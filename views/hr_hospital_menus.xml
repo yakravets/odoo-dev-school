@@ -1,0 +1,23 @@
+<odoo>
+
+    <menuitem id="hr_hospital_root" 
+        name="Госпіталь" 
+        web_icon="hr_hospital.static/description/icon.png"
+        sequence="15" />
+    
+    <menuitem id="hr_hospital_visits_root" 
+        name="Візити"
+        parent="hr_hospital_root" 
+        sequence="20" />
+
+    <menuitem id="hr_hospital_catalogs_root" 
+        name="Довідники" 
+        parent="hr_hospital_root"
+        sequence="25" />
+
+    <menuitem id="hr_hospital_settings_root" 
+        name="Налаштування" 
+        parent="hr_hospital_root"
+        sequence="100" />
+
+</odoo>

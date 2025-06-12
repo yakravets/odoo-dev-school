@@ -1,0 +1,50 @@
+<odoo>
+
+    <record id="hr_hospital_patient_list" model="ir.ui.view">
+        <field name="name">Пацієнти</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <list string="Пацієнти">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="birth_date"/>
+            </list>
+        </field>
+    </record>    
+
+    <record id="hr_hospital_patient_form" model="ir.ui.view">
+        <field name="name">Пацієнт</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <form string="Пацієнт">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="phone"/>
+                        <field name="birth_date"/>
+                        <field name="home_addess"/>
+                        <field name="gender"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_action" model="ir.actions.act_window">
+        <field name="name">Пацієнти</field>
+        <field name="res_model">hr.hospital.patient</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Створіть першого пацієнта!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="hr_hospital_patient_menu" 
+        name="Пацієнти" 
+        parent="hr_hospital_catalogs_root" 
+        action="hr_hospital_patient_action" 
+        sequence="21"/>    
+
+</odoo>

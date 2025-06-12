@@ -1,0 +1,51 @@
+<odoo>
+
+    <record id="hr_hospital_doctor_view_list" model="ir.ui.view">
+        <field name="name">Лікарі</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <list string="Лікарі">
+                <field name="name"/>
+                <field name="specialization"/>
+                <field name="phone"/>
+                <field name="email"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hr_hospital_doctor_view_form" model="ir.ui.view">
+        <field name="name">Лікар</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Лікар">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="specialization"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_doctor_action" model="ir.actions.act_window">
+        <field name="name">Лікарі</field>
+        <field name="res_model">hr.hospital.doctor</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Створіть першого лікаря!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="hr_hospital_doctor_menu" 
+        name="Лікарі" 
+        parent="hr_hospital_catalogs_root" 
+        action="hr_hospital_doctor_action" 
+        sequence="21"/>
+    
+</odoo>

@@ -1,0 +1,65 @@
+<odoo>
+
+    <record id="hr_hospital_patient_visit_view_list" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.visit.list</field>
+        <field name="model">hr.hospital.patient.visit</field>
+        <field name="arch" type="xml">
+            <list string="Візити пацієнтів">
+                <field name="patient_id"/>
+                <field name="planned_datetime"/>
+                <field name="doctor_id"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_visit_view_form" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.visit.form</field>
+        <field name="model">hr.hospital.patient.visit</field>
+        <field name="arch" type="xml">
+            <form string="Візит пацієнта">
+                <sheet>
+                    <group name="group_patient_visit_header">
+                        <group name="group_patient_visit_header_left">
+                            <field name="planned_datetime"/>
+                            <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                        </group>
+                        <group name="group_patient_visit_header_right">
+                            <field name="visited_datetime"/>
+                            <field name="status"/>
+                            <field name="type_of_disease_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Скарги">
+                            <field name="note" nolabel="1"/>
+                        </page>
+                        <page string="Рекомендації">
+                            <field name="recommendation" nolabel="1"/>
+                        </page>
+                    </notebook>                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_visit_action" model="ir.actions.act_window">
+        <field name="name">Візити пацієнтів</field>
+        <field name="res_model">hr.hospital.patient.visit</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Створіть перший візит пацієнта!
+            </p>
+        </field>
+    </record>
+    
+    <menuitem id="hr_hospital_patient_visit_menu" 
+        name="Візити пацієнтів" 
+        parent="hr_hospital_visits_root" 
+        action="hr_hospital_patient_visit_action" 
+        sequence="30"/>
+
+
+</odoo>
