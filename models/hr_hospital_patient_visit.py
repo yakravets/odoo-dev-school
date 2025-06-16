@@ -23,24 +23,21 @@ class PatientVisit(models.Model):
         default='planned'
     )
     patient_id = fields.Many2one(
-        comodel='hr.hospital.patient',
+        comodel_name='hr.hospital.patient',
         string='Пацієнт',
-        required=True,
-        on_delete='restrict',
+        required=True
     )
     doctor_id = fields.Many2one(
-        comodel='hr.hospital.doctor',
+        comodel_name='hr.hospital.doctor',
         string='Лікар',
         required=True,
-        on_delete='restrict',
     )
     note = fields.Html(
         string="Скарги пацієнта"
     )
     type_of_disease_id = fields.Many2one(
-        comodel='hr.hospital.type.of.disease',
+        comodel_name='hr.hospital.type.of.disease',
         string='Діагноз',
-        on_delete='restrict',
     )
     recommendation = fields.Html(
         string="Рекомендації"

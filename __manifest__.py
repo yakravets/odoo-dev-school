@@ -26,7 +26,9 @@
     ],
 
     'demo': [
-
+        'demo/hr.hospital.type.of.disease.csv',
+        'demo/hr.hospital.specialization.csv',
+        'demo/hr.hospital.doctor.csv',
     ],
 
     'instalable': True,

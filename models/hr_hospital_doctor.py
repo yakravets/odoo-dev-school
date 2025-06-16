@@ -15,7 +15,7 @@ class Doctor(models.Model):
     email = fields.Char(
         string='Електронна пошта',
     )
-    specialization = fields.Many2one(
+    specialization_id = fields.Many2one(
         comodel_name='hr.hospital.specialization',
         string='Спеціалізація',
         required=True

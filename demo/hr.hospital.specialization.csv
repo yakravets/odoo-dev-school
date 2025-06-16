@@ -1,0 +1,6 @@
+"id","name","description","active"
+"specialization_1","ЛОР","Вуха, горло, ніс",True
+"specialization_2","Стоматолог","Зуби",True
+"specialization_3","Травматолог","Скелет",True
+"specialization_4","Окуліст","Очі",True
+"specialization_5","Сімейний лікар","Загальний огляд",True
