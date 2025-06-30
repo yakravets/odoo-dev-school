@@ -1,0 +1,302 @@
+<odoo>
+    <!-- Візит 1 -->
+    <record id="visit_1" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-01 10:00:00</field>
+        <field name="actual_datetime">2025-06-01 10:05:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_1"/>
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="visit_type">primary</field>
+        <field name="recommendation">Дотримуватися дієти, повторний візит через тиждень.</field>
+        <field name="amount">500</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 2 -->
+    <record id="visit_2" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-03 14:00:00</field>
+        <field name="actual_datetime">2025-06-03 14:15:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_2"/>
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Продовжити лікування, здати аналізи.</field>
+        <field name="amount">600</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 3 -->
+    <record id="visit_3" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-05 16:00:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">cancelled</field>
+        <field name="patient_id" ref="hr_hospital_patient_3"/>
+        <field name="doctor_id" ref="doctor_sydorenko"/>
+        <field name="visit_type">primary</field>
+        <field name="recommendation">Пацієнт скасував візит через хворобу.</field>
+        <field name="amount">0</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 4 -->
+    <record id="visit_4" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-07 09:00:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">no_show</field>
+        <field name="patient_id" ref="hr_hospital_patient_4"/>
+        <field name="doctor_id" ref="doctor_kovalenko"/>
+        <field name="visit_type">preventive</field>
+        <field name="recommendation">Пацієнт не з’явився.</field>
+        <field name="amount">0</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 5 -->
+    <record id="visit_5" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-08 11:00:00</field>
+        <field name="actual_datetime">2025-06-08 11:10:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_5"/>
+        <field name="doctor_id" ref="doctor_kravchenko"/>
+        <field name="visit_type">primary</field>
+        <field name="recommendation">Призначено додаткове обстеження.</field>
+        <field name="amount">750</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 6 -->
+    <record id="visit_6" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-10 15:30:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_6"/>
+        <field name="doctor_id" ref="doctor_intern1"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Заплановано повторний огляд.</field>
+        <field name="amount">400</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 7 -->
+    <record id="visit_7" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-12 12:00:00</field>
+        <field name="actual_datetime">2025-06-12 12:02:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_7"/>
+        <field name="doctor_id" ref="doctor_intern2"/>
+        <field name="visit_type">primary</field>
+        <field name="recommendation">Рекомендовано профілактичне лікування.</field>
+        <field name="amount">350</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 8 -->
+    <record id="visit_8" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-14 17:00:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_8"/>
+        <field name="doctor_id" ref="doctor_romanov"/>
+        <field name="visit_type">emergency</field>
+        <field name="recommendation">Термінова консультація.</field>
+        <field name="amount">1200</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 9 -->
+    <record id="visit_9" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-15 08:30:00</field>
+        <field name="actual_datetime">2025-06-15 08:40:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_9"/>
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="visit_type">preventive</field>
+        <field name="recommendation">Проведено профілактичний огляд.</field>
+        <field name="amount">300</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 10 -->
+    <record id="visit_10" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-16 13:20:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_10"/>
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Заплановано здачу аналізів.</field>
+        <field name="amount">450</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 11 -->
+    <record id="visit_11" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-17 10:00:00</field>
+        <field name="actual_datetime">2025-06-17 10:15:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_11"/>
+        <field name="doctor_id" ref="doctor_sydorenko"/>
+        <field name="visit_type">primary</field>
+        <field name="recommendation">Пацієнт почувається добре.</field>
+        <field name="amount">500</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 12 -->
+    <record id="visit_12" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-18 11:40:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_12"/>
+        <field name="doctor_id" ref="doctor_kovalenko"/>
+        <field name="visit_type">preventive</field>
+        <field name="recommendation">Заплановано вакцинацію.</field>
+        <field name="amount">350</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 13 -->
+    <record id="visit_13" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-19 09:45:00</field>
+        <field name="actual_datetime">2025-06-19 09:50:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_13"/>
+        <field name="doctor_id" ref="doctor_kravchenko"/>
+        <field name="visit_type">primary</field>
+        <field name="recommendation">Виписано рецепт.</field>
+        <field name="amount">500</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 14 -->
+    <record id="visit_14" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-20 08:30:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">no_show</field>
+        <field name="patient_id" ref="hr_hospital_patient_14"/>
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Пацієнт не з’явився.</field>
+        <field name="amount">0</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 15 -->
+    <record id="visit_15" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-21 16:30:00</field>
+        <field name="actual_datetime">2025-06-21 16:32:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_15"/>
+        <field name="doctor_id" ref="doctor_romanov"/>
+        <field name="visit_type">emergency</field>
+        <field name="recommendation">Надано невідкладну допомогу.</field>
+        <field name="amount">1300</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 16 -->
+    <record id="visit_16" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-22 13:00:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_1"/>
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="visit_type">primary</field>
+        <field name="recommendation">Плановий огляд.</field>
+        <field name="amount">400</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 17 -->
+    <record id="visit_17" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-23 11:00:00</field>
+        <field name="actual_datetime">2025-06-23 11:03:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_2"/>
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Лікування завершено.</field>
+        <field name="amount">650</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 18 -->
+    <record id="visit_18" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-24 15:00:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_3"/>
+        <field name="doctor_id" ref="doctor_sydorenko"/>
+        <field name="visit_type">preventive</field>
+        <field name="recommendation">Заплановано профілактичний огляд.</field>
+        <field name="amount">300</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 19 -->
+    <record id="visit_19" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-25 10:30:00</field>
+        <field name="actual_datetime">2025-06-25 10:34:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_4"/>
+        <field name="doctor_id" ref="doctor_kovalenko"/>
+        <field name="visit_type">emergency</field>
+        <field name="recommendation">Оперативне втручання не потрібне.</field>
+        <field name="amount">800</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 20 -->
+    <record id="visit_20" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-26 12:15:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">cancelled</field>
+        <field name="patient_id" ref="hr_hospital_patient_5"/>
+        <field name="doctor_id" ref="doctor_kravchenko"/>
+        <field name="visit_type">primary</field>
+        <field name="recommendation">Візит скасовано пацієнтом.</field>
+        <field name="amount">0</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 21 -->
+    <record id="visit_21" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-27 18:00:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_6"/>
+        <field name="doctor_id" ref="doctor_intern1"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Плановий повторний візит.</field>
+        <field name="amount">420</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 22 -->
+    <record id="visit_22" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-28 08:00:00</field>
+        <field name="actual_datetime">2025-06-28 08:05:00</field>
+        <field name="status">done</field>
+        <field name="patient_id" ref="hr_hospital_patient_7"/>
+        <field name="doctor_id" ref="doctor_intern2"/>
+        <field name="visit_type">primary</field>
+        <field name="recommendation">Рекомендовано здати загальний аналіз крові.</field>
+        <field name="amount">380</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 23 -->
+    <record id="visit_23" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-28 14:15:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_8"/>
+        <field name="doctor_id" ref="doctor_romanov"/>
+        <field name="visit_type">emergency</field>
+        <field name="recommendation">Термінова консультація хірурга.</field>
+        <field name="amount">1400</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 24 -->
+    <record id="visit_24" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-29 10:00:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_9"/>
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="visit_type">preventive</field>
+        <field name="recommendation">Плановий профілактичний огляд.</field>
+        <field name="amount">330</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 25 -->
+    <record id="visit_25" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-06-30 09:00:00</field>
+        <field name="actual_datetime"/>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_10"/>
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Запланована консультація.</field>
+        <field name="amount">470</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+</odoo>

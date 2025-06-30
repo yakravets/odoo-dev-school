@@ -1,0 +1,51 @@
+<odoo>
+
+    <record id="hr_hospital_contact_person_view_list" model="ir.ui.view">
+        <field name="name">Контактні особи</field>
+        <field name="model">hr.hospital.contact.person</field>
+        <field name="arch" type="xml">
+            <list string="Контактні особи">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hr_hospital_contact_person_view_form" model="ir.ui.view">
+        <field name="name">Контактна особа</field>
+        <field name="model">hr.hospital.contact.person</field>
+        <field name="arch" type="xml">
+            <form string="Контактна особа">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="middle_name"/>                        
+                            <field name="phone"/>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_contact_person_action" model="ir.actions.act_window">
+        <field name="name">Контактні особи</field>
+        <field name="res_model">hr.hospital.contact.person</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Створіть першу контактну особу!
+            </p>
+        </field>
+    </record>
+
+</odoo>

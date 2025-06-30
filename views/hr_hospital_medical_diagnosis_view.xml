@@ -1,0 +1,51 @@
+<odoo>
+
+    <record id="hr_hospital_medical_diagnosis_view_list" model="ir.ui.view">
+        <field name="name">Діагноз</field>
+        <field name="model">hr.hospital.medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <list string="Розклад лікаря">
+                <field name="visit_id"/>
+                <field name="disease_id"/>
+                <field name="is_approved"/>
+                <field name="severity"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hr_hospital_medical_diagnosis_view_form" model="ir.ui.view">
+        <field name="name">Діагноз</field>
+        <field name="model">hr.hospital.medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <form string="Діагноз">
+                <sheet>
+                    <group>
+                        <field name="visit_id"/>
+                        <field name="disease_id"/>
+                        <field name="severity"/>
+                        <field name="description"/>
+                        <field name="treatment"/>                    
+                    </group>
+                    <group>
+                        <field name="is_approved"/>
+                        <field name="approved_date"/>                        
+                        <field name="approved_by_id"/> 
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_medical_diagnosis_action" model="ir.actions.act_window">
+        <field name="name">Діагнози</field>
+        <field name="res_model">hr.hospital.medical.diagnosis</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="hr_hospital_medical_diagnosis_view_list"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Записи про діагнози відсутні, створіть перший діагноз!
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,74 @@
+<odoo>
+    <menuitem id="hr_hospital_root" 
+        name="Госпіталь" 
+        web_icon="hr_hospital.static/description/icon.png"
+        sequence="15"/>
+
+    <menuitem id="hr_hospital_visits_root" 
+        name="Візити"
+        parent="hr_hospital_root" 
+        sequence="20"/>
+
+    <menuitem id="hr_hospital_patient_visit_menu" 
+        name="Візити пацієнтів" 
+        action="hr_hospital_patient_visit_action" 
+        parent="hr_hospital_visits_root"
+        sequence="30"/>
+    <menuitem id="hr_hospital_medical_diagnosis_action_menu" 
+        name="Діагнози"
+        action="hr_hospital_medical_diagnosis_action" 
+        parent="hr_hospital_visits_root"
+        sequence="40"/>
+
+    <menuitem id="hr_hospital_patient_root" 
+        name="Пацієнти" 
+        parent="hr_hospital_root"
+        sequence="25"/>
+
+    <menuitem id="hr_hospital_patient_menu" 
+        name="Пацієнти" 
+        action="hr_hospital_patient_action" 
+        parent="hr_hospital_patient_root"
+        sequence="20"/>
+    <menuitem id="hr_hospital_contact_person_action_menu" 
+        name="Контактні особи" 
+        action="hr_hospital_contact_person_action" 
+        parent="hr_hospital_patient_root"
+        sequence="25"/>
+    <menuitem id="hr_hospital_patient_doctor_history_action_menu" 
+        name="Історія змін персонального лікаря пацієнта" 
+        action="hr_hospital_patient_doctor_history_action" 
+        parent="hr_hospital_patient_root"
+        sequence="30"/>
+
+    <menuitem id="hr_hospital_doctors_root" 
+        name="Лікарі" 
+        parent="hr_hospital_root"
+        sequence="25"/>
+
+    <menuitem id="hr_hospital_doctor_menu" 
+        name="Лікарі" 
+        action="hr_hospital_doctor_action" 
+        parent="hr_hospital_doctors_root"
+        sequence="20"/>
+    <menuitem id="hr_hospital_doctor_schedule_action_menu" 
+        name="Розклад лікаря" 
+        action="hr_hospital_doctor_schedule_action" 
+        parent="hr_hospital_doctors_root"
+        sequence="25"/>
+    <menuitem id="hr_hospital_type_of_disease_menu" 
+        name="Хвороби" 
+        action="hr_hospital_specialization_action" 
+        parent="hr_hospital_doctors_root"
+        sequence="30"/>
+    <menuitem id="hr_hospital_specialization_menu" 
+        name="Спеціалізації" 
+        action="hr_hospital_type_of_disease_action" 
+        parent="hr_hospital_doctors_root"
+        sequence="35"/>
+
+    <menuitem id="hr_hospital_settings_root" 
+        name="Налаштування" 
+        parent="hr_hospital_root"
+        sequence="100"/>
+</odoo>

@@ -1,0 +1,41 @@
+<odoo>
+
+    <record id="hr_hospital_specialization_view_list" model="ir.ui.view">
+        <field name="name">hr.hospital.specialization.list</field>
+        <field name="model">hr.hospital.specialization</field>
+        <field name="arch" type="xml">
+            <list string="Спеціалізації">
+                <field name="name"/>
+                <field name="code"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hr_hospital_specialization_view_form" model="ir.ui.view">
+        <field name="name">hr.hospital.specialization.form</field>
+        <field name="model">hr.hospital.specialization</field>
+        <field name="arch" type="xml">
+            <form string="Спеціалізація">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="code"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_specialization_action" model="ir.actions.act_window">
+        <field name="name">Спеціалізації</field>
+        <field name="res_model">hr.hospital.specialization</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Створіть першу спеціалізацію!
+            </p>
+        </field>
+    </record>
+
+</odoo>

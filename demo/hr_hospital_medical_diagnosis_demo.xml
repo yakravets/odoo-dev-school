@@ -1,0 +1,185 @@
+<odoo>
+    <!-- Діагнози від лікарів -->
+    <record id="diagnosis_1" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_1"/>
+        <field name="disease_id" ref="disease_flu"/>
+        <field name="description">Класичний перебіг грипу з підвищеною температурою.</field>
+        <field name="treatment">Постільний режим, багато рідини, парацетамол.</field>
+        <field name="is_approved">1</field>
+        <field name="approved_by_id" ref="doctor_ivanov"/>
+        <field name="approved_date">2025-06-01 11:00:00</field>
+        <field name="severity">moderate</field>
+    </record>
+    <record id="diagnosis_2" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_2"/>
+        <field name="disease_id" ref="disease_diabetes"/>
+        <field name="description">Виявлено діабет на ранній стадії.</field>
+        <field name="treatment">Дієта, контроль рівня цукру, консультація ендокринолога.</field>
+        <field name="is_approved">1</field>
+        <field name="approved_by_id" ref="doctor_petrenko"/>
+        <field name="approved_date">2025-06-03 15:00:00</field>
+        <field name="severity">moderate</field>
+    </record>
+    <record id="diagnosis_3" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_5"/>
+        <field name="disease_id" ref="disease_allergic_rhinitis"/>
+        <field name="description">Сезонний алергічний риніт, загострення навесні.</field>
+        <field name="treatment">Антигістамінні препарати, уникати алергенів.</field>
+        <field name="is_approved">1</field>
+        <field name="approved_by_id" ref="doctor_kravchenko"/>
+        <field name="approved_date">2025-06-08 12:00:00</field>
+        <field name="severity">mild</field>
+    </record>
+    <record id="diagnosis_4" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_7"/>
+        <field name="disease_id" ref="disease_flu_b"/>
+        <field name="description">Грип типу B, легкий перебіг.</field>
+        <field name="treatment">Постільний режим, пиття, симптоматичне лікування.</field>
+        <field name="is_approved">1</field>
+        <field name="approved_by_id" ref="doctor_intern2"/>
+        <field name="approved_date">2025-06-12 14:30:00</field>
+        <field name="severity">mild</field>
+    </record>
+    <record id="diagnosis_5" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_9"/>
+        <field name="disease_id" ref="disease_allergic_rhinitis"/>
+        <field name="description">Профілактичний огляд, ознак хвороби не виявлено.</field>
+        <field name="treatment">Рекомендовано спостереження протягом сезону алергенів.</field>
+        <field name="is_approved">1</field>
+        <field name="approved_by_id" ref="doctor_ivanov"/>
+        <field name="approved_date">2025-06-15 09:00:00</field>
+        <field name="severity">mild</field>
+    </record>
+    <record id="diagnosis_6" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_11"/>
+        <field name="disease_id" ref="disease_pneumonia"/>
+        <field name="description">Підозра на вірусну пневмонію, призначено додаткові обстеження.</field>
+        <field name="treatment">Антибіотики після підтвердження, рентгенографія грудної клітки.</field>
+        <field name="is_approved">1</field>
+        <field name="approved_by_id" ref="doctor_sydorenko"/>
+        <field name="approved_date">2025-06-17 12:00:00</field>
+        <field name="severity">severe</field>
+    </record>
+    <record id="diagnosis_7" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_13"/>
+        <field name="disease_id" ref="disease_chronic_allergic_rhinitis"/>
+        <field name="description">Хронічний алергічний риніт, тривала закладеність носа.</field>
+        <field name="treatment">Десенсибілізуюча терапія, спрей для носа.</field>
+        <field name="is_approved">1</field>
+        <field name="approved_by_id" ref="doctor_kravchenko"/>
+        <field name="approved_date">2025-06-19 10:00:00</field>
+        <field name="severity">mild</field>
+    </record>
+    <record id="diagnosis_8" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_15"/>
+        <field name="disease_id" ref="disease_covid19"/>
+        <field name="description">COVID-19, тяжкий перебіг, госпіталізація.</field>
+        <field name="treatment">Киснева терапія, противірусні препарати.</field>
+        <field name="is_approved">1</field>
+        <field name="approved_by_id" ref="doctor_romanov"/>
+        <field name="approved_date">2025-06-21 18:00:00</field>
+        <field name="severity">severe</field>
+    </record>
+    <record id="diagnosis_9" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_17"/>
+        <field name="disease_id" ref="disease_diabetes_1"/>
+        <field name="description">Цукровий діабет 1 типу, стан компенсації.</field>
+        <field name="treatment">Інсулін, контроль глікемії.</field>
+        <field name="is_approved">1</field>
+        <field name="approved_by_id" ref="doctor_petrenko"/>
+        <field name="approved_date">2025-06-23 12:00:00</field>
+        <field name="severity">moderate</field>
+    </record>
+    <record id="diagnosis_10" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_19"/>
+        <field name="disease_id" ref="disease_pneumonia_bacterial"/>
+        <field name="description">Бактеріальна пневмонія, середня тяжкість.</field>
+        <field name="treatment">Антибактеріальна терапія, рясне пиття.</field>
+        <field name="is_approved">1</field>
+        <field name="approved_by_id" ref="doctor_kovalenko"/>
+        <field name="approved_date">2025-06-25 11:00:00</field>
+        <field name="severity">moderate</field>
+    </record>
+
+    <!-- Діагнози від інтернів (незатверджені) -->
+    <record id="diagnosis_11" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_6"/>
+        <field name="disease_id" ref="disease_flu_a"/>
+        <field name="description">Підозра на грип типу А, очікується підтвердження.</field>
+        <field name="treatment">Симптоматична терапія, ізоляція.</field>
+        <field name="is_approved">0</field>
+        <field name="severity">moderate</field>
+    </record>
+    <record id="diagnosis_12" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_8"/>
+        <field name="disease_id" ref="disease_covid19_omicron"/>
+        <field name="description">COVID-19 Омікрон, легкий перебіг.</field>
+        <field name="treatment">Постільний режим, симптоматичне лікування.</field>
+        <field name="is_approved">0</field>
+        <field name="severity">mild</field>
+    </record>
+    <record id="diagnosis_13" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_10"/>
+        <field name="disease_id" ref="disease_diabetes"/>
+        <field name="description">Підозра на діабет, призначено обстеження.</field>
+        <field name="treatment">Проконсультуватися з ендокринологом.</field>
+        <field name="is_approved">0</field>
+        <field name="severity">moderate</field>
+    </record>
+    <record id="diagnosis_14" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_12"/>
+        <field name="disease_id" ref="disease_allergic_rhinitis"/>
+        <field name="description">Підозра на алергічний риніт.</field>
+        <field name="treatment">Антигістамінні препарати.</field>
+        <field name="is_approved">0</field>
+        <field name="severity">mild</field>
+    </record>
+    <record id="diagnosis_15" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_14"/>
+        <field name="disease_id" ref="disease_flu"/>
+        <field name="description">Підозра на грип, пацієнт не з’явився.</field>
+        <field name="treatment">-</field>
+        <field name="is_approved">0</field>
+        <field name="severity">mild</field>
+    </record>
+    <record id="diagnosis_16" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_16"/>
+        <field name="disease_id" ref="disease_pneumonia_viral"/>
+        <field name="description">Підозра на вірусну пневмонію, призначено ПЛР.</field>
+        <field name="treatment">Симптоматична терапія, ПЛР-діагностика.</field>
+        <field name="is_approved">0</field>
+        <field name="severity">moderate</field>
+    </record>
+    <record id="diagnosis_17" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_18"/>
+        <field name="disease_id" ref="disease_diabetes_1"/>
+        <field name="description">Підозра на цукровий діабет 1 типу.</field>
+        <field name="treatment">Обстеження, консультація ендокринолога.</field>
+        <field name="is_approved">0</field>
+        <field name="severity">moderate</field>
+    </record>
+    <record id="diagnosis_18" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_20"/>
+        <field name="disease_id" ref="disease_covid19_delta"/>
+        <field name="description">Підозра на COVID-19 Дельта, візит скасовано.</field>
+        <field name="treatment">-</field>
+        <field name="is_approved">0</field>
+        <field name="severity">severe</field>
+    </record>
+    <record id="diagnosis_19" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_21"/>
+        <field name="disease_id" ref="disease_flu_a"/>
+        <field name="description">Грип типу А, підозра.</field>
+        <field name="treatment">Постільний режим.</field>
+        <field name="is_approved">0</field>
+        <field name="severity">moderate</field>
+    </record>
+    <record id="diagnosis_20" model="hr.hospital.medical.diagnosis">
+        <field name="visit_id" ref="visit_22"/>
+        <field name="disease_id" ref="disease_allergic_rhinitis"/>
+        <field name="description">Підозра на сезонну алергію.</field>
+        <field name="treatment">Симптоматична терапія.</field>
+        <field name="is_approved">0</field>
+        <field name="severity">mild</field>
+    </record>
+</odoo>

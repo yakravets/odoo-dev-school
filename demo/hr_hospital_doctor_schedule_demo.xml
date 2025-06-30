@@ -1,0 +1,364 @@
+<odoo>
+    <!-- Ivanov: працює Пн-Ср, Чт - конференція, Пт - вихідний -->
+    <record id="schedule_ivanov_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="day_of_week">mon</field>
+        <field name="date">2025-06-23</field>
+        <field name="from_time">9.0</field>
+        <field name="to_time">17.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_ivanov_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="day_of_week">tue</field>
+        <field name="date">2025-06-24</field>
+        <field name="from_time">9.0</field>
+        <field name="to_time">17.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_ivanov_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="day_of_week">wed</field>
+        <field name="date">2025-06-25</field>
+        <field name="from_time">9.0</field>
+        <field name="to_time">15.0</field>
+        <field name="schedule_type">workday</field>
+        <field name="note">Скорочений день</field>
+    </record>
+    <record id="schedule_ivanov_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="day_of_week">thu</field>
+        <field name="date">2025-06-26</field>
+        <field name="schedule_type">conference</field>
+        <field name="note">Медична конференція</field>
+    </record>
+    <record id="schedule_ivanov_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="day_of_week">fri</field>
+        <field name="date">2025-06-27</field>
+        <field name="schedule_type">vacation</field>
+        <field name="note">Відпустка</field>
+    </record>
+
+    <!-- Petrenko: Пн - лікарняний, Вт-Чт працює, Пт - вихідний -->
+    <record id="schedule_petrenko_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="day_of_week">mon</field>
+        <field name="date">2025-06-23</field>
+        <field name="schedule_type">sick_leave</field>
+        <field name="note">Лікарняний</field>
+    </record>
+    <record id="schedule_petrenko_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="day_of_week">tue</field>
+        <field name="date">2025-06-24</field>
+        <field name="from_time">10.0</field>
+        <field name="to_time">18.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_petrenko_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="day_of_week">wed</field>
+        <field name="date">2025-06-25</field>
+        <field name="from_time">10.0</field>
+        <field name="to_time">18.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_petrenko_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="day_of_week">thu</field>
+        <field name="date">2025-06-26</field>
+        <field name="from_time">10.0</field>
+        <field name="to_time">18.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_petrenko_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="day_of_week">fri</field>
+        <field name="date">2025-06-27</field>
+        <field name="schedule_type">vacation</field>
+        <field name="note">Відпустка</field>
+    </record>
+
+    <!-- Sydorenko: Пн-Вт працює, Ср - вихідний, Чт-Пт працює -->
+    <record id="schedule_sydorenko_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_sydorenko"/>
+        <field name="day_of_week">mon</field>
+        <field name="date">2025-06-23</field>
+        <field name="from_time">8.0</field>
+        <field name="to_time">14.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_sydorenko_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_sydorenko"/>
+        <field name="day_of_week">tue</field>
+        <field name="date">2025-06-24</field>
+        <field name="from_time">8.0</field>
+        <field name="to_time">14.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_sydorenko_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_sydorenko"/>
+        <field name="day_of_week">wed</field>
+        <field name="date">2025-06-25</field>
+        <field name="schedule_type">vacation</field>
+        <field name="note">Відпустка</field>
+    </record>
+    <record id="schedule_sydorenko_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_sydorenko"/>
+        <field name="day_of_week">thu</field>
+        <field name="date">2025-06-26</field>
+        <field name="from_time">8.0</field>
+        <field name="to_time">14.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_sydorenko_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_sydorenko"/>
+        <field name="day_of_week">fri</field>
+        <field name="date">2025-06-27</field>
+        <field name="from_time">8.0</field>
+        <field name="to_time">14.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <!-- Kovalenko: Пн-Вт працює, Ср - конференція, Чт-Пт працює -->
+    <record id="schedule_kovalenko_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_kovalenko"/>
+        <field name="day_of_week">mon</field>
+        <field name="date">2025-06-23</field>
+        <field name="from_time">12.0</field>
+        <field name="to_time">18.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_kovalenko_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_kovalenko"/>
+        <field name="day_of_week">tue</field>
+        <field name="date">2025-06-24</field>
+        <field name="from_time">12.0</field>
+        <field name="to_time">18.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_kovalenko_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_kovalenko"/>
+        <field name="day_of_week">wed</field>
+        <field name="date">2025-06-25</field>
+        <field name="schedule_type">conference</field>
+        <field name="note">Конференція</field>
+    </record>
+    <record id="schedule_kovalenko_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_kovalenko"/>
+        <field name="day_of_week">thu</field>
+        <field name="date">2025-06-26</field>
+        <field name="from_time">12.0</field>
+        <field name="to_time">18.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_kovalenko_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_kovalenko"/>
+        <field name="day_of_week">fri</field>
+        <field name="date">2025-06-27</field>
+        <field name="from_time">12.0</field>
+        <field name="to_time">18.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <!-- Kravchenko: Пн - лікарняний, Вт-Ср працює, Чт - вихідний, Пт працює -->
+    <record id="schedule_kravchenko_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_kravchenko"/>
+        <field name="day_of_week">mon</field>
+        <field name="date">2025-06-23</field>
+        <field name="schedule_type">sick_leave</field>
+        <field name="note">Лікарняний</field>
+    </record>
+    <record id="schedule_kravchenko_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_kravchenko"/>
+        <field name="day_of_week">tue</field>
+        <field name="date">2025-06-24</field>
+        <field name="from_time">8.0</field>
+        <field name="to_time">16.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_kravchenko_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_kravchenko"/>
+        <field name="day_of_week">wed</field>
+        <field name="date">2025-06-25</field>
+        <field name="from_time">8.0</field>
+        <field name="to_time">16.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_kravchenko_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_kravchenko"/>
+        <field name="day_of_week">thu</field>
+        <field name="date">2025-06-26</field>
+        <field name="schedule_type">vacation</field>
+        <field name="note">Відпустка</field>
+    </record>
+    <record id="schedule_kravchenko_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_kravchenko"/>
+        <field name="day_of_week">fri</field>
+        <field name="date">2025-06-27</field>
+        <field name="from_time">8.0</field>
+        <field name="to_time">16.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <!-- Intern1: Пн-Пт працює, Сб - вихідний, Нд - конференція -->
+    <record id="schedule_intern1_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern1"/>
+        <field name="day_of_week">mon</field>
+        <field name="date">2025-06-23</field>
+        <field name="from_time">13.0</field>
+        <field name="to_time">19.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_intern1_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern1"/>
+        <field name="day_of_week">tue</field>
+        <field name="date">2025-06-24</field>
+        <field name="from_time">13.0</field>
+        <field name="to_time">19.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_intern1_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern1"/>
+        <field name="day_of_week">wed</field>
+        <field name="date">2025-06-25</field>
+        <field name="from_time">13.0</field>
+        <field name="to_time">19.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_intern1_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern1"/>
+        <field name="day_of_week">thu</field>
+        <field name="date">2025-06-26</field>
+        <field name="from_time">13.0</field>
+        <field name="to_time">19.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_intern1_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern1"/>
+        <field name="day_of_week">fri</field>
+        <field name="date">2025-06-27</field>
+        <field name="from_time">13.0</field>
+        <field name="to_time">19.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_intern1_sat" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern1"/>
+        <field name="day_of_week">sat</field>
+        <field name="date">2025-06-28</field>
+        <field name="schedule_type">vacation</field>
+        <field name="note">Вихідний</field>
+    </record>
+    <record id="schedule_intern1_sun" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern1"/>
+        <field name="day_of_week">sun</field>
+        <field name="date">2025-06-29</field>
+        <field name="schedule_type">conference</field>
+        <field name="note">Наукова конференція</field>
+    </record>
+
+    <!-- Intern2: Пн-Пт працює, Сб - лікарняний, Нд - вихідний -->
+    <record id="schedule_intern2_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern2"/>
+        <field name="day_of_week">mon</field>
+        <field name="date">2025-06-23</field>
+        <field name="from_time">14.0</field>
+        <field name="to_time">20.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_intern2_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern2"/>
+        <field name="day_of_week">tue</field>
+        <field name="date">2025-06-24</field>
+        <field name="from_time">14.0</field>
+        <field name="to_time">20.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_intern2_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern2"/>
+        <field name="day_of_week">wed</field>
+        <field name="date">2025-06-25</field>
+        <field name="from_time">14.0</field>
+        <field name="to_time">20.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_intern2_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern2"/>
+        <field name="day_of_week">thu</field>
+        <field name="date">2025-06-26</field>
+        <field name="from_time">14.0</field>
+        <field name="to_time">20.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_intern2_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern2"/>
+        <field name="day_of_week">fri</field>
+        <field name="date">2025-06-27</field>
+        <field name="from_time">14.0</field>
+        <field name="to_time">20.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_intern2_sat" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern2"/>
+        <field name="day_of_week">sat</field>
+        <field name="date">2025-06-28</field>
+        <field name="schedule_type">sick_leave</field>
+        <field name="note">Лікарняний</field>
+    </record>
+    <record id="schedule_intern2_sun" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_intern2"/>
+        <field name="day_of_week">sun</field>
+        <field name="date">2025-06-29</field>
+        <field name="schedule_type">vacation</field>
+        <field name="note">Вихідний</field>
+    </record>
+
+    <!-- Romanov: Пн-Вт працює, Ср - вихідний, Чт-Пт працює, Сб - конференція -->
+    <record id="schedule_romanov_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_romanov"/>
+        <field name="day_of_week">mon</field>
+        <field name="date">2025-06-23</field>
+        <field name="from_time">7.0</field>
+        <field name="to_time">13.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_romanov_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_romanov"/>
+        <field name="day_of_week">tue</field>
+        <field name="date">2025-06-24</field>
+        <field name="from_time">7.0</field>
+        <field name="to_time">13.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_romanov_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_romanov"/>
+        <field name="day_of_week">wed</field>
+        <field name="date">2025-06-25</field>
+        <field name="schedule_type">vacation</field>
+        <field name="note">Вихідний</field>
+    </record>
+    <record id="schedule_romanov_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_romanov"/>
+        <field name="day_of_week">thu</field>
+        <field name="date">2025-06-26</field>
+        <field name="from_time">7.0</field>
+        <field name="to_time">13.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_romanov_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_romanov"/>
+        <field name="day_of_week">fri</field>
+        <field name="date">2025-06-27</field>
+        <field name="from_time">7.0</field>
+        <field name="to_time">13.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+    <record id="schedule_romanov_sat" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_romanov"/>
+        <field name="day_of_week">sat</field>
+        <field name="date">2025-06-28</field>
+        <field name="schedule_type">conference</field>
+        <field name="note">Міжнародна медична конференція</field>
+    </record>
+</odoo>
