@@ -1,10 +1,10 @@
 <odoo>
 
     <record id="hr_hospital_contact_person_view_list" model="ir.ui.view">
-        <field name="name">Contact persons</field>
+        <field name="name">hr.hospital.contact.view.list</field>
         <field name="model">hr.hospital.contact.person</field>
         <field name="arch" type="xml">
-            <list string="Contact persons">
+            <list>
                 <field name="name"/>
                 <field name="phone"/>
                 <field name="email"/>
@@ -13,7 +13,7 @@
     </record>
 
     <record id="hr_hospital_contact_person_view_form" model="ir.ui.view">
-        <field name="name">Contact person</field>
+        <field name="name">hr.hospital.contact.view.form</field>
         <field name="model">hr.hospital.contact.person</field>
         <field name="arch" type="xml">
             <form string="Contact person">
