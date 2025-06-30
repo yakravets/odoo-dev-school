@@ -8,6 +8,7 @@
                 <field name="name"/>
                 <field name="phone"/>
                 <field name="birth_date"/>
+                <field name="age"/>
             </list>
         </field>
     </record>    
@@ -19,12 +20,53 @@
             <form string="Пацієнт">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="phone"/>
-                        <field name="birth_date"/>
-                        <field name="home_addess"/>
-                        <field name="gender"/>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="middle_name"/>                        
+                            <field name="phone"/>
+                            <field name="birth_date"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="active"/>
+                            <field name="citizenship_country_id"/>
+                            <field name="language_id"/>
+                            <field name="passport_data"/>
+                        </group>
                     </group>
+                    <notebook>
+                        <page string="Дані пацієнта">
+                            <group>
+                                <field name="personal_doctor_id" />                        
+                                <field name="blood_group"/>                            
+                                <field name="insurance_company_id"/>                            
+                                <field name="insurance_policy_number"/>                                                       
+                            </group>
+                        </page>
+                        <page string="Алергії">
+                            <field name="allergies" nolabel="1"/>
+                        </page>
+                        <page string="Контактні особи">
+                            <field name="contact_person_ids" context="{'patient_id': id}">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="type"/>
+                                    <field name="phone"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Історія персональних лікарів">
+                            <field name="doctor_history_ids" context="{'default_patient_id': id}">
+                                <list editable="bottom">
+                                    <field name="doctor_id"/>
+                                </list>
+                            </field>
+                        </page>  
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -39,12 +81,6 @@
                 Створіть першого пацієнта!
             </p>
         </field>
-    </record>
-
-    <menuitem id="hr_hospital_patient_menu" 
-        name="Пацієнти" 
-        parent="hr_hospital_catalogs_root" 
-        action="hr_hospital_patient_action" 
-        sequence="21"/>    
+    </record> 
 
 </odoo>

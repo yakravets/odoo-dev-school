@@ -9,6 +9,8 @@
                 <field name="specialization_id"/>
                 <field name="phone"/>
                 <field name="email"/>
+                <field name="is_intern"/>
+                <field name="mentor_id"/>
             </list>
         </field>
     </record>
@@ -18,14 +20,45 @@
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <form string="Лікар">
+                <header>
+                    <button name="%(action_mass_reassign_doctor_wizard)d"
+                        string="Масове перепризначення лікаря"
+                        type="action"
+                        class="oe_highlight"/>
+                </header>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="specialization_id"/>
-                        <field name="phone"/>
-                        <field name="email"/>
-                        <field name="active"/>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="middle_name"/>                        
+                            <field name="phone"/>
+                            <field name="birth_date"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>                        
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="active"/>
+                            <field name="citizenship_country_id"/>
+                            <field name="language_id"/>
+                            <field name="user_id"/>
+                        </group>
                     </group>
+                    <notebook>
+                        <page string="Дані лікаря">
+                            <group>
+                                <field name="specialization_id"/>
+                                <field name="education_country_id"/>
+                                <field name="license_number"/>
+                                <field name="license_issue_date"/>
+                                <field name="rating"/>
+                                <field name="is_intern"/>
+                                <field name="mentor_id"/>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -41,11 +74,5 @@
             </p>
         </field>
     </record>
-
-    <menuitem id="hr_hospital_doctor_menu" 
-        name="Лікарі" 
-        parent="hr_hospital_catalogs_root" 
-        action="hr_hospital_doctor_action" 
-        sequence="21"/>
-    
+        
 </odoo>

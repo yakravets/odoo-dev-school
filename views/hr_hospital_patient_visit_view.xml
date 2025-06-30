@@ -24,17 +24,16 @@
                             <field name="planned_datetime"/>
                             <field name="patient_id"/>
                             <field name="doctor_id"/>
+                            <field name="currency_id"/>
+                            <field name="amount"/>
                         </group>
                         <group name="group_patient_visit_header_right">
-                            <field name="visited_datetime"/>
+                            <field name="actual_datetime"/>
                             <field name="status"/>
-                            <field name="type_of_disease_id"/>
+                            <field name="visit_type"/>
                         </group>
                     </group>
                     <notebook>
-                        <page string="Скарги">
-                            <field name="note" nolabel="1"/>
-                        </page>
                         <page string="Рекомендації">
                             <field name="recommendation" nolabel="1"/>
                         </page>
@@ -55,11 +54,4 @@
         </field>
     </record>
     
-    <menuitem id="hr_hospital_patient_visit_menu" 
-        name="Візити пацієнтів" 
-        parent="hr_hospital_visits_root" 
-        action="hr_hospital_patient_visit_action" 
-        sequence="30"/>
-
-
 </odoo>

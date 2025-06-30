@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <list string="Спеціалізації">
                 <field name="name"/>
-                <field name="description"/>
+                <field name="code"/>
             </list>
         </field>
     </record>
@@ -20,7 +20,7 @@
                     <group>
                         <field name="name"/>
                         <field name="description"/>
-                        <field name="active"/>
+                        <field name="code"/>
                     </group>
                 </sheet>
             </form>
@@ -37,11 +37,5 @@
             </p>
         </field>
     </record>
-
-    <menuitem id="hr_hospital_specialization_menu" 
-        name="Спеціалізації" 
-        parent="hr_hospital_catalogs_root" 
-        action="hr_hospital_specialization_action" 
-        sequence="20"/>
 
 </odoo>

@@ -1,0 +1,160 @@
+<odoo>
+
+    <record id="doctor_ivanov" model="hr.hospital.doctor">
+        <field name="first_name">Іван</field>
+        <field name="last_name">Іванов</field>
+        <field name="middle_name">Іванович</field>
+        <field name="active">1</field>
+        <field name="phone">+380501111111</field>
+        <field name="email">ivan.ivanov@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1980-01-15</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="specialization_id" ref="specialization_therapy"/>
+        <field name="is_intern">0</field>
+        <field name="license_number">DOC-001</field>
+        <field name="license_issue_date">2005-06-01</field>
+        <field name="rating">4.85</field>
+        <field name="education_country_id" ref="base.ua"/>
+    </record>
+
+    <record id="doctor_petrenko" model="hr.hospital.doctor">
+        <field name="first_name">Петро</field>
+        <field name="last_name">Петренко</field>
+        <field name="middle_name">Петрович</field>
+        <field name="active">1</field>
+        <field name="phone">+380502222222</field>
+        <field name="email">petro.petrenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1975-03-10</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="user_id" ref="base.user_demo"/>
+        <field name="specialization_id" ref="specialization_cardiology"/>
+        <field name="is_intern">0</field>
+        <field name="license_number">DOC-002</field>
+        <field name="license_issue_date">2000-05-15</field>
+        <field name="rating">4.70</field>
+        <field name="education_country_id" ref="base.ua"/>
+    </record>
+
+    <record id="doctor_sydorenko" model="hr.hospital.doctor">
+        <field name="first_name">Олена</field>
+        <field name="last_name">Сидоренко</field>
+        <field name="middle_name">Василівна</field>
+        <field name="active">1</field>
+        <field name="phone">+380503333333</field>
+        <field name="email">olena.sydorenko@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1985-08-24</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="user_id" ref="base.user_portal"/>
+        <field name="specialization_id" ref="specialization_neurology"/>
+        <field name="is_intern">0</field>
+        <field name="license_number">DOC-003</field>
+        <field name="license_issue_date">2010-09-10</field>
+        <field name="rating">4.95</field>
+        <field name="education_country_id" ref="base.ua"/>
+    </record>
+
+    <record id="doctor_kovalenko" model="hr.hospital.doctor">
+        <field name="first_name">Андрій</field>
+        <field name="last_name">Коваленко</field>
+        <field name="middle_name">Володимирович</field>
+        <field name="active">1</field>
+        <field name="phone">+380504444444</field>
+        <field name="email">andriy.kovalenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1990-11-02</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="user_id" ref="base.user_public"/>
+        <field name="specialization_id" ref="specialization_surgery"/>
+        <field name="is_intern">0</field>
+        <field name="license_number">DOC-004</field>
+        <field name="license_issue_date">2016-12-01</field>
+        <field name="rating">4.50</field>
+        <field name="education_country_id" ref="base.ua"/>
+    </record>
+
+    <record id="doctor_kravchenko" model="hr.hospital.doctor">
+        <field name="first_name">Марія</field>
+        <field name="last_name">Кравченко</field>
+        <field name="middle_name">Сергіївна</field>
+        <field name="active">1</field>
+        <field name="phone">+380505555555</field>
+        <field name="email">maria.kravchenko@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1988-05-16</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="specialization_id" ref="specialization_pediatrics"/>
+        <field name="is_intern">0</field>
+        <field name="license_number">DOC-005</field>
+        <field name="license_issue_date">2014-03-20</field>
+        <field name="rating">4.65</field>
+        <field name="education_country_id" ref="base.ua"/>
+    </record>
+
+    <record id="doctor_intern1" model="hr.hospital.doctor">
+        <field name="first_name">Василь</field>
+        <field name="last_name">Данилюк</field>
+        <field name="middle_name">Олегович</field>
+        <field name="active">1</field>
+        <field name="phone">+380506666666</field>
+        <field name="email">vasyl.danyliuk@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1998-02-14</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="specialization_id" ref="specialization_therapy"/>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="doctor_ivanov"/>
+        <field name="license_number">DOC-006</field>
+        <field name="license_issue_date">2024-01-01</field>
+        <field name="rating">0.00</field>
+        <field name="education_country_id" ref="base.ua"/>
+    </record>
+
+    <record id="doctor_intern2" model="hr.hospital.doctor">
+        <field name="first_name">Ірина</field>
+        <field name="last_name">Ткаченко</field>
+        <field name="middle_name">Григорівна</field>
+        <field name="active">1</field>
+        <field name="phone">+380507777777</field>
+        <field name="email">iryna.tkachenko@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1999-10-21</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="specialization_id" ref="specialization_pediatrics"/>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="doctor_kravchenko"/>
+        <field name="license_number">DOC-007</field>
+        <field name="license_issue_date">2024-01-01</field>
+        <field name="rating">0.00</field>
+        <field name="education_country_id" ref="base.ua"/>
+    </record>
+
+    <record id="doctor_romanov" model="hr.hospital.doctor">
+        <field name="first_name">Роман</field>
+        <field name="last_name">Романов</field>
+        <field name="middle_name">Віталійович</field>
+        <field name="active">1</field>
+        <field name="phone">+380508888888</field>
+        <field name="email">roman.romanov@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1982-07-09</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="specialization_id" ref="specialization_surgery"/>
+        <field name="is_intern">0</field>
+        <field name="license_number">DOC-008</field>
+        <field name="license_issue_date">2008-11-11</field>
+        <field name="rating">4.60</field>
+        <field name="education_country_id" ref="base.ua"/>
+    </record>
+</odoo>

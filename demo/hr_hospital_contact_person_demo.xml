@@ -1,0 +1,197 @@
+<odoo>
+    <record id="contact_person_1" model="hr.hospital.contact.person">
+        <field name="first_name">Оксана</field>
+        <field name="last_name">Іванова</field>
+        <field name="middle_name">Петрівна</field>
+        <field name="phone">+380501234501</field>
+        <field name="email">oksana.ivanova@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1982-04-21</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">husbent/wife</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_1'))]"/>
+    </record>
+    <record id="contact_person_2" model="hr.hospital.contact.person">
+        <field name="first_name">Григорій</field>
+        <field name="last_name">Петренко</field>
+        <field name="middle_name">Олександрович</field>
+        <field name="phone">+380501234502</field>
+        <field name="email">hryhoriy.petrenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1970-07-03</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">father/mouther</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_2'))]"/>
+    </record>
+    <record id="contact_person_3" model="hr.hospital.contact.person">
+        <field name="first_name">Марія</field>
+        <field name="last_name">Сидорова</field>
+        <field name="middle_name">Степанівна</field>
+        <field name="phone">+380501234503</field>
+        <field name="email">mariya.sydorova@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1965-11-19</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">father/mouther</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_3'))]"/>
+    </record>
+    <record id="contact_person_4" model="hr.hospital.contact.person">
+        <field name="first_name">Олег</field>
+        <field name="last_name">Кравченко</field>
+        <field name="middle_name">Ігорович</field>
+        <field name="phone">+380501234504</field>
+        <field name="email">oleg.kravchenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1991-05-13</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">relative</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_4'))]"/>
+    </record>
+    <record id="contact_person_5" model="hr.hospital.contact.person">
+        <field name="first_name">Світлана</field>
+        <field name="last_name">Мельник</field>
+        <field name="middle_name">Василівна</field>
+        <field name="phone">+380501234505</field>
+        <field name="email">svitlana.melnyk@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1987-09-17</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">friend</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_5'))]"/>
+    </record>
+    <record id="contact_person_6" model="hr.hospital.contact.person">
+        <field name="first_name">Дмитро</field>
+        <field name="last_name">Лисенко</field>
+        <field name="middle_name">Андрійович</field>
+        <field name="phone">+380501234506</field>
+        <field name="email">dmytro.lysenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1995-02-28</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">colleague</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_6'))]"/>
+    </record>
+    <record id="contact_person_7" model="hr.hospital.contact.person">
+        <field name="first_name">Тетяна</field>
+        <field name="last_name">Гнатюк</field>
+        <field name="middle_name">Романівна</field>
+        <field name="phone">+380501234507</field>
+        <field name="email">tetyana.hnatyuk@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1980-12-05</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">other</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_7'))]"/>
+    </record>
+    <record id="contact_person_8" model="hr.hospital.contact.person">
+        <field name="first_name">Ігор</field>
+        <field name="last_name">Захарченко</field>
+        <field name="middle_name">Валерійович</field>
+        <field name="phone">+380501234508</field>
+        <field name="email">ihor.zakharchenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1993-08-23</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">husbent/wife</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_8'))]"/>
+    </record>
+    <record id="contact_person_9" model="hr.hospital.contact.person">
+        <field name="first_name">Валентина</field>
+        <field name="last_name">Левченко</field>
+        <field name="middle_name">Григорівна</field>
+        <field name="phone">+380501234509</field>
+        <field name="email">valentyna.levchenko@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1977-03-30</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">friend</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_9'))]"/>
+    </record>
+    <record id="contact_person_10" model="hr.hospital.contact.person">
+        <field name="first_name">Руслан</field>
+        <field name="last_name">Бондар</field>
+        <field name="middle_name">Павлович</field>
+        <field name="phone">+380501234510</field>
+        <field name="email">ruslan.bondar@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1984-06-15</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">colleague</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_10'))]"/>
+    </record>
+    <record id="contact_person_11" model="hr.hospital.contact.person">
+        <field name="first_name">Інна</field>
+        <field name="last_name">Романова</field>
+        <field name="middle_name">Олексіївна</field>
+        <field name="phone">+380501234511</field>
+        <field name="email">inna.romanova@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1996-01-11</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">relative</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_11'))]"/>
+    </record>
+    <record id="contact_person_12" model="hr.hospital.contact.person">
+        <field name="first_name">Олександр</field>
+        <field name="last_name">Коваленко</field>
+        <field name="middle_name">Євгенович</field>
+        <field name="phone">+380501234512</field>
+        <field name="email">oleksandr.kovalenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1979-10-27</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">other</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_12'))]"/>
+    </record>
+    <record id="contact_person_13" model="hr.hospital.contact.person">
+        <field name="first_name">Вікторія</field>
+        <field name="last_name">Мороз</field>
+        <field name="middle_name">Валеріївна</field>
+        <field name="phone">+380501234513</field>
+        <field name="email">viktoria.moroz@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1981-11-14</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">relative</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_13'))]"/>
+    </record>
+    <record id="contact_person_14" model="hr.hospital.contact.person">
+        <field name="first_name">Антон</field>
+        <field name="last_name">Дорошенко</field>
+        <field name="middle_name">Віталійович</field>
+        <field name="phone">+380501234514</field>
+        <field name="email">anton.doroshenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1983-03-02</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">colleague</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_14'))]"/>
+    </record>
+    <record id="contact_person_15" model="hr.hospital.contact.person">
+        <field name="first_name">Катерина</field>
+        <field name="last_name">Шевченко</field>
+        <field name="middle_name">Леонідівна</field>
+        <field name="phone">+380501234515</field>
+        <field name="email">kateryna.shevchenko@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1990-04-04</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="type">friend</field>
+        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_15'))]"/>
+    </record>
+</odoo>

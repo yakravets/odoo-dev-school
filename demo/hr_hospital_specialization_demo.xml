@@ -1,0 +1,32 @@
+<odoo>
+    <record id="specialization_therapy" model="hr.hospital.specialization">
+        <field name="name">Терапія</field>
+        <field name="active">1</field>
+        <field name="code">THER</field>
+        <field name="description">Загальна терапія, профілактика і лікування захворювань внутрішніх органів.</field>
+    </record>
+    <record id="specialization_pediatrics" model="hr.hospital.specialization">
+        <field name="name">Педіатрія</field>
+        <field name="active">1</field>
+        <field name="code">PEDIATR</field>
+        <field name="description">Медична спеціальність, що займається здоров'ям дітей та підлітків.</field>
+    </record>
+    <record id="specialization_cardiology" model="hr.hospital.specialization">
+        <field name="name">Кардіологія</field>
+        <field name="active">1</field>
+        <field name="code">CARDIO</field>
+        <field name="description">Діагностика та лікування захворювань серця і судин.</field>
+    </record>
+    <record id="specialization_neurology" model="hr.hospital.specialization">
+        <field name="name">Неврологія</field>
+        <field name="active">1</field>
+        <field name="code">NEURO</field>
+        <field name="description">Вивчення, діагностика та лікування захворювань нервової системи.</field>
+    </record>
+    <record id="specialization_surgery" model="hr.hospital.specialization">
+        <field name="name">Хірургія</field>
+        <field name="active">1</field>
+        <field name="code">SURG</field>
+        <field name="description">Оперативне лікування захворювань, травм або патологій.</field>
+    </record>
+</odoo>

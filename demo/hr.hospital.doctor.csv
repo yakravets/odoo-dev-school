@@ -1,6 +1,0 @@
-"id","name","phone","email","specialization_id:id","active"
-"doctor_1","Рудаков Мирослав Степанович","+380501234567","rudakov@doctor.com","specialization_1",True
-"doctor_2","Коробов Рустам Володимирович","+380501234568","korobov@dotor.com","specialization_2",True
-"doctor_3","Коваленко Олександр Іванович","+380501234569","kovalenko@doctor.com","specialization_3",True
-"doctor_4","Савченко Олексій Андрійович","+380501234570","sav4ik@doctor.com","specialization_4",True
-"doctor_5","Петренко Іван Петрович","+380501234571","petrenko@doctor.com","specialization_5",True

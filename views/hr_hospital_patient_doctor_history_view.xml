@@ -1,0 +1,45 @@
+<odoo>
+
+    <record id="hr_hospital_patient_doctor_history_view_list" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.doctor.history</field>
+        <field name="model">hr.hospital.patient.doctor.history</field>
+        <field name="arch" type="xml">
+            <list string="Історія лікаря пацієнта">
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="assign_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_doctor_history_view_form" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.doctor.history.form</field>
+        <field name="model">hr.hospital.patient.doctor.history</field>
+        <field name="arch" type="xml">
+            <form string="Історія лікаря пацієнта">
+                <sheet>
+                    <group>
+                        <field name="patient_id"/>
+                        <field name="doctor_id"/>
+                        <field name="assign_date"/>
+                        <field name="change_date"/>
+                        <field name="change_reason"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_doctor_history_action" model="ir.actions.act_window">
+        <field name="name">Історія змін персонального лікаря пацієнта</field>
+        <field name="res_model">hr.hospital.patient.doctor.history</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="hr_hospital_patient_doctor_history_view_list"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Створіть перший запис історії лікаря пацієнта!
+            </p>
+        </field>
+    </record>
+
+</odoo>

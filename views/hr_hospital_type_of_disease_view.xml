@@ -18,13 +18,19 @@
             <form string="Тип захворювання">
                 <sheet>
                     <group>
+                        <field name="parent_id"/>
                         <field name="name"/>
-                        <field name="severity"/>
+                        <field name="icd10_code"/>
+                        <field name="danger_level"/>
+                        <field name="is_contagious"/>
+                        <field name="symptoms"/>
+                        <field name="region_ids"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
+    
     <record id="hr_hospital_type_of_disease_action" model="ir.actions.act_window">
         <field name="name">Типи захворювань</field>
         <field name="res_model">hr.hospital.type.of.disease</field>
@@ -35,11 +41,5 @@
             </p>
         </field>
     </record>
-
-    <menuitem id="hr_hospital_type_of_disease_menu" 
-        name="Типи захворювань" 
-        parent="hr_hospital_catalogs_root" 
-        action="hr_hospital_type_of_disease_action" 
-        sequence="35"/>
 
 </odoo>

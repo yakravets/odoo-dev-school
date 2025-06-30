@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_disease_report_wizard_form" model="ir.ui.view">
+        <field name="name">hr.hospital.disease.report.wizard.form</field>
+        <field name="model">hr.hospital.disease.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Звіт по хворобах за період">
+                <group>
+                    <field name="doctor_ids" widget="many2many_tags"/>
+                    <field name="disease_ids" widget="many2many_tags"/>
+                    <field name="country_ids" widget="many2many_tags"/>
+                </group>
+                <group>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </group>
+                <group>
+                    <field name="report_type"/>
+                    <field name="group_by"/>
+                </group>
+                <footer>
+                    <button name="action_report" type="object" string="Згенерувати звіт" class="btn-primary"/>
+                    <button string="Скасувати" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

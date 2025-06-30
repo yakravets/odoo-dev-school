@@ -17,18 +17,36 @@
 
     'data': [
         'security/ir.model.access.csv',
-        'views/hr_hospital_menus.xml',
+
+        'wizard/hr_hospital_mass_reassign_doctor_wizard_view.xml',
+        'wizard/hr_hospital_doctor_schedule_wizard_view.xml',
+        'wizard/hr_hospital_mass_reassign_doctor_wizard_view.xml',
+        'wizard/hr_hospital_patient_card_export_wizard_view.xml',
+
         'views/hr_hospital_specialization_view.xml',
         'views/hr_hospital_doctor_view.xml',
         'views/hr_hospital_patient_view.xml',
         'views/hr_hospital_type_of_disease_view.xml',
         'views/hr_hospital_patient_visit_view.xml',
+        'views/hr_hospital_contact_person_view.xml',
+        'views/hr_hospital_doctor_schedule_view.xml',
+        'views/hr_hospital_doctor_schedule_view.xml',
+        'views/hr_hospital_medical_diagnosis_view.xml',
+        'views/hr_hospital_patient_doctor_history_view.xml',
+        
+        'views/hr_hospital_menus.xml',
     ],
 
     'demo': [
-        'demo/hr.hospital.type.of.disease.csv',
-        'demo/hr.hospital.specialization.csv',
-        'demo/hr.hospital.doctor.csv',
+        'demo/hr_hospital_specialization_demo.xml',
+        'demo/hr_hospital_type_of_disease_demo.xml',
+        'demo/hr_hospital_doctor_demo.xml',
+        'demo/hr_hospital_patient_demo.xml',
+        'demo/hr_hospital_contact_person_demo.xml',
+        'demo/hr_hospital_patient_visit_demo.xml',
+        'demo/hr_hospital_medical_diagnosis_demo.xml',
+        'demo/hr_hospital_doctor_schedule_demo.xml',
+        'demo/hr_hospital_patient_doctor_history_demo.xml',
     ],
 
     'instalable': True,

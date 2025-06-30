@@ -1,0 +1,246 @@
+<odoo>
+    <record id="hr_hospital_patient_1" model="hr.hospital.patient">
+        <field name="first_name">Віктор</field>
+        <field name="last_name">Семенюк</field>
+        <field name="middle_name">Іванович</field>
+        <field name="phone">+380501000001</field>
+        <field name="email">viktor.semenyuk@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1984-02-11</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_ivanov"/>
+        <field name="passport_data">AA1234567</field>
+        <field name="blood_group">a_pos</field>
+        <field name="allergies">Пилок, пил</field>
+        <field name="insurance_company_id" ref="base.res_partner_1"/>
+        <field name="insurance_policy_number">P-00001</field>
+    </record>
+    <record id="hr_hospital_patient_2" model="hr.hospital.patient">
+        <field name="first_name">Ірина</field>
+        <field name="last_name">Бондаренко</field>
+        <field name="middle_name">Петрівна</field>
+        <field name="phone">+380501000002</field>
+        <field name="email">iryna.bondarenko@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1992-07-28</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_petrenko"/>
+        <field name="passport_data">AA2345678</field>
+        <field name="blood_group">ab_neg</field>
+        <field name="insurance_company_id" ref="base.res_partner_2"/>
+        <field name="insurance_policy_number">P-00002</field>
+    </record>
+    <record id="hr_hospital_patient_3" model="hr.hospital.patient">
+        <field name="first_name">Олег</field>
+        <field name="last_name">Савченко</field>
+        <field name="middle_name">Сергійович</field>
+        <field name="phone">+380501000003</field>
+        <field name="email">oleg.savchenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1978-11-14</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_sydorenko"/>
+        <field name="passport_data">AA3456789</field>
+        <field name="blood_group">b_pos</field>
+        <field name="allergies">Аспірин</field>
+        <field name="insurance_company_id" ref="base.res_partner_3"/>
+        <field name="insurance_policy_number">P-00003</field>
+    </record>
+    <record id="hr_hospital_patient_4" model="hr.hospital.patient">
+        <field name="first_name">Людмила</field>
+        <field name="last_name">Жук</field>
+        <field name="middle_name">Валеріївна</field>
+        <field name="phone">+380501000004</field>
+        <field name="email">lyudmyla.zhuk@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1987-05-23</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_kovalenko"/>
+        <field name="passport_data">AA4567890</field>
+        <field name="blood_group">ab_pos</field>
+        <field name="insurance_company_id" ref="base.res_partner_4"/>
+        <field name="insurance_policy_number">P-00004</field>
+    </record>
+    <record id="hr_hospital_patient_5" model="hr.hospital.patient">
+        <field name="first_name">Анатолій</field>
+        <field name="last_name">Мельник</field>
+        <field name="middle_name">Олександрович</field>
+        <field name="phone">+380501000005</field>
+        <field name="email">anatoliy.melnyk@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1981-09-17</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_kravchenko"/>
+        <field name="passport_data">AA5678901</field>
+        <field name="blood_group">o_neg</field>
+        <field name="allergies">Горіхи</field>
+        <field name="insurance_company_id" ref="base.res_partner_5"/>
+        <field name="insurance_policy_number">P-00005</field>
+    </record>
+    <record id="hr_hospital_patient_6" model="hr.hospital.patient">
+        <field name="first_name">Олена</field>
+        <field name="last_name">Ткаченко</field>
+        <field name="middle_name">Миколаївна</field>
+        <field name="phone">+380501000006</field>
+        <field name="email">olena.tkachenko@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1995-03-15</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_intern1"/>
+        <field name="passport_data">AA6789012</field>
+        <field name="blood_group">o_pos</field>
+        <field name="insurance_company_id" ref="base.res_partner_6"/>
+        <field name="insurance_policy_number">P-00006</field>
+    </record>
+    <record id="hr_hospital_patient_7" model="hr.hospital.patient">
+        <field name="first_name">Денис</field>
+        <field name="last_name">Коваль</field>
+        <field name="middle_name">Володимирович</field>
+        <field name="phone">+380501000007</field>
+        <field name="email">denys.koval@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1996-12-30</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_intern2"/>
+        <field name="passport_data">AA7890123</field>
+        <field name="blood_group">b_neg</field>
+        <field name="insurance_company_id" ref="base.res_partner_7"/>
+        <field name="insurance_policy_number">P-00007</field>
+    </record>
+    <record id="hr_hospital_patient_8" model="hr.hospital.patient">
+        <field name="first_name">Тетяна</field>
+        <field name="last_name">Гнатюк</field>
+        <field name="middle_name">Русланівна</field>
+        <field name="phone">+380501000008</field>
+        <field name="email">tetyana.hnatyuk@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1997-04-11</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_romanov"/>
+        <field name="passport_data">AA8901234</field>
+        <field name="blood_group">a_neg</field>
+        <field name="allergies">Мед</field>
+        <field name="insurance_company_id" ref="base.res_partner_8"/>
+        <field name="insurance_policy_number">P-00008</field>
+    </record>
+    <record id="hr_hospital_patient_9" model="hr.hospital.patient">
+        <field name="first_name">Володимир</field>
+        <field name="last_name">Шевченко</field>
+        <field name="middle_name">Григорович</field>
+        <field name="phone">+380501000009</field>
+        <field name="email">volodymyr.shevchenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1982-08-28</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_ivanov"/>
+        <field name="passport_data">AA9012345</field>
+        <field name="blood_group">ab_pos</field>
+        <field name="insurance_company_id" ref="base.res_partner_9"/>
+        <field name="insurance_policy_number">P-00009</field>
+    </record>
+    <record id="hr_hospital_patient_10" model="hr.hospital.patient">
+        <field name="first_name">Світлана</field>
+        <field name="last_name">Коваленко</field>
+        <field name="middle_name">Юріївна</field>
+        <field name="phone">+380501000010</field>
+        <field name="email">svitlana.kovalenko@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1989-10-22</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_petrenko"/>
+        <field name="passport_data">AA0123456</field>
+        <field name="blood_group">o_neg</field>
+        <field name="insurance_company_id" ref="base.res_partner_10"/>
+        <field name="insurance_policy_number">P-00010</field>
+    </record>
+    <record id="hr_hospital_patient_11" model="hr.hospital.patient">
+        <field name="first_name">Сергій</field>
+        <field name="last_name">Мороз</field>
+        <field name="middle_name">Вікторович</field>
+        <field name="phone">+380501000011</field>
+        <field name="email">serhiy.moroz@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1991-06-04</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_sydorenko"/>
+        <field name="passport_data">AA1234568</field>
+        <field name="blood_group">b_pos</field>
+        <field name="insurance_company_id" ref="base.res_partner_1"/>
+        <field name="insurance_policy_number">P-00011</field>
+    </record>
+    <record id="hr_hospital_patient_12" model="hr.hospital.patient">
+        <field name="first_name">Ганна</field>
+        <field name="last_name">Гаврилюк</field>
+        <field name="middle_name">Валеріївна</field>
+        <field name="phone">+380501000012</field>
+        <field name="email">hanna.havryliuk@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1986-03-29</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_kovalenko"/>
+        <field name="passport_data">AA2345679</field>
+        <field name="blood_group">a_neg</field>
+        <field name="insurance_company_id" ref="base.res_partner_2"/>
+        <field name="insurance_policy_number">P-00012</field>
+    </record>
+    <record id="hr_hospital_patient_13" model="hr.hospital.patient">
+        <field name="first_name">Павло</field>
+        <field name="last_name">Лисенко</field>
+        <field name="middle_name">Ігорович</field>
+        <field name="phone">+380501000013</field>
+        <field name="email">pavlo.lysenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1990-09-05</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_kravchenko"/>
+        <field name="passport_data">AA3456790</field>
+        <field name="blood_group">ab_neg</field>
+        <field name="insurance_company_id" ref="base.res_partner_3"/>
+        <field name="insurance_policy_number">P-00013</field>
+    </record>
+    <record id="hr_hospital_patient_14" model="hr.hospital.patient">
+        <field name="first_name">Олександра</field>
+        <field name="last_name">Білик</field>
+        <field name="middle_name">Віталіївна</field>
+        <field name="phone">+380501000014</field>
+        <field name="email">oleksandra.bilyk@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1988-12-18</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_ivanov"/>
+        <field name="passport_data">AA4567901</field>
+        <field name="blood_group">o_pos</field>
+        <field name="insurance_company_id" ref="base.res_partner_4"/>
+        <field name="insurance_policy_number">P-00014</field>
+    </record>
+    <record id="hr_hospital_patient_15" model="hr.hospital.patient">
+        <field name="first_name">Микита</field>
+        <field name="last_name">Романенко</field>
+        <field name="middle_name">Анатолійович</field>
+        <field name="phone">+380501000015</field>
+        <field name="email">mykyta.romanenko@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1993-11-07</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="personal_doctor_id" ref="doctor_romanov"/>
+        <field name="passport_data">AA5679012</field>
+        <field name="blood_group">b_neg</field>
+        <field name="insurance_company_id" ref="base.res_partner_5"/>
+        <field name="insurance_policy_number">P-00015</field>
+    </record>
+</odoo>
