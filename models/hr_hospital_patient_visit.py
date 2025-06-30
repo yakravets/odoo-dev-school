@@ -33,7 +33,8 @@ class PatientVisit(models.Model):
         comodel_name='hr.hospital.doctor',
         string='Лікар',
         required=True,
-        ondelete='restrict'
+        ondelete='restrict',
+        domain="[('license_number', '!=', False)]"
     )
     visit_type = fields.Selection(
         [

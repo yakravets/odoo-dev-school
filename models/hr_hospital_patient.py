@@ -43,9 +43,10 @@ class Patient(models.Model):
     contact_person_ids = fields.Many2many(
         comodel_name='hr.hospital.contact.person',
         relation='hr_hospital_contact_person_patient_rel',
-        column1='contact_person_id',
-        column2='patient_id',
-        string="Контактні особи"
+        column1='patient_id',
+        column2='contact_person_id',
+        string="Контактні особи",
+        domain="[('allergies', '!=', False)]"
     )
     doctor_history_ids = fields.One2many(
         comodel_name='hr.hospital.patient.doctor.history',

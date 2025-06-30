@@ -23,7 +23,7 @@
                         <group name="group_patient_visit_header_left">
                             <field name="planned_datetime"/>
                             <field name="patient_id"/>
-                            <field name="doctor_id"/>
+                            <field name="doctor_id" domain="[('license_number', '!=', False)]"/>
                             <field name="currency_id"/>
                             <field name="amount"/>
                         </group>

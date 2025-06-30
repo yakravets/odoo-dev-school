@@ -1,5 +1,6 @@
 from odoo import models, fields
 from odoo.exceptions import ValidationError
+from datetime import timedelta
 
 class Diagnosis(models.Model):
     _name = 'hr.hospital.medical.diagnosis'
@@ -9,12 +10,17 @@ class Diagnosis(models.Model):
         comodel_name='hr.hospital.patient.visit',
         string="Візит",
         required=True,
-        ondelete='cascade'
+        ondelete='cascade',
+        domain=lambda self: [
+            ('state', '=', 'done'),
+            ('visit_date', '>=', (fields.Date.today() - timedelta(days=30)).strftime('%Y-%m-%d'))
+        ]
     )
     disease_id = fields.Many2one(
         comodel_name='hr.hospital.type.of.disease',
         string="Хвороба",
-        required=True
+        required=True,
+        domain="[('is_contagious', '=', True), ('danger_level', 'in', ['high', 'critical'])]"
     )
     description = fields.Text(
         string="Опис діагнозу"

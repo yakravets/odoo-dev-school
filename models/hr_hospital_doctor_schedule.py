@@ -11,7 +11,8 @@ class DoctorSchedule(models.Model):
         comodel_name='hr.hospital.doctor',
         string="Лікар",
         required=True,
-        ondelete='cascade'
+        ondelete='cascade',
+        domain="[('specialization_id', '!=', False)]"
     )
     day_of_week = fields.Selection(
         [

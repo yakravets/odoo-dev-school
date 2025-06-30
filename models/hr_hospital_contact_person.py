@@ -18,7 +18,8 @@ class ContactPerson(models.Model):
         required=True
     )
     patient_ids = fields.One2many(
-    comodel_name='hr.hospital.patient',
-    inverse_name='contact_person_ids',
-    string="Пацієнти"
-)
+        comodel_name='hr.hospital.patient',
+        inverse_name='contact_person_ids',
+        string="Пацієнти",
+        domain="[('allergies', '!=', False)]"
+    )
