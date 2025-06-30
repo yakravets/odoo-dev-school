@@ -46,7 +46,7 @@
         <field name="passport_data">AA3456789</field>
         <field name="blood_group">b_pos</field>
         <field name="allergies">Аспірин</field>
-        <field name="insurance_company_id" ref="base.res_partner_3"/>
+        <field name="insurance_company_id" ref="base.res_partner_2"/>
         <field name="insurance_policy_number">P-00003</field>
     </record>
     <record id="hr_hospital_patient_4" model="hr.hospital.patient">
@@ -62,7 +62,7 @@
         <field name="personal_doctor_id" ref="doctor_kovalenko"/>
         <field name="passport_data">AA4567890</field>
         <field name="blood_group">ab_pos</field>
-        <field name="insurance_company_id" ref="base.res_partner_4"/>
+        <field name="insurance_company_id" ref="base.res_partner_2"/>
         <field name="insurance_policy_number">P-00004</field>
     </record>
     <record id="hr_hospital_patient_5" model="hr.hospital.patient">
@@ -79,7 +79,7 @@
         <field name="passport_data">AA5678901</field>
         <field name="blood_group">o_neg</field>
         <field name="allergies">Горіхи</field>
-        <field name="insurance_company_id" ref="base.res_partner_5"/>
+        <field name="insurance_company_id" ref="base.res_partner_2"/>
         <field name="insurance_policy_number">P-00005</field>
     </record>
     <record id="hr_hospital_patient_6" model="hr.hospital.patient">
@@ -95,7 +95,7 @@
         <field name="personal_doctor_id" ref="doctor_intern1"/>
         <field name="passport_data">AA6789012</field>
         <field name="blood_group">o_pos</field>
-        <field name="insurance_company_id" ref="base.res_partner_6"/>
+        <field name="insurance_company_id" ref="base.res_partner_2"/>
         <field name="insurance_policy_number">P-00006</field>
     </record>
     <record id="hr_hospital_patient_7" model="hr.hospital.patient">
@@ -111,7 +111,7 @@
         <field name="personal_doctor_id" ref="doctor_intern2"/>
         <field name="passport_data">AA7890123</field>
         <field name="blood_group">b_neg</field>
-        <field name="insurance_company_id" ref="base.res_partner_7"/>
+        <field name="insurance_company_id" ref="base.res_partner_3"/>
         <field name="insurance_policy_number">P-00007</field>
     </record>
     <record id="hr_hospital_patient_8" model="hr.hospital.patient">
@@ -128,7 +128,7 @@
         <field name="passport_data">AA8901234</field>
         <field name="blood_group">a_neg</field>
         <field name="allergies">Мед</field>
-        <field name="insurance_company_id" ref="base.res_partner_8"/>
+        <field name="insurance_company_id" ref="base.res_partner_3"/>
         <field name="insurance_policy_number">P-00008</field>
     </record>
     <record id="hr_hospital_patient_9" model="hr.hospital.patient">
@@ -144,7 +144,7 @@
         <field name="personal_doctor_id" ref="doctor_ivanov"/>
         <field name="passport_data">AA9012345</field>
         <field name="blood_group">ab_pos</field>
-        <field name="insurance_company_id" ref="base.res_partner_9"/>
+        <field name="insurance_company_id" ref="base.res_partner_3"/>
         <field name="insurance_policy_number">P-00009</field>
     </record>
     <record id="hr_hospital_patient_10" model="hr.hospital.patient">
@@ -160,7 +160,7 @@
         <field name="personal_doctor_id" ref="doctor_petrenko"/>
         <field name="passport_data">AA0123456</field>
         <field name="blood_group">o_neg</field>
-        <field name="insurance_company_id" ref="base.res_partner_10"/>
+        <field name="insurance_company_id" ref="base.res_partner_3"/>
         <field name="insurance_policy_number">P-00010</field>
     </record>
     <record id="hr_hospital_patient_11" model="hr.hospital.patient">
@@ -176,7 +176,7 @@
         <field name="personal_doctor_id" ref="doctor_sydorenko"/>
         <field name="passport_data">AA1234568</field>
         <field name="blood_group">b_pos</field>
-        <field name="insurance_company_id" ref="base.res_partner_1"/>
+        <field name="insurance_company_id" ref="base.res_partner_2"/>
         <field name="insurance_policy_number">P-00011</field>
     </record>
     <record id="hr_hospital_patient_12" model="hr.hospital.patient">
@@ -208,7 +208,7 @@
         <field name="personal_doctor_id" ref="doctor_kravchenko"/>
         <field name="passport_data">AA3456790</field>
         <field name="blood_group">ab_neg</field>
-        <field name="insurance_company_id" ref="base.res_partner_3"/>
+        <field name="insurance_company_id" ref="base.res_partner_2"/>
         <field name="insurance_policy_number">P-00013</field>
     </record>
     <record id="hr_hospital_patient_14" model="hr.hospital.patient">
@@ -224,7 +224,7 @@
         <field name="personal_doctor_id" ref="doctor_ivanov"/>
         <field name="passport_data">AA4567901</field>
         <field name="blood_group">o_pos</field>
-        <field name="insurance_company_id" ref="base.res_partner_4"/>
+        <field name="insurance_company_id" ref="base.res_partner_1"/>
         <field name="insurance_policy_number">P-00014</field>
     </record>
     <record id="hr_hospital_patient_15" model="hr.hospital.patient">
@@ -240,7 +240,7 @@
         <field name="personal_doctor_id" ref="doctor_romanov"/>
         <field name="passport_data">AA5679012</field>
         <field name="blood_group">b_neg</field>
-        <field name="insurance_company_id" ref="base.res_partner_5"/>
+        <field name="insurance_company_id" ref="base.res_partner_1"/>
         <field name="insurance_policy_number">P-00015</field>
     </record>
 </odoo>

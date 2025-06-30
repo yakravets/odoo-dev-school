@@ -55,7 +55,7 @@
         <field name="is_contagious">1</field>
         <field name="symptoms">Висока температура, задишка, біль у грудях</field>
         <field name="parent_id" ref="disease_covid19"/>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.in')), (4, ref('base.gb'))]"/>
+        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.in'))]"/>
     </record>
     <!-- Омікрон-штам COVID-19 (child of covid19) -->
     <record id="disease_covid19_omicron" model="hr.hospital.type.of.disease">
@@ -125,7 +125,7 @@
         <field name="is_contagious">0</field>
         <field name="symptoms">Постійний нежить, закладеність носа</field>
         <field name="parent_id" ref="disease_allergic_rhinitis"/>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.gb'))]"/>
+        <field name="region_ids" eval="[(4, ref('base.ua'))]"/>
     </record>
     <!-- Діабет (top-level) -->
     <record id="disease_diabetes" model="hr.hospital.type.of.disease">

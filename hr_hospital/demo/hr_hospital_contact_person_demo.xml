@@ -10,7 +10,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">husbent/wife</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_1'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_1'))]"/>
     </record>
     <record id="contact_person_2" model="hr.hospital.contact.person">
         <field name="first_name">Григорій</field>
@@ -23,7 +23,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">father/mouther</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_2'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_2'))]"/>
     </record>
     <record id="contact_person_3" model="hr.hospital.contact.person">
         <field name="first_name">Марія</field>
@@ -36,7 +36,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">father/mouther</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_3'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_3'))]"/>
     </record>
     <record id="contact_person_4" model="hr.hospital.contact.person">
         <field name="first_name">Олег</field>
@@ -49,7 +49,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">relative</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_4'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_4'))]"/>
     </record>
     <record id="contact_person_5" model="hr.hospital.contact.person">
         <field name="first_name">Світлана</field>
@@ -62,7 +62,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">friend</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_5'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_5'))]"/>
     </record>
     <record id="contact_person_6" model="hr.hospital.contact.person">
         <field name="first_name">Дмитро</field>
@@ -75,7 +75,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">colleague</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_6'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_6'))]"/>
     </record>
     <record id="contact_person_7" model="hr.hospital.contact.person">
         <field name="first_name">Тетяна</field>
@@ -88,7 +88,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">other</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_7'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_7'))]"/>
     </record>
     <record id="contact_person_8" model="hr.hospital.contact.person">
         <field name="first_name">Ігор</field>
@@ -101,7 +101,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">husbent/wife</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_8'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_8'))]"/>
     </record>
     <record id="contact_person_9" model="hr.hospital.contact.person">
         <field name="first_name">Валентина</field>
@@ -114,7 +114,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">friend</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_9'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_9'))]"/>
     </record>
     <record id="contact_person_10" model="hr.hospital.contact.person">
         <field name="first_name">Руслан</field>
@@ -127,7 +127,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">colleague</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_10'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_10'))]"/>
     </record>
     <record id="contact_person_11" model="hr.hospital.contact.person">
         <field name="first_name">Інна</field>
@@ -140,7 +140,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">relative</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_11'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_11'))]"/>
     </record>
     <record id="contact_person_12" model="hr.hospital.contact.person">
         <field name="first_name">Олександр</field>
@@ -153,7 +153,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">other</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_12'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_12'))]"/>
     </record>
     <record id="contact_person_13" model="hr.hospital.contact.person">
         <field name="first_name">Вікторія</field>
@@ -166,7 +166,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">relative</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_13'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_13'))]"/>
     </record>
     <record id="contact_person_14" model="hr.hospital.contact.person">
         <field name="first_name">Антон</field>
@@ -179,7 +179,7 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">colleague</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_14'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_14'))]"/>
     </record>
     <record id="contact_person_15" model="hr.hospital.contact.person">
         <field name="first_name">Катерина</field>
@@ -192,6 +192,6 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="type">friend</field>
-        <field name="patient_id" eval="[(4, ref('hr_hospital_patient_15'))]"/>
+        <field name="patient_ids" eval="[(4, ref('hr_hospital_patient_15'))]"/>
     </record>
 </odoo>
