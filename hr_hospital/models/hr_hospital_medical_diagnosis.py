@@ -1,10 +1,18 @@
-from odoo import models, fields, _
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from datetime import timedelta
 
 class Diagnosis(models.Model):
     _name = 'hr.hospital.medical.diagnosis'
     _description = _('Diagnosis')
+
+    name = fields.Char(
+        string=_("Name"), 
+        required=True, 
+        copy=False, 
+        readonly=True, 
+        default=lambda self: _('New')
+    )
 
     visit_id = fields.Many2one(
         comodel_name='hr.hospital.patient.visit',
@@ -50,6 +58,12 @@ class Diagnosis(models.Model):
         ],
         string=_("Severity")
     )
+
+    @api.model
+    def create(self, vals):
+        if vals.get('name', _('New')) == _('New'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('hr.hospital.medical.diagnosis') or _('New')
+        return super(Diagnosis, self).create(vals)
 
     def action_approve(self):
         for rec in self:

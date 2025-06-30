@@ -5,6 +5,7 @@
         <field name="model">hr.hospital.patient.visit</field>
         <field name="arch" type="xml">
             <list string="Візити пацієнтів">
+                <field name="name"/>
                 <field name="patient_id"/>
                 <field name="planned_datetime"/>
                 <field name="doctor_id"/>
@@ -21,6 +22,7 @@
                 <sheet>
                     <group name="group_patient_visit_header">
                         <group name="group_patient_visit_header_left">
+                            <field name="name"/>
                             <field name="planned_datetime"/>
                             <field name="patient_id"/>
                             <field name="doctor_id" domain="[('license_number', '!=', False)]"/>

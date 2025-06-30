@@ -1,0 +1,35 @@
+<data>
+   
+   <record id="seq_doctor_schedule" model="ir.sequence">
+       <field name="name">Doctor\'s schedule</field>
+       <field name="code">hr.hospital.doctor.schedule</field>
+       <field name="prefix">DS</field>
+       <field name="padding">11</field>
+       <field name="company_id" eval="False"/>
+   </record>
+    
+    <record id="seq_medical_diagnosis" model="ir.sequence">
+         <field name="name">Medical diagnosis</field>
+         <field name="code">hr.hospital.medical.diagnosis</field>
+         <field name="prefix">MD</field>
+         <field name="padding">11</field>
+         <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="seq_patient_doctor_history" model="ir.sequence">
+        <field name="name">Patient doctor history</field>
+        <field name="code">hr.hospital.patient.doctor.history</field>
+        <field name="prefix">PDH</field>
+        <field name="padding">11</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="seq_patient_visit" model="ir.sequence">
+        <field name="name">Patient visit</field>
+        <field name="code">hr.hospital.patient.visit</field>
+        <field name="prefix">PV</field>
+        <field name="padding">11</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+</data>

@@ -5,6 +5,7 @@
         <field name="model">hr.hospital.medical.diagnosis</field>
         <field name="arch" type="xml">
             <list string="Розклад лікаря">
+                <field name="name"/>
                 <field name="visit_id"/>
                 <field name="disease_id"/>
                 <field name="is_approved"/>
@@ -20,6 +21,7 @@
             <form string="Діагноз">
                 <sheet>
                     <group>
+                        <field name="name"/>
                         <field name="visit_id"/>
                         <field name="disease_id"/>
                         <field name="severity"/>

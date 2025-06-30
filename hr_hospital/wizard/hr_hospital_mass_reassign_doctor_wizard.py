@@ -6,17 +6,17 @@ class MassReassignDoctorWizard(models.TransientModel):
     _description = _('Mass Doctor Reassignment Wizard')
 
     old_doctor_id = fields.Many2one(
-        'hr.hospital.doctor',
+        comodel_name='hr.hospital.doctor',
         string=_("Old doctor"),
         required=False
     )
     new_doctor_id = fields.Many2one(
-        'hr.hospital.doctor',
+        comodel_name='hr.hospital.doctor',
         string=_("New doctor"),
         required=True
     )
     patient_ids = fields.Many2many(
-        'hr.hospital.patient',
+        comodel_name='hr.hospital.patient',
         string=_("Patients"),
         domain="[('personal_doctor_id', '=', old_doctor_id)]"
     )

@@ -5,6 +5,13 @@ class PatientVisit(models.Model):
     _name = 'hr.hospital.patient.visit'
     _description = _('Patient visits')
 
+    name = fields.Char(
+        string=_("Name"), 
+        required=True, 
+        copy=False, 
+        readonly=True, 
+        default=lambda self: _('New')
+    )
     planned_datetime = fields.Datetime(
         string=_('Scheduled date/time'),
         required=True
@@ -98,6 +105,13 @@ class PatientVisit(models.Model):
                 }
             }
 
+    @api.model
+    def create(self, vals):
+        if vals.get('name', _('New')) == _('New'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('hr.hospital.patient.visit') or _('New')
+        return super().create(vals)
+
+    
     def unlink(self):
         for rec in self:
             if rec.diagnosis_ids:

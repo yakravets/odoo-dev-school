@@ -5,6 +5,7 @@
         <field name="model">hr.hospital.doctor.schedule</field>
         <field name="arch" type="xml">
             <list string="Розклад лікаря">
+                <field name="name"/>
                 <field name="doctor_id"/>
                 <field name="date"/>
                 <field name="from_time"/>
@@ -20,6 +21,7 @@
             <form string="Розклад лікаря">
                 <sheet>
                     <group>
+                        <field name="name"/>
                         <field name="doctor_id"/>
                         <field name="date"/>
                         <field name="from_time"/>

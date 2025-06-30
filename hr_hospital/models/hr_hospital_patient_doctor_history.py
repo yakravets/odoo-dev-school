@@ -4,6 +4,14 @@ class PatientDoctorHistory(models.Model):
     _name = 'hr.hospital.patient.doctor.history'
     _description = _('History of changes in personal doctors')
 
+    name = fields.Char(
+        string=_("Name"), 
+        required=True, 
+        copy=False, 
+        readonly=True, 
+        default=lambda self: _('New')
+    )
+
     active = fields.Boolean(
         string=_("Active"), 
         default=True
@@ -34,7 +42,12 @@ class PatientDoctorHistory(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get('name', _('New')) == _('New'):
+                vals['name'] = self.env['ir.sequence'].next_by_code('hr.hospital.patient.doctor.history') or _('New')
+
         records = super().create(vals_list)
+
         for record in records:
             if record.patient_id:
                 prev = self.search([

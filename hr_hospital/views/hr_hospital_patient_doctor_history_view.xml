@@ -5,6 +5,7 @@
         <field name="model">hr.hospital.patient.doctor.history</field>
         <field name="arch" type="xml">
             <list string="Історія лікаря пацієнта">
+                <field name="name"/>
                 <field name="patient_id"/>
                 <field name="doctor_id"/>
                 <field name="assign_date"/>
@@ -19,6 +20,7 @@
             <form string="Історія лікаря пацієнта">
                 <sheet>
                     <group>
+                        <field name="name"/>
                         <field name="patient_id"/>
                         <field name="doctor_id"/>
                         <field name="assign_date"/>

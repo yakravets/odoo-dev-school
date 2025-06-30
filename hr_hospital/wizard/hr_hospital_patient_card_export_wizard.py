@@ -11,7 +11,7 @@ class PatientCardExportWizard(models.TransientModel):
     _description = _('Patient Card Export Wizard')
 
     patient_id = fields.Many2one(
-        'hr.hospital.patient', 
+        comodel_name='hr.hospital.patient', 
         string=_('Patient'), 
         required=True
     )
@@ -32,7 +32,7 @@ class PatientCardExportWizard(models.TransientModel):
     )
 
     lang_id = fields.Many2one(
-        'res.lang', 
+        comodel_name='res.lang', 
         string=_('Report language')
     )
     export_format = fields.Selection(
@@ -49,7 +49,7 @@ class PatientCardExportWizard(models.TransientModel):
         readonly=True
     )
     export_filename = fields.Char(
-        string=_('File name'), 
+        string='File name', 
         readonly=True
     )
 
@@ -69,13 +69,13 @@ class PatientCardExportWizard(models.TransientModel):
         data = []
         for visit in visits:
             item = {
-                _('Date'): str(visit.date),
-                _('Doctor'): visit.doctor_id.name,
+                'Date': str(visit.date),
+                'Doctor': visit.doctor_id.name,
             }
             if self.include_diagnoses:
-                item[_('Diagnosis')] = visit.diagnosis or ''
+                item['Diagnosis'] = visit.diagnosis or ''
             if self.include_recommendations:
-                item[_('Recommendations')] = visit.recommendation or ''
+                item['Recommendations'] = visit.recommendation or ''
             data.append(item)
         return data
 
@@ -98,7 +98,7 @@ class PatientCardExportWizard(models.TransientModel):
 
         return {
             'type': 'ir.actions.act_window',
-            'res_model': 'patient.card.export.wizard',
+            'res_model': 'hr.hospital.patient.card.export.wizard',
             'view_mode': 'form',
             'res_id': self.id,
             'target': 'new',

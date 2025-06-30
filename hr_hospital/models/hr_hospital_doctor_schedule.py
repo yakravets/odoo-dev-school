@@ -1,4 +1,4 @@
-from odoo import models, fields, _
+from odoo import models, fields, api, _
 
 class DoctorSchedule(models.Model):
     _name = 'hr.hospital.doctor.schedule'
@@ -6,6 +6,14 @@ class DoctorSchedule(models.Model):
     _sql_constraints = [
         ('check_time', 'CHECK(to_time > from_time)', _('The end time must be after the start time!')),
     ]
+    
+    name = fields.Char(
+        string=_("Name"), 
+        required=True, 
+        copy=False, 
+        readonly=True, 
+        default=lambda self: _('New')
+    )
 
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
@@ -47,3 +55,9 @@ class DoctorSchedule(models.Model):
     note = fields.Char(
         string=_("Notes")
     )
+
+    @api.model
+    def create(self, vals):
+        if vals.get('name', _('New')) == _('New'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('hr.hospital.doctor.schedule') or _('New')
+        return super().create(vals)
