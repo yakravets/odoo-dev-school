@@ -1,35 +1,35 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 class PatientDoctorHistory(models.Model):
     _name = 'hr.hospital.patient.doctor.history'
-    _description = 'Історія змін персональних лікарів'
+    _description = _('History of changes in personal doctors')
 
     active = fields.Boolean(
-        string="Активний", 
+        string=_("Active"), 
         default=True
     )
     patient_id = fields.Many2one(
         comodel_name='hr.hospital.patient',
-        string="Пацієнт",
+        string=_("Patient"),
         required=True,
         ondelete='cascade'
     )
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string="Лікар",
+        string=_("Doctor"),
         required=True,
         ondelete='restrict'
     )
     assign_date = fields.Date(
-        string="Дата призначення",
+        string=_("Appointment date"),
         required=True,
         default=fields.Date.context_today
     )
     change_date = fields.Date(
-        string="Дата зміни"
+        string=_("Change date")
     )
     change_reason = fields.Text(
-        string="Причина зміни"
+        string=_("Reason for change")
     )
 
     @api.model_create_multi

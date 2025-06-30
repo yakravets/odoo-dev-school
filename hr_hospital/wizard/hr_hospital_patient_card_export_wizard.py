@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from datetime import datetime
 import json
@@ -8,23 +8,50 @@ import base64
 
 class PatientCardExportWizard(models.TransientModel):
     _name = 'hr.hospital.patient.card.export.wizard'
-    _description = 'Patient Card Export Wizard'
+    _description = _('Patient Card Export Wizard')
 
-    patient_id = fields.Many2one('hr.hospital.patient', string='Пацієнт', required=True)
-    date_from = fields.Date(string='Дата початку')
-    date_to = fields.Date(string='Дата закінчення')
+    patient_id = fields.Many2one(
+        'hr.hospital.patient', 
+        string=_('Patient'), 
+        required=True
+    )
+    date_from = fields.Date(
+        string=_('Start date')
+    )
+    date_to = fields.Date(
+        string=_('End date')
+    )
 
-    include_diagnoses = fields.Boolean(string='Включити діагнози', default=True)
-    include_recommendations = fields.Boolean(string='Включити рекомендації', default=True)
+    include_diagnoses = fields.Boolean(
+        string=_('Include diagnoses'), 
+        default=True
+    )
+    include_recommendations = fields.Boolean(
+        string=_('Include recommendations'), 
+        default=True
+    )
 
-    lang_id = fields.Many2one('res.lang', string='Мова звіту')
-    export_format = fields.Selection([
-        ('json', 'JSON'),
-        ('csv', 'CSV'),
-    ], string='Формат експорту', default='json')
+    lang_id = fields.Many2one(
+        'res.lang', 
+        string=_('Report language')
+    )
+    export_format = fields.Selection(
+        [
+            ('json', 'JSON'),
+            ('csv', 'CSV'),
+        ], 
+        string=_('Export format'), 
+        default='json'
+    )
 
-    export_file = fields.Binary(string='Файл', readonly=True)
-    export_filename = fields.Char(string='Назва файлу', readonly=True)
+    export_file = fields.Binary(
+        string=_('File'), 
+        readonly=True
+    )
+    export_filename = fields.Char(
+        string=_('File name'), 
+        readonly=True
+    )
 
     @api.onchange('patient_id')
     def _onchange_patient_lang(self):
@@ -42,13 +69,13 @@ class PatientCardExportWizard(models.TransientModel):
         data = []
         for visit in visits:
             item = {
-                'Дата': str(visit.date),
-                'Лікар': visit.doctor_id.name,
+                _('Date'): str(visit.date),
+                _('Doctor'): visit.doctor_id.name,
             }
             if self.include_diagnoses:
-                item['Діагноз'] = visit.diagnosis or ''
+                item[_('Diagnosis')] = visit.diagnosis or ''
             if self.include_recommendations:
-                item['Рекомендації'] = visit.recommendation or ''
+                item[_('Recommendations')] = visit.recommendation or ''
             data.append(item)
         return data
 

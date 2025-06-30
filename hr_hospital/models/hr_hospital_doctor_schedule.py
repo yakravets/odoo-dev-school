@@ -1,49 +1,49 @@
-from odoo import models, fields
+from odoo import models, fields, _
 
 class DoctorSchedule(models.Model):
     _name = 'hr.hospital.doctor.schedule'
-    _description = 'Розклад лікаря'
+    _description = _('Doctor\'s schedule')
     _sql_constraints = [
-        ('check_time', 'CHECK(to_time > from_time)', 'Час закінчення повинен бути після часу початку!'),
+        ('check_time', 'CHECK(to_time > from_time)', _('The end time must be after the start time!')),
     ]
 
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string="Лікар",
+        string=_("Doctor"),
         required=True,
         ondelete='cascade',
         domain="[('specialization_id', '!=', False)]"
     )
     day_of_week = fields.Selection(
         [
-            ('mon', 'Понеділок'),
-            ('tue', 'Вівторок'),
-            ('wed', 'Середа'),
-            ('thu', 'Четвер'),
-            ('fri', 'П\'ятниця'),
-            ('sat', 'Субота'),
-            ('sun', 'Неділя')
+            ('mon', _('Monday')),
+            ('tue', _('Tuesday')),
+            ('wed', _('Wednesday')),
+            ('thu', _('Thursday')),
+            ('fri', _('Friday')),
+            ('sat', _('Saturday')),
+            ('sun', _('Sunday'))
         ],
-        string="День тижня"
+        string=_("Day of the week")
     )
     date = fields.Date(
-        string="Дата (конкретна)"
+        string=_("Date (specific)")
     )
     from_time = fields.Float(
-        string="Час початку"
+        string=_("Start time")
     )
     to_time = fields.Float(
-        string="Час закінчення"
+        string=_("End time")
     )
     schedule_type = fields.Selection(
         [
-            ('workday', 'Робочий день'),
-            ('vacation', 'Відпустка'),
-            ('sick_leave', 'Лікарняний'),
-            ('conference', 'Конференція'),
+            ('workday', _('Working day')),
+            ('vacation', _('Leave')),
+            ('sick_leave', _('Hospital')),
+            ('conference', _('Conference')),
         ],
-        string="Тип"
+        string=_("Type")
     )
     note = fields.Char(
-        string="Примітки"
+        string=_("Notes")
     )

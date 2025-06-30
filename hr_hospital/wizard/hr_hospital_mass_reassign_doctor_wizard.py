@@ -3,29 +3,29 @@ from odoo.exceptions import UserError
 
 class MassReassignDoctorWizard(models.TransientModel):
     _name = 'hr.hospital.mass.reassign.doctor.wizard'
-    _description = 'Візард масового перепризначення лікаря'
+    _description = _('Mass Doctor Reassignment Wizard')
 
     old_doctor_id = fields.Many2one(
         'hr.hospital.doctor',
-        string="Старий лікар",
+        string=_("Old doctor"),
         required=False
     )
     new_doctor_id = fields.Many2one(
         'hr.hospital.doctor',
-        string="Новий лікар",
+        string=_("New doctor"),
         required=True
     )
     patient_ids = fields.Many2many(
         'hr.hospital.patient',
-        string="Пацієнти",
+        string=_("Patients"),
         domain="[('personal_doctor_id', '=', old_doctor_id)]"
     )
     change_date = fields.Date(
-        string="Дата зміни",
+        string=_("Change date"),
         default=fields.Date.context_today
     )
     change_reason = fields.Text(
-        string="Причина зміни",
+        string=_("Reason for change"),
         required=True
     )
 
@@ -46,7 +46,7 @@ class MassReassignDoctorWizard(models.TransientModel):
 
     def action_reassign(self):
         if not self.patient_ids:
-            raise UserError(_("Оберіть принаймні одного пацієнта для перепризначення."))
+            raise UserError(_("Select at least one patient to reassign."))
         for patient in self.patient_ids:
             patient.write({
                 'personal_doctor_id': self.new_doctor_id.id

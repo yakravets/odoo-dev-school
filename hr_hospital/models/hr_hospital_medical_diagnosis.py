@@ -1,14 +1,14 @@
-from odoo import models, fields
+from odoo import models, fields, _
 from odoo.exceptions import ValidationError
 from datetime import timedelta
 
 class Diagnosis(models.Model):
     _name = 'hr.hospital.medical.diagnosis'
-    _description = 'Діагноз'
+    _description = _('Diagnosis')
 
     visit_id = fields.Many2one(
         comodel_name='hr.hospital.patient.visit',
-        string="Візит",
+        string=_("Visit"),
         required=True,
         ondelete='cascade',
         domain=lambda self: [
@@ -18,37 +18,37 @@ class Diagnosis(models.Model):
     )
     disease_id = fields.Many2one(
         comodel_name='hr.hospital.type.of.disease',
-        string="Хвороба",
+        string=_("Disease"),
         required=True,
         domain="[('is_contagious', '=', True), ('danger_level', 'in', ['high', 'critical'])]"
     )
     description = fields.Text(
-        string="Опис діагнозу"
+        string=_("Description of diagnosis")
     )
     treatment = fields.Html(
-        string="Призначене лікування"
+        string=_("Prescribed treatment")
     )
     is_approved = fields.Boolean(
-        string="Затверджено", 
+        string=_("Approved"), 
         default=False
     )
     approved_by_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string="Лікар, що затвердив",
+        string=_("The doctor who approved"),
         readonly=True
     )
     approved_date = fields.Datetime(
-        string="Дата затвердження", 
+        string=_("Approval date"), 
         readonly=True
     )
     severity = fields.Selection(
         [
-            ('mild', 'Легкий'),
-            ('moderate', 'Середній'),
-            ('severe', 'Тяжкий'),
-            ('critical', 'Критичний')
+            ('mild', _('Mild')),
+            ('moderate', _('Moderate')),
+            ('severe', _('Severe')),
+            ('critical', _('Critical')),
         ],
-        string="Ступінь тяжкості"
+        string=_("Severity")
     )
 
     def action_approve(self):
@@ -60,4 +60,4 @@ class Diagnosis(models.Model):
                     'approved_date': fields.Datetime.now(),
                 })
             else:
-                raise ValidationError("Діагноз вже затверджено.")
+                raise ValidationError(_("The diagnosis has already been confirmed."))

@@ -1,45 +1,67 @@
-from odoo import models, fields, api
-from datetime import timedelta, datetime
+from odoo import models, fields, api, _
+from datetime import timedelta
 
 class DoctorScheduleWizard(models.TransientModel):
     _name = 'hr.hospital.doctor.schedule.wizard'
-    _description = 'Doctor Schedule Wizard'
+    _description = _('Doctor Schedule Wizard')
 
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor', 
-        string='Лікар', 
+        string=_('Doctor'), 
         required=True
     )
     date_start = fields.Date(
-        string='Тиждень початку', 
+        string=_('Start week'), 
         required=True
     )
     week_count = fields.Integer(
-        string='Кількість тижнів', 
+        string=_('Number of weeks'), 
         default=1, 
         required=True
     )
     schedule_type = fields.Selection(  
         [
-            ('standard', 'Стандартний'),
-            ('even', 'Парний тиждень'),
-            ('odd', 'Непарний тиждень')
+            ('standard', _('Standard')),
+            ('even', _('Even week')),
+            ('odd', _('Odd week'))
         ], 
-        string='Тип розкладу', 
+        string=_('Schedule type'), 
         default='standard')
 
-    monday = fields.Boolean(string='Понеділок')
-    tuesday = fields.Boolean(string='Вівторок')
-    wednesday = fields.Boolean(string='Середа')
-    thursday = fields.Boolean(string='Четвер')
-    friday = fields.Boolean(string='Пʼятниця')
-    saturday = fields.Boolean(string='Субота')
-    sunday = fields.Boolean(string='Неділя')
+    monday = fields.Boolean(
+        string=_('Monday')
+    )
+    tuesday = fields.Boolean(
+        string=_('Tuesday')
+    )
+    wednesday = fields.Boolean(
+        string=_('Wednesday')
+    )
+    thursday = fields.Boolean(
+        string=_('Thursday')
+    )
+    friday = fields.Boolean(
+        string=_('Friday')
+    )
+    saturday = fields.Boolean(
+        string=_('Saturday')
+    )
+    sunday = fields.Boolean(
+        string=_('Sunday')
+    )
 
-    time_start = fields.Float(string='Час початку')
-    time_end = fields.Float(string='Час закінчення')
-    break_from = fields.Float(string='Перерва з')
-    break_to = fields.Float(string='Перерва до')
+    time_start = fields.Float(
+        string=_('Start time')
+    )
+    time_end = fields.Float(
+        string=_('End time')
+    )
+    break_from = fields.Float(
+        string=_('Break from')
+    )
+    break_to = fields.Float(
+        string=_('Break to')
+    )
 
     @api.model
     def _float_to_time(self, float_hour):

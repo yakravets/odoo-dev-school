@@ -1,18 +1,18 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from datetime import date
 
 class Patient(models.Model):
     _name = 'hr.hospital.patient'
-    _description = 'Пацієнт'
+    _description = _('Patient')
     _inherit = 'hr.hospital.abstract.person'
 
     personal_doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string="Персональний лікар"
+        string=_("Personal doctor")
     )
     passport_data = fields.Char(
-        string="Паспортні дані",
+        string=_("Passport data"),
         size=10
     )    
     blood_group = fields.Selection(
@@ -26,18 +26,18 @@ class Patient(models.Model):
             ('ab_pos', 'AB(IV) Rh+'),
             ('ab_neg', 'AB(IV) Rh-'),
         ],
-        string="Група крові/Rh-фактор",
+        string=_("Blood type/Rh factor"),
     )
     allergies = fields.Text(
-        string="Алергії"
+        string=_("Allergies")
     )
     insurance_company_id = fields.Many2one(
         comodel_name='res.partner',
-        string="Страхова компанія",
+        string=_("Insurance company"),
         domain=[('is_company', '=', True)]
     )
     insurance_policy_number = fields.Char(
-        string="Номер страхового поліса"
+        string=_("Insurance policy number")
     )
 
     contact_person_ids = fields.Many2many(
@@ -45,12 +45,12 @@ class Patient(models.Model):
         relation='hr_hospital_contact_person_patient_rel',
         column1='patient_id',
         column2='contact_person_id',
-        string="Контактні особи",
+        string=_("Contact persons"),
     )
     doctor_history_ids = fields.One2many(
         comodel_name='hr.hospital.patient.doctor.history',
         inverse_name='patient_id',
-        string="Історія персональних лікарів"
+        string=_("The history of personal doctors")
     )
 
     @api.constrains('birth_date')
@@ -59,10 +59,10 @@ class Patient(models.Model):
             if rec.birth_date:
                 today = date.today()
                 if rec.birth_date >= today:
-                    raise ValidationError("Дата народження має бути в минулому.")
+                    raise ValidationError(_("The date of birth must be in the past."))
                 age = today.year - rec.birth_date.year - ((today.month, today.day) < (rec.birth_date.month, rec.birth_date.day))
                 if age < 0:
-                    raise ValidationError("Вік пацієнта має бути більше 0.")
+                    raise ValidationError(_("The patient's age must be greater than 0."))
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -94,8 +94,8 @@ class Patient(models.Model):
             if suggested_lang:
                 return {
                     'warning': {
-                        'title': "Мова спілкування",
-                        'message': f"Рекомендована мова для цієї країни: {suggested_lang.name}"
+                        'title': _("Language of communication"),
+                        'message': _("Recommended language for this country:") + suggested_lang.name
                     },
                     'value': {
                         'communication_language_id': suggested_lang.id

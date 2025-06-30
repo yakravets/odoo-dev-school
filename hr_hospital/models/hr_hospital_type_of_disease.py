@@ -1,57 +1,61 @@
-from odoo import models, fields, api
+from odoo import models, fields, _
 
 class TypeOfDisease(models.Model):
     _name = 'hr.hospital.type.of.disease'
-    _description = 'Захворювання(хвороби)'
+    _description = _('Disease')
 
     name = fields.Char(
-        string='Назва',
+        string=_('Name'),
         required=True
     )
     active = fields.Boolean(
-        string='Активний',
+        string=_('Active'),
         default=True
     )
     parent_id = fields.Many2one(
         comodel_name='hr.hospital.type.of.disease',
-        string="Батьківська хвороба",
+        string=_("Parent"),
         ondelete='set null'
     )
     child_ids = fields.One2many(
         comodel_name='hr.hospital.type.of.disease',
         inverse_name='parent_id',
-        string="Дочірні хвороби"
+        string=_("Related diseases")
     )
     severity = fields.Selection(
         selection=[
-            ('mild', 'Легкий'),
-            ('moderate', 'Середній'),
-            ('severe', 'Важкий')
+            ('mild', _('Mild')),
+            ('moderate', _('Moderate')),
+            ('severe', _('Severe')),
+            ('critical', _('Critical')),
         ],
-        string='Серйозність',
+        string=_('Severity'),
         required=True
     )
-    icd10_code = fields.Char(string="Код МКХ-10", size=10)
+    icd10_code = fields.Char(
+        string=_("ICD-10 code"), 
+        size=10
+    )
     danger_level = fields.Selection(
         [
-            ('low', 'Низький'),
-            ('medium', 'Середній'),
-            ('high', 'Високий'),
-            ('critical', 'Критичний'),
+            ('low', _('Low')),
+            ('medium', _('Medium')),
+            ('high', _('High')),
+            ('critical', _('Critical')),
         ],
-        string="Ступінь небезпеки"
+        string=_("Danger level")
     )
     is_contagious = fields.Boolean(
-        string="Заразна"
+        string=_("Contagious")
     )
     symptoms = fields.Text(
-        string="Симптоми"
+        string=_("Symptoms")
     )
     region_ids = fields.Many2many(
         comodel_name='res.country',
         relation='hr_hospital_type_of_disease_country_rel',
         column1='disease_id',
         column2='country_id',
-        string="Регіон поширення"
+        string=_("Distribution regions")
     )
     

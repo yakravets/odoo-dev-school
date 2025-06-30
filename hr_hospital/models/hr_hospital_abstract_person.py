@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 import re
 from datetime import date
@@ -11,61 +11,61 @@ class AbstractPerson(models.AbstractModel):
 
 
     first_name = fields.Char(
-        string='Ім\'я',
+        string=_('First name'),
         required=True
     )
     last_name = fields.Char(
-        string='Прізвище',
+        string=_('Last name'),
         required=True
     )
     middle_name = fields.Char(
-        string='По батькові',   
+        string=_('Middle name'),   
     )    
     name = fields.Char(
-        string='Повне ім\'я',
+        string=_('Full Name'),
         compute='_compute_name',
         readonly=True,
         store=True
     )
     active = fields.Boolean(
-        string='Активний',
+        string=_('Active'),
         default=True
     )
 
     phone = fields.Char(
-        string='Номер телефону',
+        string=_('Phone number'),
         required=True
     )
     email = fields.Char(
-        string='Електронна пошта',
+        string='Email',
     )
     gender = fields.Selection(
         [
-            ('unknown', 'Не вказана'),
-            ('man', 'Чоловік'),
-            ('woman', 'Жінка'),
+            ('unknown', _('Unknown')),
+            ('man', _('Man')),
+            ('woman', _('Woman')),
         ], 
-        string='Стать', 
+        string=_('Gender'), 
         required=True, 
         default='unknown'
     )
     birth_date = fields.Date(
-        string='Дата народження',
+        string=_('Birth date'),
         required=True
     )
     age = fields.Integer(
-        string="Вік", 
+        string=_("Age"), 
         compute='_compute_age', 
         readonly=True,
         store=True
     )
     citizenship_country_id = fields.Many2one(
         comodel_name='res.country',
-        string='Країна громадянства',
+        string=_('Citizenship country'),
     )
     language_id = fields.Many2one(
         comodel_name='res.lang',
-        string='Мова спілкування',
+        string=_('Language'),
     )
 
     @api.depends('birth_date')
@@ -90,13 +90,13 @@ class AbstractPerson(models.AbstractModel):
         phone_pattern = re.compile(r'^\+?\d{10,15}$')
         for record in self:
             if record.phone and not phone_pattern.match(record.phone):
-                raise ValidationError("Телефон повинен бути у форматі +380XXXXXXXXX або 0XXXXXXXXX.")
+                raise ValidationError(_("Phone number must be in format +380XXXXXXXXX або 0XXXXXXXXX."))
 
     @api.constrains('email')
     def _check_email(self):
         email_pattern = re.compile(r'^[\w\.-]+@[\w\.-]+\.\w{2,4}$')
         for record in self:
             if record.email and not email_pattern.match(record.email):
-                raise ValidationError("Некоректний формат Email.")
+                raise ValidationError(_("Incorrect Email."))
 
     

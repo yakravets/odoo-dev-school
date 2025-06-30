@@ -1,43 +1,46 @@
-from odoo import models, fields
+from odoo import models, fields, _
 
 class DiseaseReportWizard(models.TransientModel):
     _name = 'hr.hospital.disease.report.wizard'
-    _description = 'Звіт по хворобах за період'
+    _description = _('Disease report for the period')
 
     doctor_ids = fields.Many2many(
         comodel_name='hr.hospital.doctor',
-        string='Лікарі'
+        string=_('Doctors')
     )
     disease_ids = fields.Many2many(
         comodel_name='hr.hospital.type.of.disease',
-        string='Хвороби',
-        relation='hr_hospital_disease_ids_rel'
+        relation='hr_hospital_disease_ids_rel',
+        string=_('Diseases'),
     )
     country_ids = fields.Many2many(
         comodel_name='res.country',
-        string='Країни'
+        string=_('Countries')
     )
     date_start = fields.Date(
-        string='Дата початку',
+        string=_('Start date'),
         required=True
     )
     date_end = fields.Date(
-        string='Дата закінчення',
+        string=_('End date'),
         required=True
     )
     report_type = fields.Selection(
-        [('detailed', 'Детальний'), ('summary', 'Підсумковий')],
-        string='Тип звіту',
+        [
+            ('detailed', _('Detailed')), 
+            ('summary', _('Summary'))
+        ],
+        string=_('Report type'),
         default='detailed'
     )
     group_by = fields.Selection(
         [
-            ('doctor', 'Лікар'),
-            ('disease', 'Хвороба'),
-            ('month', 'Місяць'),
-            ('country', 'Країна')
+            ('doctor', _('Doctor')),
+            ('disease', _('Disease')),
+            ('month', _('Month')),
+            ('country', _('Country'))
         ],
-        string='Групувати за',
+        string='Group by',
         required=True
     )
 
