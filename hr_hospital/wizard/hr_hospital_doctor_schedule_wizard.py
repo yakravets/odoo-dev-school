@@ -5,14 +5,28 @@ class DoctorScheduleWizard(models.TransientModel):
     _name = 'hr.hospital.doctor.schedule.wizard'
     _description = 'Doctor Schedule Wizard'
 
-    doctor_id = fields.Many2one('hr.employee', string='Лікар', required=True)
-    date_start = fields.Date(string='Тиждень початку', required=True)
-    week_count = fields.Integer(string='Кількість тижнів', default=1, required=True)
-    schedule_type = fields.Selection([
-        ('standard', 'Стандартний'),
-        ('even', 'Парний тиждень'),
-        ('odd', 'Непарний тиждень')
-    ], string='Тип розкладу', default='standard')
+    doctor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor', 
+        string='Лікар', 
+        required=True
+    )
+    date_start = fields.Date(
+        string='Тиждень початку', 
+        required=True
+    )
+    week_count = fields.Integer(
+        string='Кількість тижнів', 
+        default=1, 
+        required=True
+    )
+    schedule_type = fields.Selection(  
+        [
+            ('standard', 'Стандартний'),
+            ('even', 'Парний тиждень'),
+            ('odd', 'Непарний тиждень')
+        ], 
+        string='Тип розкладу', 
+        default='standard')
 
     monday = fields.Boolean(string='Понеділок')
     tuesday = fields.Boolean(string='Вівторок')

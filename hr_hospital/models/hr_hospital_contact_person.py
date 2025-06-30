@@ -21,5 +21,4 @@ class ContactPerson(models.Model):
         comodel_name='hr.hospital.patient',
         inverse_name='contact_person_ids',
         string="Пацієнти",
-        domain="[('allergies', '!=', False)]"
     )

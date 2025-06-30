@@ -21,8 +21,8 @@
         </footer>
         <field name="export_file" invisible="1"/>
         <field name="export_filename" invisible="1"/>
-        <div t-if="export_file">
-          <p>Файл готовий: <a type="binary" name="export_file" download="1"><t t-esc="export_filename"/></a></p>
+        <div>
+          <p>Файл готовий: <a type="binary" name="export_file" download="1"></a></p>
         </div>
       </form>
     </field>

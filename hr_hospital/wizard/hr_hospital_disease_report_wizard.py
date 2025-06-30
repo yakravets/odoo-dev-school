@@ -10,7 +10,8 @@ class DiseaseReportWizard(models.TransientModel):
     )
     disease_ids = fields.Many2many(
         comodel_name='hr.hospital.type.of.disease',
-        string='Хвороби'
+        string='Хвороби',
+        relation='hr_hospital_disease_ids_rel'
     )
     country_ids = fields.Many2many(
         comodel_name='res.country',
@@ -39,3 +40,16 @@ class DiseaseReportWizard(models.TransientModel):
         string='Групувати за',
         required=True
     )
+
+    def action_report(self):
+        self.ensure_one()
+        report_data = {
+            'doctor_ids': self.doctor_ids.ids,
+            'disease_ids': self.disease_ids.ids,
+            'country_ids': self.country_ids.ids,
+            'date_start': self.date_start,
+            'date_end': self.date_end,
+            'report_type': self.report_type,
+            'group_by': self.group_by
+        }
+        return self.env.ref('hr_hospital.action_report_disease').report_action(self, data=report_data)

@@ -11,7 +11,7 @@
         <field name="birth_date">1980-01-15</field>
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
-        <field name="user_id" ref="base.user_admin"/>
+        <field name="user_id" ref="base.user_demo"/>
         <field name="specialization_id" ref="specialization_therapy"/>
         <field name="is_intern">0</field>
         <field name="license_number">DOC-001</field>
@@ -51,7 +51,7 @@
         <field name="birth_date">1985-08-24</field>
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
-        <field name="user_id" ref="base.user_portal"/>
+        <field name="user_id" ref="base.user_demo"/>
         <field name="specialization_id" ref="specialization_neurology"/>
         <field name="is_intern">0</field>
         <field name="license_number">DOC-003</field>
@@ -71,7 +71,7 @@
         <field name="birth_date">1990-11-02</field>
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
-        <field name="user_id" ref="base.user_public"/>
+        <field name="user_id" ref="base.user_demo"/>
         <field name="specialization_id" ref="specialization_surgery"/>
         <field name="is_intern">0</field>
         <field name="license_number">DOC-004</field>
