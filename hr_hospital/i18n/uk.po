@@ -19,39 +19,39 @@ msgstr ""
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 msgid "A doctor cannot be his own mentor."
-msgstr ""
+msgstr "Лікар не може бути сам собі ментором"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 msgid ""
 "A patient cannot be scheduled with the same doctor more than once a day."
-msgstr ""
+msgstr "Пацієнт не може бути записаний на прийом до одного й того ж лікаря більше одного разу на день."
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__blood_group__a_pos
 msgid "A(II) Rh+"
-msgstr ""
+msgstr "A(II) Rh+"
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__blood_group__a_neg
 msgid "A(II) Rh-"
-msgstr ""
+msgstr "A(II) Rh-"
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__blood_group__ab_pos
 msgid "AB(IV) Rh+"
-msgstr ""
+msgstr "AB(IV) Rh+"
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__blood_group__ab_neg
 msgid "AB(IV) Rh-"
-msgstr ""
+msgstr "AB(IV) Rh-"
 
 #. module: hr_hospital
 #: model:ir.model,name:hr_hospital.model_hr_hospital_abstract_person
 msgid "Abstract Person Model"
-msgstr ""
+msgstr "Абстрактна модель персони"
 
 #. module: hr_hospital
 #. odoo-python
@@ -67,14 +67,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__active
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__active
 msgid "Active"
-msgstr ""
+msgstr "Активний"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__actual_datetime
 msgid "Actual date and time of visit"
-msgstr ""
+msgstr "Фактична дата та час візиту"
 
 #. module: hr_hospital
 #. odoo-python
@@ -84,57 +84,57 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__age
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__age
 msgid "Age"
-msgstr ""
+msgstr "Вік"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__allergies
 msgid "Allergies"
-msgstr ""
+msgstr "Алергії"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 msgid "An intern cannot be a mentor physician."
-msgstr ""
+msgstr "Лікар-інтерн не може бути лікарем-наставником."
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_doctor_history.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_doctor_history__assign_date
 msgid "Appointment date"
-msgstr ""
+msgstr "Запланована дата"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_medical_diagnosis.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_medical_diagnosis__approved_date
 msgid "Approval date"
-msgstr ""
+msgstr "Дата затвердження"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_medical_diagnosis.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_medical_diagnosis__is_approved
 msgid "Approved"
-msgstr ""
+msgstr "Затверджено"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 msgid "Attention: patient allergies"
-msgstr ""
+msgstr "Увага: пацієнт має алергії"
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__blood_group__b_pos
 msgid "B(III) Rh+"
-msgstr ""
+msgstr "B(III) Rh+"
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__blood_group__b_neg
 msgid "B(III) Rh-"
-msgstr ""
+msgstr "B(III) Rh-"
 
 #. module: hr_hospital
 #. odoo-python
@@ -144,40 +144,40 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__birth_date
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__birth_date
 msgid "Birth date"
-msgstr ""
+msgstr "Дата народження"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__blood_group
 msgid "Blood type/Rh factor"
-msgstr ""
+msgstr "Група крові/Резус фактор"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_doctor_schedule_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__break_from
 msgid "Break from"
-msgstr ""
+msgstr "Перерва від"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_doctor_schedule_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__break_to
 msgid "Break to"
-msgstr ""
+msgstr "Перерва до"
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient_card_export_wizard__export_format__csv
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient_visit__status__cancelled
 msgid "Cancelled"
-msgstr ""
+msgstr "Відмінений"
 
 #. module: hr_hospital
 #. odoo-python
@@ -186,7 +186,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_mass_reassign_doctor_wizard__change_date
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_doctor_history__change_date
 msgid "Change date"
-msgstr ""
+msgstr "Дата зміни"
 
 #. module: hr_hospital
 #. odoo-python
@@ -196,84 +196,84 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__citizenship_country_id
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__citizenship_country_id
 msgid "Citizenship country"
-msgstr ""
+msgstr "Країна громадянства"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_contact_person.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_contact_person__type__colleague
 msgid "Colleague"
-msgstr ""
+msgstr "Колега"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient_visit__status__done
 msgid "Completed"
-msgstr ""
+msgstr "Завершено"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor_schedule.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__schedule_type__conference
 msgid "Conference"
-msgstr ""
+msgstr "Конференція"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_contact_person.py:0
 #: model:ir.model,name:hr_hospital.model_hr_hospital_contact_person
 msgid "Contact Person"
-msgstr ""
+msgstr "Контактна особа"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__contact_person_ids
 msgid "Contact persons"
-msgstr ""
+msgstr "Контактні особи"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_type_of_disease.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__is_contagious
 msgid "Contagious"
-msgstr ""
+msgstr "Заразний"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__amount
 msgid "Cost of visit"
-msgstr ""
+msgstr "Вартість візиту"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__diagnosis_count
 msgid "Count of diagnoses"
-msgstr ""
+msgstr "Кількість діагнозів"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_disease_report_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease_report_wizard__country_ids
 msgid "Countries"
-msgstr ""
+msgstr "Країни"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_disease_report_wizard.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_disease_report_wizard__group_by__country
 msgid "Country"
-msgstr ""
+msgstr "Країна"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__education_country_id
 msgid "Country of study"
-msgstr ""
+msgstr "Країна навчання"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_contact_person__create_uid
@@ -290,7 +290,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__create_uid
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Створено"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_contact_person__create_date
@@ -307,7 +307,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__create_date
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Створено"
 
 #. module: hr_hospital
 #. odoo-python
@@ -317,69 +317,69 @@ msgstr ""
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_type_of_disease__danger_level__critical
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_type_of_disease__severity__critical
 msgid "Critical"
-msgstr ""
+msgstr "Критичний"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__currency_id
 msgid "Currency"
-msgstr ""
+msgstr "Валюта"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_type_of_disease.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__danger_level
 msgid "Danger level"
-msgstr ""
+msgstr "Рівень небезпеки"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_patient_card_export_wizard.py:0
 msgid "Date"
-msgstr ""
+msgstr "Дата"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor_schedule.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule__date
 msgid "Date (specific)"
-msgstr ""
+msgstr "Дата (конкретна)"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor_schedule.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule__day_of_week
 msgid "Day of the week"
-msgstr ""
+msgstr "День тижня"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_specialization.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__description
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_medical_diagnosis.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_medical_diagnosis__description
 msgid "Description of diagnosis"
-msgstr ""
+msgstr "Опис діагнозу"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_disease_report_wizard.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_disease_report_wizard__report_type__detailed
 msgid "Detailed"
-msgstr ""
+msgstr "Детальний"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__diagnosis_ids
 msgid "Diagnoses"
-msgstr ""
+msgstr "Діагнози"
 
 #. module: hr_hospital
 #. odoo-python
@@ -387,14 +387,14 @@ msgstr ""
 #: code:addons/hr_hospital/wizard/hr_hospital_patient_card_export_wizard.py:0
 #: model:ir.model,name:hr_hospital.model_hr_hospital_medical_diagnosis
 msgid "Diagnosis"
-msgstr ""
+msgstr "Діагнози"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient_visit__status__no_show
 msgid "Didn't show up"
-msgstr ""
+msgstr "Не з'явився"
 
 #. module: hr_hospital
 #. odoo-python
@@ -405,21 +405,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_medical_diagnosis__disease_id
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_disease_report_wizard__group_by__disease
 msgid "Disease"
-msgstr ""
+msgstr "Захворювання"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_disease_report_wizard.py:0
 #: model:ir.model,name:hr_hospital.model_hr_hospital_disease_report_wizard
 msgid "Disease report for the period"
-msgstr ""
+msgstr "Звіт про захворювання за період"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_disease_report_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease_report_wizard__disease_ids
 msgid "Diseases"
-msgstr ""
+msgstr "Захворювання"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_contact_person__display_name
@@ -436,14 +436,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__display_name
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Відображуване ім'я"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_type_of_disease.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__region_ids
 msgid "Distribution regions"
-msgstr ""
+msgstr "Регіони розповсюдження"
 
 #. module: hr_hospital
 #. odoo-python
@@ -461,21 +461,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__doctor_id
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_disease_report_wizard__group_by__doctor
 msgid "Doctor"
-msgstr ""
+msgstr "Лікар"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_doctor_schedule_wizard.py:0
 #: model:ir.model,name:hr_hospital.model_hr_hospital_doctor_schedule_wizard
 msgid "Doctor Schedule Wizard"
-msgstr ""
+msgstr "Майстер розкладу лікарів"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor_schedule.py:0
 #: model:ir.model,name:hr_hospital.model_hr_hospital_doctor_schedule
 msgid "Doctor's schedule"
-msgstr ""
+msgstr "Розклад роботи лікарів"
 
 #. module: hr_hospital
 #. odoo-python
@@ -484,7 +484,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease_report_wizard__doctor_ids
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__doctor_ids
 msgid "Doctors"
-msgstr ""
+msgstr "Лікарі"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_abstract_person__email
@@ -492,14 +492,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__email
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__email
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient_visit__visit_type__emergency
 msgid "Emergency"
-msgstr ""
+msgstr "Екстренне"
 
 #. module: hr_hospital
 #. odoo-python
@@ -508,7 +508,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease_report_wizard__date_end
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_card_export_wizard__date_to
 msgid "End date"
-msgstr ""
+msgstr "Дата закінчення"
 
 #. module: hr_hospital
 #. odoo-python
@@ -517,42 +517,42 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule__to_time
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__time_end
 msgid "End time"
-msgstr ""
+msgstr "Час закінчення"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_doctor_schedule_wizard.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule_wizard__schedule_type__even
 msgid "Even week"
-msgstr ""
+msgstr "Парний тиждень"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_patient_card_export_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_card_export_wizard__export_format
 msgid "Export format"
-msgstr ""
+msgstr "Формат експорту"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_contact_person.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_contact_person__type__father/mouther
 msgid "Father/Mother"
-msgstr ""
+msgstr "Батько/Мати"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_patient_card_export_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_card_export_wizard__export_file
 msgid "File"
-msgstr ""
+msgstr "Файл"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_patient_card_export_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_card_export_wizard__export_filename
 msgid "File name"
-msgstr ""
+msgstr "Ім'я файлу"
 
 #. module: hr_hospital
 #. odoo-python
@@ -562,13 +562,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__first_name
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__first_name
 msgid "First name"
-msgstr ""
+msgstr "Ім'я"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 msgid "For interns, it is mandatory to indicate a mentor physician."
-msgstr ""
+msgstr "Для інтернів обов'язково вказати лікаря-наставника."
 
 #. module: hr_hospital
 #. odoo-python
@@ -577,14 +577,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__friday
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__day_of_week__fri
 msgid "Friday"
-msgstr ""
+msgstr "П'ятниця"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_contact_person.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_contact_person__type__friend
 msgid "Friend"
-msgstr ""
+msgstr "Друг"
 
 #. module: hr_hospital
 #. odoo-python
@@ -594,7 +594,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__name
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__name
 msgid "Full Name"
-msgstr ""
+msgstr "Повне ім'я"
 
 #. module: hr_hospital
 #. odoo-python
@@ -604,47 +604,47 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__gender
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__gender
 msgid "Gender"
-msgstr ""
+msgstr "Стать"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease_report_wizard__group_by
 msgid "Group by"
-msgstr ""
+msgstr "Групувати по"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_type_of_disease.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_type_of_disease__danger_level__high
 msgid "High"
-msgstr ""
+msgstr "Високий"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_doctor_history.py:0
 #: model:ir.model,name:hr_hospital.model_hr_hospital_patient_doctor_history
 msgid "History of changes in personal doctors"
-msgstr ""
+msgstr "Історія змін персональних лікарів"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor_schedule.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__schedule_type__sick_leave
 msgid "Hospital"
-msgstr ""
+msgstr "Госпіталь"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_contact_person.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_contact_person__type__husbent/wife
 msgid "Husband/Wife"
-msgstr ""
+msgstr "Чоловік/Дружина"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_type_of_disease.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__icd10_code
 msgid "ICD-10 code"
-msgstr ""
+msgstr "Код ICD-10"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_contact_person__id
@@ -661,7 +661,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__id
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_abstract_person__image_1920
@@ -669,7 +669,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__image_1920
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__image_1920
 msgid "Image"
-msgstr ""
+msgstr "Картинка"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_abstract_person__image_1024
@@ -677,7 +677,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__image_1024
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__image_1024
 msgid "Image 1024"
-msgstr ""
+msgstr "Картинка 1024"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_abstract_person__image_128
@@ -685,7 +685,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__image_128
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__image_128
 msgid "Image 128"
-msgstr ""
+msgstr "Картинка 128"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_abstract_person__image_256
@@ -693,7 +693,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__image_256
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__image_256
 msgid "Image 256"
-msgstr ""
+msgstr "Картинка 256"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_abstract_person__image_512
@@ -701,53 +701,53 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__image_512
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__image_512
 msgid "Image 512"
-msgstr ""
+msgstr "Картинка 512"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_patient_card_export_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_card_export_wizard__include_diagnoses
 msgid "Include diagnoses"
-msgstr ""
+msgstr "Включити діагнози"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_patient_card_export_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_card_export_wizard__include_recommendations
 msgid "Include recommendations"
-msgstr ""
+msgstr "Включити рекомендації"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_abstract_person.py:0
 msgid "Incorrect Email."
-msgstr ""
+msgstr "Некоректний Email."
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__insurance_company_id
 msgid "Insurance company"
-msgstr ""
+msgstr "Страхова компанія"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__insurance_policy_number
 msgid "Insurance policy number"
-msgstr ""
+msgstr "Номер страхового полісу"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__is_intern
 msgid "Intern"
-msgstr ""
+msgstr "Інтерн"
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient_card_export_wizard__export_format__json
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 #. module: hr_hospital
 #. odoo-python
@@ -757,13 +757,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__language_id
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__language_id
 msgid "Language"
-msgstr ""
+msgstr "Мова"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 msgid "Language of communication"
-msgstr ""
+msgstr "Мова спілкування"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_contact_person__write_uid
@@ -780,7 +780,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__write_uid
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Останнє оновлення"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_contact_person__write_date
@@ -797,7 +797,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__write_date
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Останнє оновлення"
 
 #. module: hr_hospital
 #. odoo-python
@@ -807,35 +807,35 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__last_name
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__last_name
 msgid "Last name"
-msgstr ""
+msgstr "Прізвище"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor_schedule.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__schedule_type__vacation
 msgid "Leave"
-msgstr ""
+msgstr "Відпустка"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__license_issue_date
 msgid "License issue date"
-msgstr ""
+msgstr "Дата видачі ліцензії"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__license_number
 msgid "License number"
-msgstr ""
+msgstr "Номер ліцензії"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_type_of_disease.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_type_of_disease__danger_level__low
 msgid "Low"
-msgstr ""
+msgstr "Низький"
 
 #. module: hr_hospital
 #. odoo-python
@@ -845,28 +845,28 @@ msgstr ""
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor__gender__man
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__gender__man
 msgid "Man"
-msgstr ""
+msgstr "Чоловік"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_mass_reassign_doctor_wizard.py:0
 #: model:ir.model,name:hr_hospital.model_hr_hospital_mass_reassign_doctor_wizard
 msgid "Mass Doctor Reassignment Wizard"
-msgstr ""
+msgstr "Майстер масового перепризначення лікарів"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_type_of_disease.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_type_of_disease__danger_level__medium
 msgid "Medium"
-msgstr ""
+msgstr "Середній"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__mentor_id
 msgid "Mentor doctor"
-msgstr ""
+msgstr "Лікар-наставник"
 
 #. module: hr_hospital
 #. odoo-python
@@ -876,7 +876,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__middle_name
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__middle_name
 msgid "Middle name"
-msgstr ""
+msgstr "По батькові"
 
 #. module: hr_hospital
 #. odoo-python
@@ -885,7 +885,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_medical_diagnosis__severity__mild
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_type_of_disease__severity__mild
 msgid "Mild"
-msgstr ""
+msgstr "Помірний"
 
 #. module: hr_hospital
 #. odoo-python
@@ -894,7 +894,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_medical_diagnosis__severity__moderate
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_type_of_disease__severity__moderate
 msgid "Moderate"
-msgstr ""
+msgstr "Помірний"
 
 #. module: hr_hospital
 #. odoo-python
@@ -903,14 +903,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__monday
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__day_of_week__mon
 msgid "Monday"
-msgstr ""
+msgstr "Понеділок"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_disease_report_wizard.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_disease_report_wizard__group_by__month
 msgid "Month"
-msgstr ""
+msgstr "Місяць"
 
 #. module: hr_hospital
 #. odoo-python
@@ -927,7 +927,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__name
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__name
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #. module: hr_hospital
 #. odoo-python
@@ -936,7 +936,7 @@ msgstr ""
 #: code:addons/hr_hospital/models/hr_hospital_patient_doctor_history.py:0
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 msgid "New"
-msgstr ""
+msgstr "Новий"
 
 #. module: hr_hospital
 #. odoo-python
@@ -950,65 +950,65 @@ msgstr ""
 #: code:addons/hr_hospital/models/hr_hospital_doctor_schedule.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule__note
 msgid "Notes"
-msgstr ""
+msgstr "Нотатки"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_doctor_schedule_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__week_count
 msgid "Number of weeks"
-msgstr ""
+msgstr "Кількість тижнів"
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__blood_group__o_pos
 msgid "O(I) Rh+"
-msgstr ""
+msgstr "O(I) Rh+"
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__blood_group__o_neg
 msgid "O(I) Rh-"
-msgstr ""
+msgstr "O(I) Rh-"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_doctor_schedule_wizard.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule_wizard__schedule_type__odd
 msgid "Odd week"
-msgstr ""
+msgstr "Непарний тиждень"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_mass_reassign_doctor_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_mass_reassign_doctor_wizard__old_doctor_id
 msgid "Old doctor"
-msgstr ""
+msgstr "Старий лікар"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 msgid "Only interns can have a mentor doctor."
-msgstr ""
+msgstr "Тільки інтерни можуть мати лікаря-наставника."
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_contact_person.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_contact_person__type__other
 msgid "Other"
-msgstr ""
+msgstr "Інше"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_type_of_disease.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__parent_id
 msgid "Parent"
-msgstr ""
+msgstr "Група"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__passport_data
 msgid "Passport data"
-msgstr ""
+msgstr "Паспортні дані"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1021,21 +1021,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_doctor_history__patient_id
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__patient_id
 msgid "Patient"
-msgstr ""
+msgstr "Пацієнт"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_patient_card_export_wizard.py:0
 #: model:ir.model,name:hr_hospital.model_hr_hospital_patient_card_export_wizard
 msgid "Patient Card Export Wizard"
-msgstr ""
+msgstr "Майстер експорту картки пацієнта"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model,name:hr_hospital.model_hr_hospital_patient_visit
 msgid "Patient visits"
-msgstr ""
+msgstr "Візити пацієнтів"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1044,14 +1044,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_contact_person__patient_ids
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_mass_reassign_doctor_wizard__patient_ids
 msgid "Patients"
-msgstr ""
+msgstr "Пацієнти"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__personal_doctor_id
 msgid "Personal doctor"
-msgstr ""
+msgstr "Особистий лікар"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1061,41 +1061,41 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__phone
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__phone
 msgid "Phone number"
-msgstr ""
+msgstr "Номер телефону"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_abstract_person.py:0
 msgid "Phone number must be in format +380XXXXXXXXX або 0XXXXXXXXX."
-msgstr ""
+msgstr "Номер телефону має бути у форматі +380XXXXXXXXX або 0XXXXXXXXX."
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_medical_diagnosis.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_medical_diagnosis__treatment
 msgid "Prescribed treatment"
-msgstr ""
+msgstr "Призначене лікування"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient_visit__visit_type__preventive
 msgid "Preventive"
-msgstr ""
+msgstr "Профілактичний"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient_visit__visit_type__primary
 msgid "Primary"
-msgstr ""
+msgstr "Первинний"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__rating
 msgid "Rating"
-msgstr ""
+msgstr "Рейтинг"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1104,7 +1104,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_mass_reassign_doctor_wizard__change_reason
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_doctor_history__change_reason
 msgid "Reason for change"
-msgstr ""
+msgstr "Причина зміни"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1112,48 +1112,48 @@ msgstr ""
 #: code:addons/hr_hospital/wizard/hr_hospital_patient_card_export_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__recommendation
 msgid "Recommendations"
-msgstr ""
+msgstr "Рекомендації"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 msgid "Recommended language for this country:"
-msgstr ""
+msgstr "Рекомендована мова для цієї країни:"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_type_of_disease.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__child_ids
 msgid "Related diseases"
-msgstr ""
+msgstr "Дочірні захворювання"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_contact_person.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_contact_person__type__relative
 msgid "Relative"
-msgstr ""
+msgstr "Родич"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient_visit__visit_type__repeat
 msgid "Repeat"
-msgstr ""
+msgstr "Повторний"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_patient_card_export_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_card_export_wizard__lang_id
 msgid "Report language"
-msgstr ""
+msgstr "Мова звіту"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_disease_report_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease_report_wizard__report_type
 msgid "Report type"
-msgstr ""
+msgstr "Тип звіту"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1162,34 +1162,34 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__saturday
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__day_of_week__sat
 msgid "Saturday"
-msgstr ""
+msgstr "Субота"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_doctor_schedule_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__schedule_type
 msgid "Schedule type"
-msgstr ""
+msgstr "Тип розкладу"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient_visit__status__planned
 msgid "Scheduled"
-msgstr ""
+msgstr "Заплановано"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__planned_datetime
 msgid "Scheduled date/time"
-msgstr ""
+msgstr "Запланована дата/час"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_mass_reassign_doctor_wizard.py:0
 msgid "Select at least one patient to reassign."
-msgstr ""
+msgstr "Виберіть принаймні одного пацієнта для перепризначення."
 
 #. module: hr_hospital
 #. odoo-python
@@ -1198,7 +1198,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_medical_diagnosis__severity__severe
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_type_of_disease__severity__severe
 msgid "Severe"
-msgstr ""
+msgstr "Важкий"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1207,35 +1207,35 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_medical_diagnosis__severity
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__severity
 msgid "Severity"
-msgstr ""
+msgstr "Серйозність"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__specialization_id
 msgid "Specialization"
-msgstr ""
+msgstr "Спеціалізація"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_specialization.py:0
 #: model:ir.model,name:hr_hospital.model_hr_hospital_specialization
 msgid "Specializations"
-msgstr ""
+msgstr "Спеціалізації"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_specialization.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_specialization__code
 msgid "Specialty code"
-msgstr ""
+msgstr "Код спеціалізації"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_doctor_schedule_wizard.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule_wizard__schedule_type__standard
 msgid "Standard"
-msgstr ""
+msgstr "Стандартний"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1244,7 +1244,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease_report_wizard__date_start
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_card_export_wizard__date_from
 msgid "Start date"
-msgstr ""
+msgstr "Дата початку"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1253,28 +1253,28 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule__from_time
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__time_start
 msgid "Start time"
-msgstr ""
+msgstr "Час початку"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_doctor_schedule_wizard.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__date_start
 msgid "Start week"
-msgstr ""
+msgstr "Початок тижня"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__status
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/wizard/hr_hospital_disease_report_wizard.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_disease_report_wizard__report_type__summary
 msgid "Summary"
-msgstr ""
+msgstr "Короткий зміст"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1283,86 +1283,86 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__sunday
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__day_of_week__sun
 msgid "Sunday"
-msgstr ""
+msgstr "Неділя"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_type_of_disease.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_type_of_disease__symptoms
 msgid "Symptoms"
-msgstr ""
+msgstr "Симптоми"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__user_id
 msgid "System user"
-msgstr ""
+msgstr "Користувач"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 msgid "The date of birth must be in the past."
-msgstr ""
+msgstr "Дата народження має бути в минулому."
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_medical_diagnosis.py:0
 msgid "The diagnosis has already been confirmed."
-msgstr ""
+msgstr "Діагноз вже підтверджено."
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_medical_diagnosis.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_medical_diagnosis__approved_by_id
 msgid "The doctor who approved"
-msgstr ""
+msgstr "Лікар, який схвалив"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor_schedule.py:0
 #: model:ir.model.constraint,message:hr_hospital.constraint_hr_hospital_doctor_schedule_check_time
 msgid "The end time must be after the start time!"
-msgstr ""
+msgstr "Час закінчення має бути після часу початку!"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__doctor_history_ids
 msgid "The history of personal doctors"
-msgstr ""
+msgstr "Історія особистих лікарів"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.constraint,message:hr_hospital.constraint_hr_hospital_doctor_unique_license_number
 msgid "The license number must be unique!"
-msgstr ""
+msgstr "Номер ліцензії має бути унікальним!"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 msgid "The patient has allergies:"
-msgstr ""
+msgstr "У пацієнта є алергія:"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient.py:0
 msgid "The patient's age must be greater than 0."
-msgstr ""
+msgstr "Вік пацієнта має бути більше 0."
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 msgid "The rating must be between 0.00 and 5.00."
-msgstr ""
+msgstr "Рейтинг має бути в межах від 0,00 до 5,00."
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.constraint,message:hr_hospital.constraint_hr_hospital_doctor_check_rating_range
 msgid "The rating must be from 0.00 to 5.00!"
-msgstr ""
+msgstr "Рейтинг має бути від 0.00 до 5.00!"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1371,7 +1371,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__thursday
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__day_of_week__thu
 msgid "Thursday"
-msgstr ""
+msgstr "Четвер"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1380,28 +1380,28 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__tuesday
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__day_of_week__tue
 msgid "Tuesday"
-msgstr ""
+msgstr "Вівторок"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor_schedule.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule__schedule_type
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_contact_person.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_contact_person__type
 msgid "Type of Contact Person"
-msgstr ""
+msgstr "Тип контактної особи"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient_visit__visit_type
 msgid "Type of visit"
-msgstr ""
+msgstr "Тип візиту"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1411,14 +1411,14 @@ msgstr ""
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor__gender__unknown
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__gender__unknown
 msgid "Unknown"
-msgstr ""
+msgstr "Невідомо"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_medical_diagnosis.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_medical_diagnosis__visit_id
 msgid "Visit"
-msgstr ""
+msgstr "Візит"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1427,7 +1427,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor_schedule_wizard__wednesday
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__day_of_week__wed
 msgid "Wednesday"
-msgstr ""
+msgstr "Середа"
 
 #. module: hr_hospital
 #. odoo-python
@@ -1437,34 +1437,34 @@ msgstr ""
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor__gender__woman
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_patient__gender__woman
 msgid "Woman"
-msgstr ""
+msgstr "Жінка"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__work_experience
 msgid "Work experience (years)"
-msgstr ""
+msgstr "Досвід роботи (роки)"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__schedule_ids
 msgid "Work schedule"
-msgstr ""
+msgstr "Графік роботи"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_doctor_schedule.py:0
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor_schedule__schedule_type__workday
 msgid "Working day"
-msgstr ""
+msgstr "Робочий день"
 
 #. module: hr_hospital
 #. odoo-python
 #: code:addons/hr_hospital/models/hr_hospital_patient_visit.py:0
 msgid "You cannot delete a visit for which diagnoses exist."
-msgstr ""
+msgstr "Ви не можете видалити візит, для якого існують діагнози."
 
 #. module: hr_hospital
 #: model:ir.actions.act_window,name:hr_hospital.hr_hospital_patient_doctor_history_action
