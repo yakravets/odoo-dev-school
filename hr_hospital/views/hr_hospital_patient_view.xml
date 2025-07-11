@@ -1,10 +1,21 @@
 <odoo>
 
-    <record id="hr_hospital_patient_list" model="ir.ui.view">
-        <field name="name">Пацієнти</field>
+    <record id="hr_hospital_patient_search" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.search</field>
         <field name="model">hr.hospital.patient</field>
         <field name="arch" type="xml">
-            <list string="Пацієнти">
+            <search string="Search Patients">
+                <field name="name"/>
+                <field name="phone"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_list" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.list</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <list string="Patients">
                 <field name="name"/>
                 <field name="phone"/>
                 <field name="birth_date"/>
@@ -14,10 +25,22 @@
     </record>    
 
     <record id="hr_hospital_patient_form" model="ir.ui.view">
-        <field name="name">Пацієнт</field>
+        <field name="name">hr.hospital.patient.form</field>
         <field name="model">hr.hospital.patient</field>
         <field name="arch" type="xml">
-            <form string="Пацієнт">
+            <form string="Patient">
+                <header>
+                <button name="action_create_visit"
+                    type="object"
+                    string="Create Visit"
+                    class="btn-primary"
+                    icon="fa-plus"/>
+                    <button name="action_open_visit_history"
+                        type="object"
+                        string="Visit History"
+                        class="btn-primary"
+                        icon="fa-calendar"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
@@ -39,7 +62,7 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Дані пацієнта">
+                        <page string="Private information">
                             <group>
                                 <field name="personal_doctor_id" />                        
                                 <field name="blood_group"/>                            
@@ -47,10 +70,10 @@
                                 <field name="insurance_policy_number"/>                                                       
                             </group>
                         </page>
-                        <page string="Алергії">
+                        <page string="Allergies">
                             <field name="allergies" nolabel="1"/>
                         </page>
-                        <page string="Контактні особи">
+                        <page string="Contact person">
                             <field name="contact_person_ids" context="{'patient_id': id}">
                                 <list editable="bottom">
                                     <field name="name"/>
@@ -59,10 +82,20 @@
                                 </list>
                             </field>
                         </page>
-                        <page string="Історія персональних лікарів">
+                        <page string="History change of personal doctor">
                             <field name="doctor_history_ids" context="{'default_patient_id': id}">
                                 <list editable="bottom">
                                     <field name="doctor_id"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Visit history">
+                            <field name="visit_ids">
+                                <list>
+                                    <field name="planned_datetime"/>
+                                    <field name="actual_datetime"/>
+                                    <field name="doctor_id"/>
+                                    <field name="status" widget="badge"/>
                                 </list>
                             </field>
                         </page>  
@@ -73,12 +106,12 @@
     </record>
 
     <record id="hr_hospital_patient_action" model="ir.actions.act_window">
-        <field name="name">Пацієнти</field>
+        <field name="name">Patients</field>
         <field name="res_model">hr.hospital.patient</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Створіть першого пацієнта!
+                Create first patients!
             </p>
         </field>
     </record> 

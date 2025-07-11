@@ -151,10 +151,51 @@
         <field name="citizenship_country_id" ref="base.ua"/>
         <field name="language_id" ref="base.lang_uk_UA"/>
         <field name="specialization_id" ref="specialization_surgery"/>
-        <field name="is_intern">0</field>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="doctor_kovalenko"/>
         <field name="license_number">DOC-008</field>
         <field name="license_issue_date">2008-11-11</field>
         <field name="rating">4.60</field>
+        <field name="education_country_id" ref="base.ua"/>
+    </record>
+
+    <record id="doctor_koval" model="hr.hospital.doctor">
+        <field name="first_name">Олексій</field>
+        <field name="last_name">Коваль</field>
+        <field name="middle_name">Петрович</field>
+        <field name="active">1</field>
+        <field name="phone">+380631234567</field>
+        <field name="email">oleksii.koval@example.com</field>
+        <field name="gender">man</field>
+        <field name="birth_date">1998-03-15</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="specialization_id" ref="specialization_pediatrics"/>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="doctor_kravchenko"/>
+        <field name="license_number">INT-001</field>
+        <field name="license_issue_date">2024-01-15</field>
+        <field name="rating">3.90</field>
+        <field name="education_country_id" ref="base.ua"/>
+    </record>
+
+    <record id="doctor_melnyk" model="hr.hospital.doctor">
+        <field name="first_name">Ірина</field>
+        <field name="last_name">Мельник</field>
+        <field name="middle_name">Андріївна</field>
+        <field name="active">1</field>
+        <field name="phone">+380987654321</field>
+        <field name="email">iryna.melnyk@example.com</field>
+        <field name="gender">woman</field>
+        <field name="birth_date">1997-09-28</field>
+        <field name="citizenship_country_id" ref="base.ua"/>
+        <field name="language_id" ref="base.lang_uk_UA"/>
+        <field name="specialization_id" ref="specialization_pediatrics"/>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="doctor_kravchenko"/>
+        <field name="license_number">INT-002</field>
+        <field name="license_issue_date">2023-09-01</field>
+        <field name="rating">4.10</field>
         <field name="education_country_id" ref="base.ua"/>
     </record>
 </odoo>

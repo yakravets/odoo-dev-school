@@ -38,10 +38,34 @@
         </field>
     </record>
 
+    <record id="hr_hospital_medical_diagnosis_pivot_view" model="ir.ui.view">
+        <field name="name">hr.hospital.medical.diagnosis.pivot</field>
+        <field name="model">hr.hospital.medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <pivot string="Diagnoses Analysis">
+                <field name="disease_id" type="row"/>
+                <field name="approved_date" interval="month" type="col"/>
+                <field name="diagnosis_unit" type="measure" string="Diagnoses Count"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_graph_view" model="ir.ui.view">
+        <field name="name">hr.hospital.medical.diagnosis.graph</field>
+        <field name="model">hr.hospital.medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <graph string="Disease Incidence by Type and Month" type="bar" stacked="True">
+                <field name="diagnosis_unit" type="measure" string="Diagnoses"/>
+                <field name="approved_date" type="col" interval="month"/>
+                <field name="disease_id" type="row" string="Disease Type"/>
+            </graph>
+        </field>
+    </record>
+
     <record id="hr_hospital_medical_diagnosis_action" model="ir.actions.act_window">
         <field name="name">Діагнози</field>
         <field name="res_model">hr.hospital.medical.diagnosis</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">list,form,pivot,graph</field>
         <field name="view_id" ref="hr_hospital_medical_diagnosis_view_list"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">

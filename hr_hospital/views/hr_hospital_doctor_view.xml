@@ -1,10 +1,21 @@
 <odoo>
 
-    <record id="hr_hospital_doctor_view_list" model="ir.ui.view">
-        <field name="name">Лікарі</field>
+    <record id="hr_hospital_doctor_view_search" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.search</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
-            <list string="Лікарі">
+            <search string="Doctors Search">
+                <filter name="mentors" string="Only mentors" domain="[('is_intern','=',False)]"/>
+                <filter name="interns" string="Only interns" domain="[('is_intern','=',True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_hospital_doctor_view_list" model="ir.ui.view">
+        <field name="name">Doctors</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <list string="Doctors">
                 <field name="name"/>
                 <field name="specialization_id"/>
                 <field name="phone"/>
@@ -16,13 +27,13 @@
     </record>
 
     <record id="hr_hospital_doctor_view_form" model="ir.ui.view">
-        <field name="name">Лікар</field>
+        <field name="name">Doctor</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
-            <form string="Лікар">
+            <form string="Doctor">
                 <header>
                     <button name="%(action_mass_reassign_doctor_wizard)d"
-                        string="Масове перепризначення лікаря"
+                        string="Mass reassign doctors"
                         type="action"
                         class="oe_highlight"/>
                 </header>
@@ -58,19 +69,73 @@
                                 <field name="mentor_id"/>
                             </group>
                         </page>
+                        <page string="Interns">
+                            <field name="intern_ids" nolabel="1" context="{'default_mentor_id': id}">
+                                <kanban>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click o_kanban_record">
+                                                <div>
+                                                    <strong>
+                                                        <field name="name"/>                                                        
+                                                    </strong>
+                                                </div>
+                                                <div>
+                                                    <field name="license_number"/>
+                                                </div>
+                                                <div>
+                                                    <field name="rating"/>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
         </field>
     </record>
 
+    <record id="hr_hospital_doctor_kanban_view" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.kanban</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_example">
+                <field name="specialization_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_details">
+                                <strong>
+                                    <field name="first_name"/> <field name="last_name"/>
+                                </strong><br/>
+                                <span t-if="record.specialization_id.raw_value">
+                                    <field name="specialization_id"/>
+                                </span><br/>
+                                <span>
+                                    <field name="phone"/>
+                                </span><br/>
+                                <button type="object" name="action_create_visit_quick"
+                                        class="btn btn-primary btn-sm mt-2">
+                                    <i class="fa fa-calendar-plus-o"/> Записати пацієнта
+                                </button>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record id="hr_hospital_doctor_action" model="ir.actions.act_window">
-        <field name="name">Лікарі</field>
+        <field name="name">Doctors</field>
         <field name="res_model">hr.hospital.doctor</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">list,form,kanban</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Створіть першого лікаря!
+                Create first doctor!
             </p>
         </field>
     </record>

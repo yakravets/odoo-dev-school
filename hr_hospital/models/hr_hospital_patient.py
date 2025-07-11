@@ -52,6 +52,26 @@ class Patient(models.Model):
         inverse_name='patient_id',
         string=_("The history of personal doctors")
     )
+    diagnosis_history_ids = fields.One2many(
+        comodel_name='hr.hospital.medical.diagnosis',
+        inverse_name='visit_id',
+        string="Diagnosis history",
+        compute='_compute_diagnosis_history',
+        store=False
+    )
+    visit_ids = fields.One2many(
+        comodel_name='hr.hospital.patient.visit',
+        inverse_name='patient_id',
+        string='Visits'
+    )
+
+    def _compute_diagnosis_history(self):
+        for patient in self:
+            patient_visits = self.env['hr.hospital.patient.visit'].search([
+                ('patient_id', '=', patient.id)
+            ])
+            diagnoses = patient_visits.mapped('diagnosis_ids')
+            patient.diagnosis_history_ids = diagnoses
 
     @api.constrains('birth_date')
     def _check_age_positive(self):
@@ -114,4 +134,33 @@ class Patient(models.Model):
         if lang_code:
             return self.env['res.lang'].search([('code', '=', lang_code)], limit=1)
         return False
+
+    def action_open_visit_history(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('Visit History'),
+            'res_model': 'hr.hospital.patient.visit',
+            'view_mode': 'tree,form',
+            'domain': [('patient_id', '=', self.id)],
+            'context': {'default_patient_id': self.id},
+            'target': 'current',
+        }
+
+    def action_create_visit(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('New Visit'),
+            'res_model': 'hr.hospital.patient.visit',
+            'view_mode': 'form',
+            'view_type': 'form',
+            'context': {
+                'default_patient_id': self.id,
+                'default_doctor_id': self.personal_doctor_id.id,
+            },
+            'target': 'current',
+        }
+
+
     

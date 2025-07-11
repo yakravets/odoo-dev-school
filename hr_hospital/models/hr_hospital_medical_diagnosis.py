@@ -58,6 +58,10 @@ class Diagnosis(models.Model):
         ],
         string=_("Severity")
     )
+    diagnosis_unit = fields.Integer(
+        string=_("Visit Unit"), 
+        default=1
+    )
 
     @api.model
     def create(self, vals):

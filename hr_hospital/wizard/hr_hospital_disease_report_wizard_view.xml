@@ -3,7 +3,7 @@
         <field name="name">hr.hospital.disease.report.wizard.form</field>
         <field name="model">hr.hospital.disease.report.wizard</field>
         <field name="arch" type="xml">
-            <form string="Звіт по хворобах за період">
+            <form string="Report of disease by period">
                 <group>
                     <field name="doctor_ids" widget="many2many_tags"/>
                     <field name="disease_ids" widget="many2many_tags"/>
@@ -24,4 +24,15 @@
             </form>
         </field>
     </record>
+
+    <record id="action_open_disease_report_wizard" model="ir.actions.act_window">
+        <field name="name">Report of diseases</field>
+        <field name="res_model">hr.hospital.disease.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_disease_report_wizard_form"/>
+        <field name="binding_model_id" ref="model_hr_hospital_doctor"/>
+        <field name="binding_view_types">form,list</field>
+    </record>
+
 </odoo>

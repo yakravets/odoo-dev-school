@@ -56,6 +56,13 @@ class Doctor(models.Model):
         comodel_name='res.country',
         string=_("Country of study")
     )
+    intern_ids = fields.One2many(
+        comodel_name='hr.hospital.doctor',
+        inverse_name='mentor_id',
+        string=_("Interns"),
+        domain=[('is_intern', '=', True)],
+        readonly=True,
+    )
 
     @api.depends('license_issue_date')
     def _compute_work_experience(self):
@@ -106,4 +113,19 @@ class Doctor(models.Model):
                 name = f"{name} ({rec.speciality_id.name})"
             result.append((rec.id, name))
         return result
+
+    def action_create_visit_quick(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('New Patient Visit'),
+            'res_model': 'hr.hospital.patient.visit',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_doctor_id': self.id,
+                'default_planned_datetime': fields.Datetime.now(),
+            }
+        }
+
     
