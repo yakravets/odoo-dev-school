@@ -74,6 +74,10 @@ class PatientVisit(models.Model):
         compute='_compute_diagnosis_count',
         store=True
     )
+    visit_unit = fields.Integer(
+        string=_("Visit Unit"), 
+        default=1
+    )
 
     @api.depends('diagnosis_ids')
     def _compute_diagnosis_count(self):

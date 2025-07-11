@@ -299,4 +299,52 @@
         <field name="amount">470</field>
         <field name="currency_id" ref="base.UAH"/>
     </record>
+    <!-- Візит 26 -->
+    <record id="visit_26" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-07-15 09:00:00</field>
+        <field name="actual_datetime">2025-07-15 09:00:00</field>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_1"/>
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Запланована консультація.</field>
+        <field name="amount">400</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 27 -->
+    <record id="visit_27" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-07-15 12:00:00</field>
+        <field name="actual_datetime">2025-07-15 12:00:00</field>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_2"/>
+        <field name="doctor_id" ref="doctor_ivanov"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Запланована консультація.</field>
+        <field name="amount">400</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 28 -->
+    <record id="visit_28" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-07-17 13:00:00</field>
+        <field name="actual_datetime">2025-07-17 13:00:00</field>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_3"/>
+        <field name="doctor_id" ref="doctor_petrenko"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Запланована консультація.</field>
+        <field name="amount">500</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+    <!-- Візит 29 -->
+    <record id="visit_29" model="hr.hospital.patient.visit">
+        <field name="planned_datetime">2025-07-20 11:00:00</field>
+        <field name="actual_datetime">2025-07-20 11:00:00</field>
+        <field name="status">planned</field>
+        <field name="patient_id" ref="hr_hospital_patient_4"/>
+        <field name="doctor_id" ref="doctor_romanov"/>
+        <field name="visit_type">repeat</field>
+        <field name="recommendation">Запланована консультація.</field>
+        <field name="amount">500</field>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
 </odoo>
