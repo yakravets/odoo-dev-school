@@ -1,18 +1,17 @@
 from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
-from datetime import datetime
 import json
 import csv
 import io
 import base64
+
 
 class PatientCardExportWizard(models.TransientModel):
     _name = 'hr.hospital.patient.card.export.wizard'
     _description = _('Patient Card Export Wizard')
 
     patient_id = fields.Many2one(
-        comodel_name='hr.hospital.patient', 
-        string=_('Patient'), 
+        comodel_name='hr.hospital.patient',
+        string=_('Patient'),
         required=True
     )
     date_from = fields.Date(
@@ -23,40 +22,44 @@ class PatientCardExportWizard(models.TransientModel):
     )
 
     include_diagnoses = fields.Boolean(
-        string=_('Include diagnoses'), 
+        string=_('Include diagnoses'),
         default=True
     )
     include_recommendations = fields.Boolean(
-        string=_('Include recommendations'), 
+        string=_('Include recommendations'),
         default=True
     )
 
     lang_id = fields.Many2one(
-        comodel_name='res.lang', 
+        comodel_name='res.lang',
         string=_('Report language')
     )
     export_format = fields.Selection(
         [
             ('json', 'JSON'),
             ('csv', 'CSV'),
-        ], 
-        string=_('Export format'), 
+        ],
+        string=_('Export format'),
         default='json'
     )
 
     export_file = fields.Binary(
-        string=_('File'), 
+        string=_('File'),
         readonly=True
     )
     export_filename = fields.Char(
-        string='File name', 
+        string='File name',
         readonly=True
     )
 
     @api.onchange('patient_id')
     def _onchange_patient_lang(self):
         if self.patient_id and self.patient_id.lang:
-            lang = self.env['res.lang'].search([('code', '=', self.patient_id.lang)], limit=1)
+            lang = self.env['res.lang'].search(
+                [
+                    ('code', '=', self.patient_id.lang)
+                ],
+                limit=1)
             self.lang_id = lang
 
     def _get_data(self):

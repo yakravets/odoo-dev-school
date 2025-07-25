@@ -2,6 +2,7 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from datetime import date
 
+
 class Patient(models.Model):
     _name = 'hr.hospital.patient'
     _description = _('Patient')
@@ -14,7 +15,7 @@ class Patient(models.Model):
     passport_data = fields.Char(
         string=_("Passport data"),
         size=10
-    )    
+    )
     blood_group = fields.Selection(
         [
             ('o_pos', 'O(I) Rh+'),
@@ -79,10 +80,16 @@ class Patient(models.Model):
             if rec.birth_date:
                 today = date.today()
                 if rec.birth_date >= today:
-                    raise ValidationError(_("The date of birth must be in the past."))
-                age = today.year - rec.birth_date.year - ((today.month, today.day) < (rec.birth_date.month, rec.birth_date.day))
+                    raise ValidationError(
+                        _("The date of birth must be in the past.")
+                    )
+                age = today.year - rec.birth_date.year - (
+                    (today.month, today.day) < (rec.birth_date.month, rec.birth_date.day)
+                )
                 if age < 0:
-                    raise ValidationError(_("The patient's age must be greater than 0."))
+                    raise ValidationError(
+                        _("The patient's age must be greater than 0.")
+                    )
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -112,10 +119,11 @@ class Patient(models.Model):
         if self.citizenship_country_id:
             suggested_lang = self._get_suggested_language_from_country(self.citizenship_country_id)
             if suggested_lang:
+                message = _("Recommended language for this country:") + suggested_lang.name
                 return {
                     'warning': {
                         'title': _("Language of communication"),
-                        'message': _("Recommended language for this country:") + suggested_lang.name
+                        'message': message
                     },
                     'value': {
                         'communication_language_id': suggested_lang.id
@@ -132,7 +140,10 @@ class Patient(models.Model):
         code = country.code
         lang_code = mapping.get(code)
         if lang_code:
-            return self.env['res.lang'].search([('code', '=', lang_code)], limit=1)
+            return self.env['res.lang'].search(
+                [('code', '=', lang_code)],
+                limit=1
+            )
         return False
 
     def action_open_visit_history(self):
@@ -161,6 +172,3 @@ class Patient(models.Model):
             },
             'target': 'current',
         }
-
-
-    

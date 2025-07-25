@@ -3,12 +3,12 @@ from odoo.exceptions import ValidationError
 import re
 from datetime import date
 
+
 class AbstractPerson(models.AbstractModel):
     _name = 'hr.hospital.abstract.person'
     _description = 'Abstract Person Model'
     _inherit = ['image.mixin']
     _abstract = True
-
 
     first_name = fields.Char(
         string=_('First name'),
@@ -19,8 +19,8 @@ class AbstractPerson(models.AbstractModel):
         required=True
     )
     middle_name = fields.Char(
-        string=_('Middle name'),   
-    )    
+        string=_('Middle name'),
+    )
     name = fields.Char(
         string=_('Full Name'),
         compute='_compute_name',
@@ -44,9 +44,9 @@ class AbstractPerson(models.AbstractModel):
             ('unknown', _('Unknown')),
             ('man', _('Man')),
             ('woman', _('Woman')),
-        ], 
-        string=_('Gender'), 
-        required=True, 
+        ],
+        string=_('Gender'),
+        required=True,
         default='unknown'
     )
     birth_date = fields.Date(
@@ -54,8 +54,8 @@ class AbstractPerson(models.AbstractModel):
         required=True
     )
     age = fields.Integer(
-        string=_("Age"), 
-        compute='_compute_age', 
+        string=_("Age"),
+        compute='_compute_age',
         readonly=True,
         store=True
     )
@@ -74,11 +74,13 @@ class AbstractPerson(models.AbstractModel):
             if record.birth_date:
                 today = date.today()
                 born = record.birth_date
-                age = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+                age = today.year - born.year - (
+                    (today.month, today.day) < (born.month, born.day)
+                )
                 record.age = age
             else:
                 record.age = 0
-    
+
     @api.depends('last_name', 'first_name', 'middle_name')
     def _compute_name(self):
         for record in self:
@@ -90,7 +92,9 @@ class AbstractPerson(models.AbstractModel):
         phone_pattern = re.compile(r'^\+?\d{10,15}$')
         for record in self:
             if record.phone and not phone_pattern.match(record.phone):
-                raise ValidationError(_("Phone number must be in format +380XXXXXXXXX або 0XXXXXXXXX."))
+                raise ValidationError(
+                    _("Phone number must be in format +380XXXXXXXXX.")
+                )
 
     @api.constrains('email')
     def _check_email(self):
@@ -98,5 +102,3 @@ class AbstractPerson(models.AbstractModel):
         for record in self:
             if record.email and not email_pattern.match(record.email):
                 raise ValidationError(_("Incorrect Email."))
-
-    

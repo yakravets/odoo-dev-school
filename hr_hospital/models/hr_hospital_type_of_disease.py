@@ -1,5 +1,6 @@
 from odoo import models, fields, _
 
+
 class TypeOfDisease(models.Model):
     _name = 'hr.hospital.type.of.disease'
     _description = _('Disease')
@@ -33,7 +34,7 @@ class TypeOfDisease(models.Model):
         required=True
     )
     icd10_code = fields.Char(
-        string=_("ICD-10 code"), 
+        string=_("ICD-10 code"),
         size=10
     )
     danger_level = fields.Selection(
@@ -58,4 +59,3 @@ class TypeOfDisease(models.Model):
         column2='country_id',
         string=_("Distribution regions")
     )
-    

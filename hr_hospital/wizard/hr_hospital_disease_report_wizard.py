@@ -1,5 +1,6 @@
 from odoo import models, fields, _
 
+
 class DiseaseReportWizard(models.TransientModel):
     _name = 'hr.hospital.disease.report.wizard'
     _description = _('Disease report for the period')
@@ -27,7 +28,7 @@ class DiseaseReportWizard(models.TransientModel):
     )
     report_type = fields.Selection(
         [
-            ('detailed', _('Detailed')), 
+            ('detailed', _('Detailed')),
             ('summary', _('Summary'))
         ],
         string=_('Report type'),
@@ -55,4 +56,5 @@ class DiseaseReportWizard(models.TransientModel):
             'report_type': self.report_type,
             'group_by': self.group_by
         }
-        return self.env.ref('hr_hospital.action_report_disease').report_action(self, data=report_data)
+        return self.env.ref('hr_hospital.action_report_disease') \
+            .report_action(self, data=report_data)

@@ -11,8 +11,8 @@
         'base'
     ],
 
-    'external_dependencies':{
-        'python':[]
+    'external_dependencies': {
+        'python': []
     },
 
     'data': [

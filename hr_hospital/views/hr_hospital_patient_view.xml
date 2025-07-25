@@ -30,11 +30,11 @@
         <field name="arch" type="xml">
             <form string="Patient">
                 <header>
-                <button name="action_create_visit"
-                    type="object"
-                    string="Create Visit"
-                    class="btn-primary"
-                    icon="fa-plus"/>
+                    <button name="action_create_visit"
+                        type="object"
+                        string="Create Visit"
+                        class="btn-primary"
+                        icon="fa-plus"/>
                     <button name="action_open_visit_history"
                         type="object"
                         string="Visit History"

@@ -1,32 +1,34 @@
 from odoo import models, fields, api, _
 from datetime import timedelta
 
+
 class DoctorScheduleWizard(models.TransientModel):
     _name = 'hr.hospital.doctor.schedule.wizard'
     _description = _('Doctor Schedule Wizard')
 
     doctor_id = fields.Many2one(
-        comodel_name='hr.hospital.doctor', 
-        string=_('Doctor'), 
+        comodel_name='hr.hospital.doctor',
+        string=_('Doctor'),
         required=True
     )
     date_start = fields.Date(
-        string=_('Start week'), 
+        string=_('Start week'),
         required=True
     )
     week_count = fields.Integer(
-        string=_('Number of weeks'), 
-        default=1, 
+        string=_('Number of weeks'),
+        default=1,
         required=True
     )
-    schedule_type = fields.Selection(  
+    schedule_type = fields.Selection(
         [
             ('standard', _('Standard')),
             ('even', _('Even week')),
             ('odd', _('Odd week'))
-        ], 
-        string=_('Schedule type'), 
-        default='standard')
+        ],
+        string=_('Schedule type'),
+        default='standard'
+    )
 
     monday = fields.Boolean(
         string=_('Monday')
@@ -70,7 +72,7 @@ class DoctorScheduleWizard(models.TransientModel):
         return f'{hours:02d}:{minutes:02d}'
 
     def action_generate_schedule(self):
-        Schedule = self.env['hr.hospital.schedule']
+        schedule = self.env['hr.hospital.schedule']
 
         weekdays = {
             0: self.monday,
@@ -95,7 +97,7 @@ class DoctorScheduleWizard(models.TransientModel):
                     if self.schedule_type == 'odd' and is_even:
                         continue
 
-                    Schedule.create({
+                    schedule.create({
                         'doctor_id': self.doctor_id.id,
                         'date': day,
                         'time_start': self._float_to_time(self.time_start),

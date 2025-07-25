@@ -2,6 +2,7 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from datetime import date
 
+
 class Doctor(models.Model):
     _name = 'hr.hospital.doctor'
     _description = _('Doctor')
@@ -80,35 +81,55 @@ class Doctor(models.Model):
     def _check_mentor_is_not_intern(self):
         for rec in self:
             if rec.mentor_id and rec.mentor_id.is_intern:
-                raise ValidationError(_("An intern cannot be a mentor physician."))
+                raise ValidationError(
+                    _("An intern cannot be a mentor physician.")
+                )
 
     @api.constrains('rating')
     def _check_rating(self):
         for record in self:
             if record.rating < 0.0 or record.rating > 5.0:
-                raise ValidationError(_("The rating must be between 0.00 and 5.00."))
+                raise ValidationError(
+                    _("The rating must be between 0.00 and 5.00.")
+                )
             if record.mentor_id and record.id and record.mentor_id.id == record.id:
-                raise ValidationError(_("A doctor cannot be his own mentor."))
+                raise ValidationError(
+                    _("A doctor cannot be his own mentor.")
+                )
 
     @api.constrains('mentor_id', 'is_intern')
     def _check_mentor(self):
         for record in self:
             if record.is_intern and not record.mentor_id:
-                raise ValidationError(_("For interns, it is mandatory to indicate a mentor physician."))
+                raise ValidationError(
+                    _("For interns, it is mandatory to indicate a mentor physician.")
+                )
             if not record.is_intern and record.mentor_id:
-                raise ValidationError(_("Only interns can have a mentor doctor."))
-                
+                raise ValidationError(
+                    _("Only interns can have a mentor doctor.")
+                )
+
     @api.onchange('is_intern')
     def _onchange_is_intern(self):
         if self.is_intern and not self.mentor_id:
-            mentor = self.env['hr.hospital.doctor'].search([('is_intern', '=', False)], limit=1)
+            mentor = self.env['hr.hospital.doctor'].search(
+                [
+                    ('is_intern', '=', False)
+                ],
+                limit=1
+            )
             if mentor:
                 self.mentor_id = mentor.id
 
     def name_get(self):
         result = []
         for rec in self:
-            name = " ".join(filter(None, [rec.last_name, rec.first_name, rec.middle_name]))
+            name = " ".join(
+                filter(
+                    None,
+                    [rec.last_name, rec.first_name, rec.middle_name]
+                )
+            )
             if rec.speciality_id:
                 name = f"{name} ({rec.speciality_id.name})"
             result.append((rec.id, name))
@@ -127,5 +148,3 @@ class Doctor(models.Model):
                 'default_planned_datetime': fields.Datetime.now(),
             }
         }
-
-    

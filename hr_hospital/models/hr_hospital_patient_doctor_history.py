@@ -1,19 +1,20 @@
 from odoo import models, fields, api, _
 
+
 class PatientDoctorHistory(models.Model):
     _name = 'hr.hospital.patient.doctor.history'
     _description = _('History of changes in personal doctors')
 
     name = fields.Char(
-        string=_("Name"), 
-        required=True, 
-        copy=False, 
-        readonly=True, 
+        string=_("Name"),
+        required=True,
+        copy=False,
+        readonly=True,
         default=lambda self: _('New')
     )
 
     active = fields.Boolean(
-        string=_("Active"), 
+        string=_("Active"),
         default=True
     )
     patient_id = fields.Many2one(
@@ -44,7 +45,8 @@ class PatientDoctorHistory(models.Model):
     def create(self, vals_list):
         for vals in vals_list:
             if vals.get('name', _('New')) == _('New'):
-                vals['name'] = self.env['ir.sequence'].next_by_code('hr.hospital.patient.doctor.history') or _('New')
+                vals['name'] = self.env['ir.sequence'] \
+                    .next_by_code('hr.hospital.patient.doctor.history') or _('New')
 
         records = super().create(vals_list)
 
@@ -55,6 +57,10 @@ class PatientDoctorHistory(models.Model):
                     ('active', '=', True),
                     ('id', '!=', record.id),
                 ])
-                prev.write({'active': False, 'change_date': fields.Date.context_today(self)})
+                prev.write(
+                    {
+                        'active': False,
+                        'change_date': fields.Date.context_today(self)
+                    }
+                )
         return records
-    

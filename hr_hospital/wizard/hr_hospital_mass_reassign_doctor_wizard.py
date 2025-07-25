@@ -1,6 +1,7 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
+
 class MassReassignDoctorWizard(models.TransientModel):
     _name = 'hr.hospital.mass.reassign.doctor.wizard'
     _description = _('Mass Doctor Reassignment Wizard')
@@ -34,7 +35,9 @@ class MassReassignDoctorWizard(models.TransientModel):
         if self.old_doctor_id:
             return {
                 'domain': {
-                    'patient_ids': [('personal_doctor_id', '=', self.old_doctor_id.id)]
+                    'patient_ids': [
+                        ('personal_doctor_id', '=', self.old_doctor_id.id)
+                    ]
                 }
             }
         else:

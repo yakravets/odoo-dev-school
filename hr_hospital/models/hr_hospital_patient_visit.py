@@ -1,15 +1,16 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
+
 class PatientVisit(models.Model):
     _name = 'hr.hospital.patient.visit'
     _description = _('Patient visits')
 
     name = fields.Char(
-        string=_("Name"), 
-        required=True, 
-        copy=False, 
-        readonly=True, 
+        string=_("Name"),
+        required=True,
+        copy=False,
+        readonly=True,
         default=lambda self: _('New')
     )
     planned_datetime = fields.Datetime(
@@ -61,7 +62,7 @@ class PatientVisit(models.Model):
         string=_("Recommendations")
     )
     amount = fields.Monetary(
-        string=_("Cost of visit"), 
+        string=_("Cost of visit"),
         currency_field='currency_id'
     )
     currency_id = fields.Many2one(
@@ -75,7 +76,7 @@ class PatientVisit(models.Model):
         store=True
     )
     visit_unit = fields.Integer(
-        string=_("Visit Unit"), 
+        string=_("Visit Unit"),
         default=1
     )
 
@@ -92,32 +93,41 @@ class PatientVisit(models.Model):
                     ('id', '!=', rec.id),
                     ('doctor_id', '=', rec.doctor_id.id),
                     ('patient_id', '=', rec.patient_id.id),
-                    ('planned_datetime', '>=', rec.planned_datetime.replace(hour=0, minute=0, second=0)),
-                    ('planned_datetime', '<', rec.planned_datetime.replace(hour=23, minute=59, second=59)),
+                    ('planned_datetime', '>=', rec.planned_datetime.replace(
+                        hour=0, minute=0, second=0
+                    )),
+                    ('planned_datetime', '<', rec.planned_datetime.replace(
+                        hour=23, minute=59, second=59
+                    )),
                 ]
                 count = self.search_count(domain)
                 if count > 0:
-                    raise ValidationError(_("A patient cannot be scheduled with the same doctor more than once a day."))
+                    raise ValidationError(
+                        _("A patient cannot be scheduled with the same doctor more than once a day.")
+                    )
 
     @api.onchange('patient_id')
     def _onchange_patient_id(self):
         if self.patient_id and self.patient_id.allergies:
+            message = _("The patient has allergies: ") + self.patient_id.allergies
             return {
                 'warning': {
                     'title': _("Attention: patient allergies"),
-                    'message': _("The patient has allergies:" ) + self.patient_id.allergies
+                    'message': message
                 }
             }
 
     @api.model
     def create(self, vals):
         if vals.get('name', _('New')) == _('New'):
-            vals['name'] = self.env['ir.sequence'].next_by_code('hr.hospital.patient.visit') or _('New')
+            vals['name'] = self.env['ir.sequence'] \
+                .next_by_code('hr.hospital.patient.visit') or _('New')
         return super().create(vals)
 
-    
     def unlink(self):
         for rec in self:
             if rec.diagnosis_ids:
-                raise ValidationError(_("You cannot delete a visit for which diagnoses exist."))
+                raise ValidationError(
+                    _("You cannot delete a visit for which diagnoses exist.")
+                )
         return super().unlink()
