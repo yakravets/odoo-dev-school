@@ -36,6 +36,10 @@
                         string="Mass reassign doctors"
                         type="action"
                         class="oe_highlight"/>
+                    <button name="%(action_doctor_report)d" 
+                        string="Doctor Report"
+                        type="action"
+                        class="btn-primary" />
                 </header>
                 <sheet>
                     <group>
@@ -104,22 +108,58 @@
         <field name="arch" type="xml">
             <kanban class="o_kanban_example">
                 <field name="specialization_id"/>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="intern_ids"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_manage_buttons">
+                                <div class="dropdown o_dropdown_kanban">
+                                    <a class="dropdown-toggle btn btn-sm" 
+                                        data-bs-toggle="dropdown" 
+                                        href="#" 
+                                        role="button" 
+                                        aria-haspopup="true" 
+                                        aria-expanded="false">
+                                        <i class="fa fa-bars"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <a type="edit" class="dropdown-item">
+                                            <i class="fa fa-pencil"/> Edit
+                                        </a>
+                                        <a type="delete" class="dropdown-item">
+                                            <i class="fa fa-trash"/> Delete
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="o_kanban_details">
                                 <strong>
                                     <field name="first_name"/> <field name="last_name"/>
-                                </strong><br/>
+                                </strong>
+                                <br/>
                                 <span t-if="record.specialization_id.raw_value">
                                     <field name="specialization_id"/>
                                 </span><br/>
                                 <span>
                                     <field name="phone"/>
                                 </span><br/>
+                                <t t-if="record.intern_ids.raw_value and record.intern_ids.raw_value.length">
+                                    <div class="mt-2">
+                                        <strong>Interns:</strong>
+                                        <ul style="margin: 0; padding-left: 15px;">
+                                            <t t-foreach="record.intern_ids.raw_value" t-as="intern">
+                                                <li>
+                                                    <t t-esc="intern.display_name"/>
+                                                </li>
+                                            </t>
+                                        </ul>
+                                    </div>
+                                </t>
                                 <button type="object" name="action_create_visit_quick"
                                         class="btn btn-primary btn-sm mt-2">
-                                    <i class="fa fa-calendar-plus-o"/> Записати пацієнта
+                                    <i class="fa fa-calendar-plus-o"/> Add Visit
                                 </button>
                             </div>
                         </div>

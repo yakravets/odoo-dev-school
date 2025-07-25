@@ -18,6 +18,8 @@
     'data': [
         'security/ir.model.access.csv',
 
+        'report/report_doctor.xml',
+
         'data/ir_sequence_data.xml',
 
         'wizard/hr_hospital_disease_report_wizard_view.xml',
@@ -31,7 +33,6 @@
         'views/hr_hospital_type_of_disease_view.xml',
         'views/hr_hospital_patient_visit_view.xml',
         'views/hr_hospital_contact_person_view.xml',
-        'views/hr_hospital_doctor_schedule_view.xml',
         'views/hr_hospital_doctor_schedule_view.xml',
         'views/hr_hospital_medical_diagnosis_view.xml',
         'views/hr_hospital_patient_doctor_history_view.xml',
@@ -51,7 +52,7 @@
         'demo/hr_hospital_patient_doctor_history_demo.xml',
     ],
 
-    'instalable': True,
+    'installable': True,
     'auto_install': False,
     'application': True,
 

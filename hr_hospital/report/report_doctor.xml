@@ -1,0 +1,98 @@
+<odoo>
+    <template id="report_doctor_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="text-center">
+                        <h2 t-field="env.company.name"/>
+                        <div t-if="env.company.logo">
+                            <img t-att-src="'data:image/png;base64,%s' % env.company.logo" style="height:80px;"/>
+                        </div>
+                        <p>
+                            <t t-esc="env.company.partner_id.contact_address or env.company.partner_id.street or ''"/>
+                            <br/>
+                            <t t-esc="env.company.phone or ''"/>
+                        </p>
+                        <hr/>
+                    </div>
+                    
+                    <div class="mt-2 mb-2">
+                        <h3>
+                            <strong>
+                                <t t-esc="' '.join(filter(None, [doc.last_name, doc.first_name, doc.middle_name]))"/>
+                            </strong>
+                            (<t t-esc="doc.specialization_id.name"/>)
+                        </h3>
+                    </div>
+
+                    <div class="mb-3">
+                        <h4>Історія візитів</h4>
+                        <ul>
+                            <t t-set="visits" t-value="doc.schedule_ids.sorted(key=lambda v: v.date, reverse=True)"/>
+                            <t t-foreach="visits" t-as="visit">
+                                <li>
+                                    <t t-esc="visit.date.strftime('%d.%m.%Y') if visit.date else ''"/> :
+                                    <t t-esc="('%02d:%02d' % (int(visit.from_time), int((visit.from_time % 1) * 60))) if visit.from_time is not False else ''"/> —
+                                    <t t-esc="('%02d:%02d' % (int(visit.to_time), int((visit.to_time % 1) * 60))) if visit.to_time is not False else ''"/>
+                                    <t t-esc="visit.name or ''"/>
+                                </li>
+                            </t>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4>Список пацієнтів</h4>
+                        <table class="table table-sm table-bordered" style="width:100%; font-size:12px;">
+                            <thead>
+                                <tr>
+                                    <th>ПІБ</th>
+                                    <th>Стать</th>
+                                    <th>Дата народження</th>
+                                    <th>Телефон</th>
+                                    <th>Статус візиту</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="visits" t-value="doc.visit_ids"/>
+                                <t t-foreach="visits" t-as="v">
+                                    <tr>
+                                        <td><t t-esc="v.patient_id.name"/></td>
+                                        <td><t t-esc="v.patient_id.gender"/></td>
+                                        <td><t t-esc="v.patient_id.birth_date.strftime('%d.%m.%Y') if v.patient_id.birth_date else ''"/></td>
+                                        <td><t t-esc="v.patient_id.phone or ''"/></td>
+                                        <td>
+                                            <t t-set="status_color">
+                                                <t t-if="v.status == 'planned'">#fff3cd</t>
+                                                <t t-elif="v.status == 'done'">#d4edda</t>
+                                                <t t-elif="v.status == 'cancel'">#f8d7da</t>
+                                                <t t-else="">transparent</t>
+                                            </t>
+                                            <span t-att-style="'background-color: %s; padding: 2px 5px; display:inline-block;'" t-esc="dict(v._fields['status'].selection).get(v.status)"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="text-right" style="font-size:10px;">
+                        <p>
+                            Дата друку: <t t-esc="datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/><br/>
+                        </p>
+                    </div>
+                </t>
+                <div class="page-break"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_doctor_report" model="ir.actions.report">
+        <field name="name">Doctor Report</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hr_hospital.report_doctor_template</field>
+        <field name="report_file">hr_hospital.report_doctor_template</field>
+        <field name="binding_model_id" ref="hr_hospital.model_hr_hospital_doctor"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

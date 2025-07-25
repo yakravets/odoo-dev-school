@@ -64,6 +64,11 @@ class Doctor(models.Model):
         domain=[('is_intern', '=', True)],
         readonly=True,
     )
+    visit_ids = fields.One2many(
+        comodel_name='hr.hospital.patient.visit',
+        inverse_name='doctor_id',
+        string=_("Work schedule")
+    )
 
     @api.depends('license_issue_date')
     def _compute_work_experience(self):
