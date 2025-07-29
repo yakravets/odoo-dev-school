@@ -1,8 +1,17 @@
+"""
+Wizard for generating or viewing the schedule of a specific doctor.
+"""
+
 from odoo import models, fields, api, _
 from datetime import timedelta
 
 
 class DoctorScheduleWizard(models.TransientModel):
+    """
+    Transient wizard model to assist with viewing
+    or creating doctor schedules.
+    """
+
     _name = 'hr.hospital.doctor.schedule.wizard'
     _description = _('Doctor Schedule Wizard')
 
@@ -67,11 +76,28 @@ class DoctorScheduleWizard(models.TransientModel):
 
     @api.model
     def _float_to_time(self, float_hour):
+        """
+        Convert a float hour (e.g., 13.5) to time string format
+        (e.g., '13:30').
+
+        :param float_hour: Float representation of hours.
+        :return: Time in 'HH:MM' format as a string.
+        """
+
         hours = int(float_hour)
         minutes = int(round((float_hour - hours) * 60))
         return f'{hours:02d}:{minutes:02d}'
 
     def action_generate_schedule(self):
+        """
+        Generate a schedule for a doctor over a specified number of weeks,
+        based on selected weekdays and schedule type (all, even, odd).
+
+        For each selected weekday, creates a schedule record with specified
+        start/end time and break time, adjusting based on whether
+        the week is even or odd.
+        """
+
         schedule = self.env['hr.hospital.schedule']
 
         weekdays = {
@@ -88,7 +114,8 @@ class DoctorScheduleWizard(models.TransientModel):
         for week in range(self.week_count):
             for day_offset in range(7):
                 day = current_date + timedelta(days=day_offset + week * 7)
-                weekday = day.weekday()  # 0 = Monday
+                # 0 is Monday.
+                weekday = day.weekday()
                 is_even = ((day.isocalendar()[1] % 2) == 0)
 
                 if weekdays.get(weekday):

@@ -1,8 +1,12 @@
+"""Defines the model for recording hospital patient visits."""
+
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 
 class PatientVisit(models.Model):
+    """Model representing individual visits of a patient to the hospital."""
+
     _name = 'hr.hospital.patient.visit'
     _description = _('Patient visits')
 
@@ -103,13 +107,15 @@ class PatientVisit(models.Model):
                 count = self.search_count(domain)
                 if count > 0:
                     raise ValidationError(
-                        _("A patient cannot be scheduled with the same doctor more than once a day.")
+                        _("A patient cannot be scheduled with the"
+                            " same doctor more than once a day.")
                     )
 
     @api.onchange('patient_id')
     def _onchange_patient_id(self):
         if self.patient_id and self.patient_id.allergies:
-            message = _("The patient has allergies: ") + self.patient_id.allergies
+            message = _("The patient has allergies: %s") \
+                % self.patient_id.allergies
             return {
                 'warning': {
                     'title': _("Attention: patient allergies"),
@@ -117,17 +123,23 @@ class PatientVisit(models.Model):
                 }
             }
 
+        return None
+
     @api.model
     def create(self, vals):
         if vals.get('name', _('New')) == _('New'):
-            vals['name'] = self.env['ir.sequence'] \
-                .next_by_code('hr.hospital.patient.visit') or _('New')
+            vals['name'] = (
+                self.env['ir.sequence']
+                .next_by_code('hr.hospital.patient.visit')
+                or _('New')
+            )
         return super().create(vals)
 
     def unlink(self):
         for rec in self:
             if rec.diagnosis_ids:
                 raise ValidationError(
-                    _("You cannot delete a visit for which diagnoses exist.")
+                    _("You cannot delete a visit for"
+                        " which diagnoses exist.")
                 )
         return super().unlink()

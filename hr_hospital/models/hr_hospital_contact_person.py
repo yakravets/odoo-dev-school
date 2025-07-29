@@ -1,9 +1,13 @@
+"""Contact person model for HR Hospital module."""
+
 from odoo import models, fields, _
 
 
 class ContactPerson(models.Model):
+    """Contact model that stores common personal info for patients linking."""
+
     _name = 'hr.hospital.contact.person'
-    _description = _('Contact Person')
+    _description = 'Contact Person'
     _inherit = 'hr.hospital.abstract.person'
 
     type = fields.Selection(

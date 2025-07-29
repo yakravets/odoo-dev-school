@@ -5,8 +5,10 @@
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <search string="Doctors Search">
-                <filter name="mentors" string="Only mentors" domain="[('is_intern','=',False)]"/>
-                <filter name="interns" string="Only interns" domain="[('is_intern','=',True)]"/>
+                <filter name="mentors" string="Only mentors" 
+                    domain="[('is_intern','=',False)]"/>
+                <filter name="interns" string="Only interns" 
+                    domain="[('is_intern','=',True)]"/>
             </search>
         </field>
     </record>
@@ -16,12 +18,20 @@
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <list string="Doctors">
+                <header>
+                    <button name="%(action_mass_reassign_doctor_wizard)d"
+                            string="Mass reassign doctors"
+                            type="action"
+                            class="oe_highlight"
+                            display="always"/>
+                </header>
                 <field name="name"/>
                 <field name="specialization_id"/>
                 <field name="phone"/>
                 <field name="email"/>
                 <field name="is_intern"/>
                 <field name="mentor_id"/>
+                <field name="active" invisible="1"/>
             </list>
         </field>
     </record>
@@ -31,11 +41,7 @@
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <form string="Doctor">
-                <header>
-                    <button name="%(action_mass_reassign_doctor_wizard)d"
-                        string="Mass reassign doctors"
-                        type="action"
-                        class="oe_highlight"/>
+                <header>                    
                     <button name="%(action_doctor_report)d" 
                         string="Doctor Report"
                         type="action"
@@ -44,6 +50,7 @@
                 <sheet>
                     <group>
                         <group>
+                            <field name="active" invisible="1"/>
                             <field name="first_name"/>
                             <field name="last_name"/>
                             <field name="middle_name"/>                        
@@ -62,7 +69,7 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Дані лікаря">
+                        <page string="Doctor details">
                             <group>
                                 <field name="specialization_id"/>
                                 <field name="education_country_id"/>
@@ -74,22 +81,21 @@
                             </group>
                         </page>
                         <page string="Interns">
-                            <field name="intern_ids" nolabel="1" context="{'default_mentor_id': id}">
+                            <field name="intern_ids" nolabel="1" 
+                                    context="{'default_mentor_id': id}">
                                 <kanban>
                                     <templates>
                                         <t t-name="kanban-box">
-                                            <div class="oe_kanban_global_click o_kanban_record">
-                                                <div>
-                                                    <strong>
-                                                        <field name="name"/>                                                        
-                                                    </strong>
-                                                </div>
-                                                <div>
-                                                    <field name="license_number"/>
-                                                </div>
-                                                <div>
-                                                    <field name="rating"/>
-                                                </div>
+                                            <div>
+                                                <strong>
+                                                    <field name="name"/>                                                        
+                                                </strong>
+                                            </div>
+                                            <div>
+                                                <field name="license_number"/>
+                                            </div>
+                                            <div>
+                                                <field name="rating"/>
                                             </div>
                                         </t>
                                     </templates>
@@ -112,57 +118,48 @@
                 <field name="last_name"/>
                 <field name="intern_ids"/>
                 <templates>
-                    <t t-name="kanban-box">
-                        <div class="oe_kanban_card oe_kanban_global_click">
-                            <div class="o_kanban_manage_buttons">
-                                <div class="dropdown o_dropdown_kanban">
-                                    <a class="dropdown-toggle btn btn-sm" 
-                                        data-bs-toggle="dropdown" 
-                                        href="#" 
-                                        role="button" 
-                                        aria-haspopup="true" 
-                                        aria-expanded="false">
-                                        <i class="fa fa-bars"/>
-                                    </a>
-                                    <div class="dropdown-menu" role="menu">
+                    <t t-name="menu">
+                        <div class="container">
+                            <div class="row">
+                                <div name="card_menu_view" class="col-6">
+                                    <div role="menuitem">
                                         <a type="edit" class="dropdown-item">
                                             <i class="fa fa-pencil"/> Edit
                                         </a>
+                                    </div>
+                                </div>
+                                <div name="card_menu_view" class="col-6">
+                                    <div role="menuitem">
                                         <a type="delete" class="dropdown-item">
                                             <i class="fa fa-trash"/> Delete
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="o_kanban_details">
-                                <strong>
-                                    <field name="first_name"/> <field name="last_name"/>
-                                </strong>
-                                <br/>
-                                <span t-if="record.specialization_id.raw_value">
-                                    <field name="specialization_id"/>
-                                </span><br/>
-                                <span>
-                                    <field name="phone"/>
-                                </span><br/>
-                                <t t-if="record.intern_ids.raw_value and record.intern_ids.raw_value.length">
-                                    <div class="mt-2">
-                                        <strong>Interns:</strong>
-                                        <ul style="margin: 0; padding-left: 15px;">
-                                            <t t-foreach="record.intern_ids.raw_value" t-as="intern">
-                                                <li>
-                                                    <t t-esc="intern.display_name"/>
-                                                </li>
-                                            </t>
-                                        </ul>
-                                    </div>
-                                </t>
-                                <button type="object" name="action_create_visit_quick"
-                                        class="btn btn-primary btn-sm mt-2">
-                                    <i class="fa fa-calendar-plus-o"/> Add Visit
-                                </button>
-                            </div>
                         </div>
+                    </t>
+                    <t t-name="card">
+                        <field name="active" invisible="1"/>
+                        <strong>
+                            <field name="first_name"/> <field name="last_name"/>
+                        </strong>
+                        <br/>
+                        <span t-if="record.specialization_id.raw_value">
+                            <field name="specialization_id"/>
+                        </span><br/>
+                        <span>
+                            <field name="phone"/>
+                        </span><br/>
+                        <t t-if="record.intern_ids.rawv_value and record.intern_ids.raw_value.length">
+                            <div class="mt-2">
+                                <strong>Interns:</strong>
+                                <field name="intern_ids" widget="many2many_tags"/>
+                            </div>
+                        </t>
+                        <button type="object" name="action_create_visit_quick"
+                                class="btn btn-primary btn-sm mt-2">
+                            <i class="fa fa-calendar-plus-o"/> Add Visit
+                        </button>
                     </t>
                 </templates>
             </kanban>

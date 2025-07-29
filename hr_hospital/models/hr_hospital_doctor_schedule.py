@@ -1,11 +1,16 @@
+"""Doctor schedule model for the hr_hospital module."""
+
 from odoo import models, fields, api, _
 
 
 class DoctorSchedule(models.Model):
+    """Model representing the schedule of a doctor."""
+
     _name = 'hr.hospital.doctor.schedule'
-    _description = _('Doctor\'s schedule')
+    _description = _('Doctor schedule')
     _sql_constraints = [
-        ('check_time', 'CHECK(to_time > from_time)', _('The end time must be after the start time!')),
+        ('check_time', 'CHECK(to_time > from_time)',
+            _('The end time must be after the start time!')),
     ]
 
     name = fields.Char(

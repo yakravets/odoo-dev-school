@@ -3,14 +3,14 @@
     <field name="name">hr.hospital.doctor.schedule.wizard.form</field>
     <field name="model">hr.hospital.doctor.schedule.wizard</field>
     <field name="arch" type="xml">
-      <form string="Генерація розкладу лікаря">
+      <form string="Doctor schedule generation">
         <group>
           <field name="doctor_id"/>
           <field name="date_start"/>
           <field name="week_count"/>
           <field name="schedule_type"/>
         </group>
-        <group string="Дні тижня">
+        <group string="Days of the week">
           <field name="monday"/>
           <field name="tuesday"/>
           <field name="wednesday"/>
@@ -19,23 +19,30 @@
           <field name="saturday"/>
           <field name="sunday"/>
         </group>
-        <group string="Час">
+        <group string="Time">
           <field name="time_start"/>
           <field name="time_end"/>
           <field name="break_from"/>
           <field name="break_to"/>
         </group>
         <footer>
-          <button string="Створити розклад" type="object" name="action_generate_schedule" class="btn-primary"/>
-          <button string="Скасувати" class="btn-secondary" special="cancel"/>
+          <button string="Create a schedule" 
+            type="object" 
+            name="action_generate_schedule" 
+            class="btn-primary"/>
+          <button string="Cancel"
+            class="btn-secondary" 
+            special="cancel"/>
         </footer>
       </form>
     </field>
   </record>
 
-  <act_window id="hr_hospital_doctor_schedule_wizard_action"
-              name="Генерація розкладу лікаря"
-              res_model="doctor.schedule.wizard"
-              view_mode="form"
-              target="new"/>
+  <record id="action_hr_hospital_doctor_schedule_wizard" model="ir.actions.act_window">
+      <field name="name">Report of diseases</field>
+      <field name="res_model">hr.hospital.disease.report.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+  </record>
+
 </odoo>

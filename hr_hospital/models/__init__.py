@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-
 from . import hr_hospital_abstract_person
 from . import hr_hospital_contact_person
 from . import hr_hospital_doctor_schedule

@@ -1,16 +1,23 @@
+"""Doctor model for HR Hospital module."""
+
+from datetime import date
+
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
-from datetime import date
 
 
 class Doctor(models.Model):
+    """Represents a doctor in the hospital system."""
+
     _name = 'hr.hospital.doctor'
-    _description = _('Doctor')
+    _description = 'Doctor'
     _inherit = 'hr.hospital.abstract.person'
 
     _sql_constraints = [
-        ('unique_license_number', 'unique(license_number)', _('The license number must be unique!')),
-        ('check_rating_range', 'CHECK(rating >= 0.00 AND rating <= 5.00)', _('The rating must be from 0.00 to 5.00!')),
+        ('unique_license_number', 'unique(license_number)',
+            _('The license number must be unique!')),
+        ('check_rating_range', 'CHECK(rating >= 0.00 AND rating <= 5.00)',
+            _('The rating must be from 0.00 to 5.00!')),
     ]
 
     user_id = fields.Many2one(
@@ -73,14 +80,12 @@ class Doctor(models.Model):
     @api.depends('license_issue_date')
     def _compute_work_experience(self):
         today = date.today()
-        for rec in self:
-            if rec.license_issue_date:
-                exp = today.year - rec.license_issue_date.year - (
-                    (today.month, today.day) < (rec.license_issue_date.month, rec.license_issue_date.day)
-                )
-                rec.work_experience = max(0, exp)
+        for record in self:
+            if record.license_issue_date:
+                experience = _calculate_work_experience(record, today)
+                record.work_experience = max(0, experience)
             else:
-                rec.work_experience = 0
+                record.work_experience = 0
 
     @api.constrains('mentor_id')
     def _check_mentor_is_not_intern(self):
@@ -97,7 +102,10 @@ class Doctor(models.Model):
                 raise ValidationError(
                     _("The rating must be between 0.00 and 5.00.")
                 )
-            if record.mentor_id and record.id and record.mentor_id.id == record.id:
+            if record.mentor_id \
+                    and record.id \
+                    and record.mentor_id.id == record.id:
+
                 raise ValidationError(
                     _("A doctor cannot be his own mentor.")
                 )
@@ -107,7 +115,8 @@ class Doctor(models.Model):
         for record in self:
             if record.is_intern and not record.mentor_id:
                 raise ValidationError(
-                    _("For interns, it is mandatory to indicate a mentor physician.")
+                    _("For interns, it is mandatory to indicate"
+                        " a mentor physician.")
                 )
             if not record.is_intern and record.mentor_id:
                 raise ValidationError(
@@ -126,21 +135,17 @@ class Doctor(models.Model):
             if mentor:
                 self.mentor_id = mentor.id
 
-    def name_get(self):
-        result = []
-        for rec in self:
-            name = " ".join(
-                filter(
-                    None,
-                    [rec.last_name, rec.first_name, rec.middle_name]
-                )
-            )
-            if rec.speciality_id:
-                name = f"{name} ({rec.speciality_id.name})"
-            result.append((rec.id, name))
-        return result
-
     def action_create_visit_quick(self):
+        """
+        Open a form view to quickly create a new patient visit.
+
+        Ensures the method is called on a single record and returns an action
+        dictionary to open a modal form for 'hr.hospital.patient.visit',
+        pre-filling the doctor and planned datetime fields.
+
+        Returns:
+            dict: Odoo action to open the patient visit form view as a popup.
+        """
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
@@ -153,3 +158,14 @@ class Doctor(models.Model):
                 'default_planned_datetime': fields.Datetime.now(),
             }
         }
+
+
+def _calculate_work_experience(record, today):
+    return (
+        today.year
+        - record.license_issue_date.year
+        - (
+            (today.month, today.day)
+            < (record.license_issue_date.month, record.license_issue_date.day)
+        )
+    )

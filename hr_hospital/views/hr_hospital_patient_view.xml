@@ -16,6 +16,13 @@
         <field name="model">hr.hospital.patient</field>
         <field name="arch" type="xml">
             <list string="Patients">
+                <header>
+                    <button name="%(action_hr_hospital_patient_card_export_wizard)d"
+                        string="Export card"
+                        type="action"
+                        class="oe_highlight"
+                        display="always"/>
+                </header>
                 <field name="name"/>
                 <field name="phone"/>
                 <field name="birth_date"/>
@@ -51,6 +58,7 @@
                             <field name="birth_date"/>
                             <field name="age"/>
                             <field name="gender"/>
+                            <field name="partner_id"/>
                         </group>
                         <group>
                             <field name="email"/>
@@ -111,7 +119,7 @@
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create first patients!
+                Create first patient!
             </p>
         </field>
     </record> 

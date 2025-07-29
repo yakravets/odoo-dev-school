@@ -1,7 +1,14 @@
+"""
+Defines the model for medical specializations
+used in the hospital system.
+"""
+
 from odoo import models, fields, _
 
 
 class Specialization(models.Model):
+    """Represents a medical specialization (e.g. cardiology, neurology)."""
+
     _name = 'hr.hospital.specialization'
     _description = _('Specializations')
 

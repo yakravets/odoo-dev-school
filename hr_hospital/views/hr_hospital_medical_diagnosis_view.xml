@@ -1,10 +1,10 @@
 <odoo>
 
     <record id="hr_hospital_medical_diagnosis_view_list" model="ir.ui.view">
-        <field name="name">Діагноз</field>
+        <field name="name">Diagnosis</field>
         <field name="model">hr.hospital.medical.diagnosis</field>
         <field name="arch" type="xml">
-            <list string="Розклад лікаря">
+            <list>
                 <field name="name"/>
                 <field name="visit_id"/>
                 <field name="disease_id"/>
@@ -15,10 +15,10 @@
     </record>
 
     <record id="hr_hospital_medical_diagnosis_view_form" model="ir.ui.view">
-        <field name="name">Діагноз</field>
+        <field name="name">Diagnosis</field>
         <field name="model">hr.hospital.medical.diagnosis</field>
         <field name="arch" type="xml">
-            <form string="Діагноз">
+            <form string="Diagnosis">
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -42,10 +42,10 @@
         <field name="name">hr.hospital.medical.diagnosis.pivot</field>
         <field name="model">hr.hospital.medical.diagnosis</field>
         <field name="arch" type="xml">
-            <pivot string="Diagnoses Analysis">
+            <pivot string="Diagnosis Analysis">
                 <field name="disease_id" type="row"/>
                 <field name="approved_date" interval="month" type="col"/>
-                <field name="diagnosis_unit" type="measure" string="Diagnoses Count"/>
+                <field name="diagnosis_unit" type="measure" string="Diagnosis Count"/>
             </pivot>
         </field>
     </record>
@@ -69,7 +69,7 @@
         <field name="view_id" ref="hr_hospital_medical_diagnosis_view_list"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Записи про діагнози відсутні, створіть перший діагноз!
+                There are no diagnosis records, create your first diagnosis!
             </p>
         </field>
     </record>

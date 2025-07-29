@@ -1,11 +1,25 @@
-from odoo import models, fields, api, _
+"""
+Wizard for exporting patient cards data.
+
+Provides functionality to export patient card information
+in different formats such as CSV or JSON.
+"""
+
 import json
 import csv
 import io
 import base64
+from odoo import models, fields, api, _
 
 
 class PatientCardExportWizard(models.TransientModel):
+    """
+    Transient wizard model to export patient card data.
+
+    Allows the user to select export format and generates
+    the corresponding file with patient card details.
+    """
+
     _name = 'hr.hospital.patient.card.export.wizard'
     _description = _('Patient Card Export Wizard')
 
@@ -83,6 +97,18 @@ class PatientCardExportWizard(models.TransientModel):
         return data
 
     def action_export(self):
+        """
+        Generate and prepare the export file for the patient card.
+
+        Depending on the selected export format ('json' or 'csv'),
+        this method fetches the patient data, formats it accordingly,
+        encodes the result to base64, and sets the export
+        file and filename fields.
+
+        Returns an action to display the wizard form with
+        the generated file ready for download.
+        """
+
         data = self._get_data()
         if self.export_format == 'json':
             file_content = json.dumps(data, ensure_ascii=False, indent=2)

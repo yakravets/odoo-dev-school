@@ -4,7 +4,7 @@
         <field name="name">hr.hospital.patient.doctor.history</field>
         <field name="model">hr.hospital.patient.doctor.history</field>
         <field name="arch" type="xml">
-            <list string="Історія лікаря пацієнта">
+            <list string="Patient doctor history">
                 <field name="name"/>
                 <field name="patient_id"/>
                 <field name="doctor_id"/>
@@ -17,7 +17,7 @@
         <field name="name">hr.hospital.patient.doctor.history.form</field>
         <field name="model">hr.hospital.patient.doctor.history</field>
         <field name="arch" type="xml">
-            <form string="Історія лікаря пацієнта">
+            <form string="Patient doctor history">
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -33,13 +33,13 @@
     </record>
 
     <record id="hr_hospital_patient_doctor_history_action" model="ir.actions.act_window">
-        <field name="name">Історія змін персонального лікаря пацієнта</field>
+        <field name="name">History of changes to the patient's personal doctor</field>
         <field name="res_model">hr.hospital.patient.doctor.history</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" ref="hr_hospital_patient_doctor_history_view_list"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Створіть перший запис історії лікаря пацієнта!
+                Create the first patient doctor history record!
             </p>
         </field>
     </record>

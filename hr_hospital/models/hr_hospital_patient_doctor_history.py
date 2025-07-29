@@ -1,7 +1,16 @@
+"""
+Model for storing the history of changes in
+assigned personal doctors for hospital patients.
+"""
+
 from odoo import models, fields, api, _
 
 
 class PatientDoctorHistory(models.Model):
+    """
+    Stores historical records of personal doctor changes for a patient.
+    """
+
     _name = 'hr.hospital.patient.doctor.history'
     _description = _('History of changes in personal doctors')
 
@@ -45,8 +54,11 @@ class PatientDoctorHistory(models.Model):
     def create(self, vals_list):
         for vals in vals_list:
             if vals.get('name', _('New')) == _('New'):
-                vals['name'] = self.env['ir.sequence'] \
-                    .next_by_code('hr.hospital.patient.doctor.history') or _('New')
+                vals['name'] = (
+                    self.env['ir.sequence']
+                    .next_by_code('hr.hospital.patient.doctor.history')
+                    or _('New')
+                )
 
         records = super().create(vals_list)
 
@@ -57,10 +69,9 @@ class PatientDoctorHistory(models.Model):
                     ('active', '=', True),
                     ('id', '!=', record.id),
                 ])
-                prev.write(
-                    {
-                        'active': False,
-                        'change_date': fields.Date.context_today(self)
-                    }
-                )
+                prev.write({
+                    'active': False,
+                    'change_date': fields.Date.context_today(self),
+                })
+
         return records

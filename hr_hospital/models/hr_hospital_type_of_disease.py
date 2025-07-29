@@ -1,13 +1,18 @@
+"""Defines the model for types of diseases used in the hospital system."""
+
 from odoo import models, fields, _
 
 
 class TypeOfDisease(models.Model):
+    """Represents a type or category of disease."""
+
     _name = 'hr.hospital.type.of.disease'
     _description = _('Disease')
 
     name = fields.Char(
         string=_('Name'),
-        required=True
+        required=True,
+        translate=True
     )
     active = fields.Boolean(
         string=_('Active'),
@@ -50,7 +55,8 @@ class TypeOfDisease(models.Model):
         string=_("Contagious")
     )
     symptoms = fields.Text(
-        string=_("Symptoms")
+        string=_("Symptoms"),
+        translate=True
     )
     region_ids = fields.Many2many(
         comodel_name='res.country',

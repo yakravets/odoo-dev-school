@@ -1,153 +1,155 @@
 <odoo>
-    <!-- Грип (parent, top-level) -->
-    <record id="disease_flu" model="hr.hospital.type.of.disease">
-        <field name="name">Грип</field>
-        <field name="active">1</field>
-        <field name="severity">moderate</field>
-        <field name="icd10_code">J10</field>
-        <field name="danger_level">medium</field>
-        <field name="is_contagious">1</field>
-        <field name="symptoms">Температура, головний біль, слабкість, кашель</field>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.uk'))]"/>
-    </record>
-    <!-- Грип типу А (child of flu) -->
-    <record id="disease_flu_a" model="hr.hospital.type.of.disease">
-        <field name="name">Грип типу А</field>
-        <field name="active">1</field>
-        <field name="severity">severe</field>
-        <field name="icd10_code">J10.0</field>
-        <field name="danger_level">high</field>
-        <field name="is_contagious">1</field>
-        <field name="symptoms">Висока температура, сильний біль у м'язах, ломота, кашель</field>
-        <field name="parent_id" ref="disease_flu"/>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.uk'))]"/>
-    </record>
-    <!-- Грип типу B (child of flu) -->
-    <record id="disease_flu_b" model="hr.hospital.type.of.disease">
-        <field name="name">Грип типу B</field>
-        <field name="active">1</field>
-        <field name="severity">moderate</field>
-        <field name="icd10_code">J10.1</field>
-        <field name="danger_level">medium</field>
-        <field name="is_contagious">1</field>
-        <field name="symptoms">Слабкість, нежить, кашель</field>
-        <field name="parent_id" ref="disease_flu"/>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.fr'))]"/>
-    </record>
-    <!-- Коронавірусна інфекція (parent, top-level) -->
-    <record id="disease_covid19" model="hr.hospital.type.of.disease">
-        <field name="name">COVID-19</field>
-        <field name="active">1</field>
-        <field name="severity">severe</field>
-        <field name="icd10_code">U07.1</field>
-        <field name="danger_level">critical</field>
-        <field name="is_contagious">1</field>
-        <field name="symptoms">Лихоманка, кашель, втрата нюху, слабкість</field>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.us')), (4, ref('base.cn'))]"/>
-    </record>
-    <!-- Дельта-штам COVID-19 (child of covid19) -->
-    <record id="disease_covid19_delta" model="hr.hospital.type.of.disease">
-        <field name="name">COVID-19 Дельта</field>
-        <field name="active">1</field>
-        <field name="severity">severe</field>
-        <field name="icd10_code">U07.1D</field>
-        <field name="danger_level">critical</field>
-        <field name="is_contagious">1</field>
-        <field name="symptoms">Висока температура, задишка, біль у грудях</field>
-        <field name="parent_id" ref="disease_covid19"/>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.in'))]"/>
-    </record>
-    <!-- Омікрон-штам COVID-19 (child of covid19) -->
-    <record id="disease_covid19_omicron" model="hr.hospital.type.of.disease">
-        <field name="name">COVID-19 Омікрон</field>
-        <field name="active">1</field>
-        <field name="severity">moderate</field>
-        <field name="icd10_code">U07.1O</field>
-        <field name="danger_level">high</field>
-        <field name="is_contagious">1</field>
-        <field name="symptoms">Кашель, нежить, біль у горлі</field>
-        <field name="parent_id" ref="disease_covid19"/>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.us')), (4, ref('base.de'))]"/>
-    </record>
-    <!-- Пневмонія (parent, top-level) -->
-    <record id="disease_pneumonia" model="hr.hospital.type.of.disease">
-        <field name="name">Пневмонія</field>
-        <field name="active">1</field>
-        <field name="severity">severe</field>
-        <field name="icd10_code">J18</field>
-        <field name="danger_level">high</field>
-        <field name="is_contagious">1</field>
-        <field name="symptoms">Висока температура, кашель з мокротою, біль у грудях</field>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.cn')), (4, ref('base.ru'))]"/>
-    </record>
-    <!-- Бактеріальна пневмонія (child of pneumonia) -->
-    <record id="disease_pneumonia_bacterial" model="hr.hospital.type.of.disease">
-        <field name="name">Бактеріальна пневмонія</field>
-        <field name="active">1</field>
-        <field name="severity">severe</field>
-        <field name="icd10_code">J15</field>
-        <field name="danger_level">high</field>
-        <field name="is_contagious">1</field>
-        <field name="symptoms">Висока температура, гнійна мокрота</field>
-        <field name="parent_id" ref="disease_pneumonia"/>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.cn'))]"/>
-    </record>
-    <!-- Вірусна пневмонія (child of pneumonia) -->
-    <record id="disease_pneumonia_viral" model="hr.hospital.type.of.disease">
-        <field name="name">Вірусна пневмонія</field>
-        <field name="active">1</field>
-        <field name="severity">moderate</field>
-        <field name="icd10_code">J12</field>
-        <field name="danger_level">medium</field>
-        <field name="is_contagious">1</field>
-        <field name="symptoms">Кашель, температура, м'язовий біль</field>
-        <field name="parent_id" ref="disease_pneumonia"/>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.ru'))]"/>
-    </record>
-    <!-- Алергічний риніт (top-level) -->
-    <record id="disease_allergic_rhinitis" model="hr.hospital.type.of.disease">
-        <field name="name">Алергічний риніт</field>
-        <field name="active">1</field>
-        <field name="severity">mild</field>
-        <field name="icd10_code">J30</field>
-        <field name="danger_level">low</field>
-        <field name="is_contagious">0</field>
-        <field name="symptoms">Чхання, свербіж у носі, сльозотеча</field>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.fr'))]"/>
-    </record>
-    <!-- Хронічний алергічний риніт (child of allergic rhinitis) -->
-    <record id="disease_chronic_allergic_rhinitis" model="hr.hospital.type.of.disease">
-        <field name="name">Хронічний алергічний риніт</field>
-        <field name="active">1</field>
-        <field name="severity">mild</field>
-        <field name="icd10_code">J30.1</field>
-        <field name="danger_level">low</field>
-        <field name="is_contagious">0</field>
-        <field name="symptoms">Постійний нежить, закладеність носа</field>
-        <field name="parent_id" ref="disease_allergic_rhinitis"/>
-        <field name="region_ids" eval="[(4, ref('base.ua'))]"/>
-    </record>
-    <!-- Діабет (top-level) -->
-    <record id="disease_diabetes" model="hr.hospital.type.of.disease">
-        <field name="name">Діабет</field>
-        <field name="active">1</field>
-        <field name="severity">moderate</field>
-        <field name="icd10_code">E10-E14</field>
-        <field name="danger_level">high</field>
-        <field name="is_contagious">0</field>
-        <field name="symptoms">Спрага, часте сечовипускання, втрата ваги</field>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.us')), (4, ref('base.in'))]"/>
-    </record>
-    <!-- Діабет 1 типу (child of diabetes) -->
-    <record id="disease_diabetes_1" model="hr.hospital.type.of.disease">
-        <field name="name">Діабет 1 типу</field>
-        <field name="active">1</field>
-        <field name="severity">moderate</field>
-        <field name="icd10_code">E10</field>
-        <field name="danger_level">high</field>
-        <field name="is_contagious">0</field>
-        <field name="symptoms">Слабкість, втрата ваги, підвищена спрага</field>
-        <field name="parent_id" ref="disease_diabetes"/>
-        <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.in'))]"/>
-    </record>
+    <data noupdate="1">
+        <!-- Flu (parent, top-level) -->
+        <record id="disease_flu" model="hr.hospital.type.of.disease">
+            <field name="name">Flu</field>
+            <field name="active">1</field>
+            <field name="severity">moderate</field>
+            <field name="icd10_code">J10</field>
+            <field name="danger_level">medium</field>
+            <field name="is_contagious">1</field>
+            <field name="symptoms">Fever, headache, weakness, cough</field>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.uk'))]"/>
+        </record>
+        <!-- Flu type A (child of flu) -->
+        <record id="disease_flu_a" model="hr.hospital.type.of.disease">
+            <field name="name">Flu type A</field>
+            <field name="active">1</field>
+            <field name="severity">severe</field>
+            <field name="icd10_code">J10.0</field>
+            <field name="danger_level">high</field>
+            <field name="is_contagious">1</field>
+            <field name="symptoms">High fever, severe muscle pain, aches, cough</field>
+            <field name="parent_id" ref="disease_flu"/>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.uk'))]"/>
+        </record>
+        <!-- Flu type B (child of flu) -->
+        <record id="disease_flu_b" model="hr.hospital.type.of.disease">
+            <field name="name">Flu type B</field>
+            <field name="active">1</field>
+            <field name="severity">moderate</field>
+            <field name="icd10_code">J10.1</field>
+            <field name="danger_level">medium</field>
+            <field name="is_contagious">1</field>
+            <field name="symptoms">Weakness, runny nose, cough</field>
+            <field name="parent_id" ref="disease_flu"/>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.fr'))]"/>
+        </record>
+        <!-- COVID-19 (parent, top-level) -->
+        <record id="disease_covid19" model="hr.hospital.type.of.disease">
+            <field name="name">COVID-19</field>
+            <field name="active">1</field>
+            <field name="severity">severe</field>
+            <field name="icd10_code">U07.1</field>
+            <field name="danger_level">critical</field>
+            <field name="is_contagious">1</field>
+            <field name="symptoms">Fever, cough, loss of smell, weakness</field>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.us')), (4, ref('base.cn'))]"/>
+        </record>
+        <!-- COVID-19 Delta strain (child of covid19) -->
+        <record id="disease_covid19_delta" model="hr.hospital.type.of.disease">
+            <field name="name">COVID-19 Delta</field>
+            <field name="active">1</field>
+            <field name="severity">severe</field>
+            <field name="icd10_code">U07.1D</field>
+            <field name="danger_level">critical</field>
+            <field name="is_contagious">1</field>
+            <field name="symptoms">High fever, shortness of breath, chest pain</field>
+            <field name="parent_id" ref="disease_covid19"/>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.in'))]"/>
+        </record>
+        <!-- COVID-19 Omicron strain (child of covid19) -->
+        <record id="disease_covid19_omicron" model="hr.hospital.type.of.disease">
+            <field name="name">COVID-19 Omicron</field>
+            <field name="active">1</field>
+            <field name="severity">moderate</field>
+            <field name="icd10_code">U07.1O</field>
+            <field name="danger_level">high</field>
+            <field name="is_contagious">1</field>
+            <field name="symptoms">Cough, runny nose, sore throat</field>
+            <field name="parent_id" ref="disease_covid19"/>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.us')), (4, ref('base.de'))]"/>
+        </record>
+        <!-- Pneumonia (parent, top-level) -->
+        <record id="disease_pneumonia" model="hr.hospital.type.of.disease">
+            <field name="name">Pneumonia</field>
+            <field name="active">1</field>
+            <field name="severity">severe</field>
+            <field name="icd10_code">J18</field>
+            <field name="danger_level">high</field>
+            <field name="is_contagious">1</field>
+            <field name="symptoms">High fever, productive cough, chest pain</field>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.cn')), (4, ref('base.ru'))]"/>
+        </record>
+        <!-- Bacterial pneumonia (child of pneumonia) -->
+        <record id="disease_pneumonia_bacterial" model="hr.hospital.type.of.disease">
+            <field name="name">Bacterial pneumonia</field>
+            <field name="active">1</field>
+            <field name="severity">severe</field>
+            <field name="icd10_code">J15</field>
+            <field name="danger_level">high</field>
+            <field name="is_contagious">1</field>
+            <field name="symptoms">High fever, purulent sputum</field>
+            <field name="parent_id" ref="disease_pneumonia"/>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.cn'))]"/>
+        </record>
+        <!-- Viral pneumonia (child of pneumonia) -->
+        <record id="disease_pneumonia_viral" model="hr.hospital.type.of.disease">
+            <field name="name">Viral pneumonia</field>
+            <field name="active">1</field>
+            <field name="severity">moderate</field>
+            <field name="icd10_code">J12</field>
+            <field name="danger_level">medium</field>
+            <field name="is_contagious">1</field>
+            <field name="symptoms">Cough, fever, muscle pain</field>
+            <field name="parent_id" ref="disease_pneumonia"/>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.ru'))]"/>
+        </record>
+        <!-- Allergic rhinitis (top-level) -->
+        <record id="disease_allergic_rhinitis" model="hr.hospital.type.of.disease">
+            <field name="name">Allergic rhinitis</field>
+            <field name="active">1</field>
+            <field name="severity">mild</field>
+            <field name="icd10_code">J30</field>
+            <field name="danger_level">low</field>
+            <field name="is_contagious">0</field>
+            <field name="symptoms">Sneezing, nasal itching, tearing</field>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.fr'))]"/>
+        </record>
+        <!-- Chronic allergic rhinitis (child of allergic rhinitis) -->
+        <record id="disease_chronic_allergic_rhinitis" model="hr.hospital.type.of.disease">
+            <field name="name">Chronic allergic rhinitis</field>
+            <field name="active">1</field>
+            <field name="severity">mild</field>
+            <field name="icd10_code">J30.1</field>
+            <field name="danger_level">low</field>
+            <field name="is_contagious">0</field>
+            <field name="symptoms">Persistent runny nose, nasal congestion</field>
+            <field name="parent_id" ref="disease_allergic_rhinitis"/>
+            <field name="region_ids" eval="[(4, ref('base.ua'))]"/>
+        </record>
+        <!-- Diabetes (top-level) -->
+        <record id="disease_diabetes" model="hr.hospital.type.of.disease">
+            <field name="name">Diabetes</field>
+            <field name="active">1</field>
+            <field name="severity">moderate</field>
+            <field name="icd10_code">E10-E14</field>
+            <field name="danger_level">high</field>
+            <field name="is_contagious">0</field>
+            <field name="symptoms">Thirst, frequent urination, weight loss</field>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.us')), (4, ref('base.in'))]"/>
+        </record>
+        <!-- Diabetes type 1 (child of diabetes) -->
+        <record id="disease_diabetes_1" model="hr.hospital.type.of.disease">
+            <field name="name">Diabetes type 1</field>
+            <field name="active">1</field>
+            <field name="severity">moderate</field>
+            <field name="icd10_code">E10</field>
+            <field name="danger_level">high</field>
+            <field name="is_contagious">0</field>
+            <field name="symptoms">Weakness, weight loss, increased thirst</field>
+            <field name="parent_id" ref="disease_diabetes"/>
+            <field name="region_ids" eval="[(4, ref('base.ua')), (4, ref('base.in'))]"/>
+        </record>
+    </data>
 </odoo>

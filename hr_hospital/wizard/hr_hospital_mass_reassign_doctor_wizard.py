@@ -1,8 +1,18 @@
+"""
+Mass Doctor Reassignment Wizard module
+"""
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
 class MassReassignDoctorWizard(models.TransientModel):
+    """
+    Wizard for mass reassignment of doctors in patient visits.
+    Allows selecting an old doctor and new doctor, and reassigns
+    patient visits within an optional date range.
+    """
+
     _name = 'hr.hospital.mass.reassign.doctor.wizard'
     _description = _('Mass Doctor Reassignment Wizard')
 
@@ -40,16 +50,31 @@ class MassReassignDoctorWizard(models.TransientModel):
                     ]
                 }
             }
-        else:
-            return {
-                'domain': {
-                    'patient_ids': []
-                }
+
+        return {
+            'domain': {
+                'patient_ids': []
             }
+        }
 
     def action_reassign(self):
+        """
+        Reassigns selected patients to a new doctor.
+
+        Raises:
+            UserError: If no patients are selected.
+
+        For each selected patient, updates the personal doctor
+        to the new doctor, and creates a history record logging
+        the reassignment with date and reason.
+
+        Closes the wizard window upon completion.
+        """
+
         if not self.patient_ids:
-            raise UserError(_("Select at least one patient to reassign."))
+            raise UserError(
+                _("Select at least one patient to reassign.")
+            )
         for patient in self.patient_ids:
             patient.write({
                 'personal_doctor_id': self.new_doctor_id.id
@@ -62,4 +87,7 @@ class MassReassignDoctorWizard(models.TransientModel):
                 'change_reason': self.change_reason,
                 'active': True,
             })
-        return {'type': 'ir.actions.act_window_close'}
+
+        return {
+            'type': 'ir.actions.act_window_close'
+        }

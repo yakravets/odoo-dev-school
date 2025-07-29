@@ -3,7 +3,7 @@
         <field name="name">hr.hospital.mass.reassign.doctor.wizard.form</field>
         <field name="model">hr.hospital.mass.reassign.doctor.wizard</field>
         <field name="arch" type="xml">
-            <form string="Масове перепризначення лікаря">
+            <form string="Mass reassignment of a doctor">
                 <group>
                     <field name="old_doctor_id"/>
                     <field name="new_doctor_id" required="1"/>
@@ -16,18 +16,23 @@
                     <field name="change_reason" required="1"/>
                 </group>
                 <footer>
-                    <button string="Перепризначити" type="object" name="action_reassign" class="btn-primary"/>
-                    <button string="Відмінити" class="btn-secondary" special="cancel"/>
+                    <button string="Reassign"
+                        type="object"
+                        name="action_reassign"
+                        class="btn-primary"/>
+                    <button string="Cancel"
+                        class="btn-secondary"
+                        special="cancel"/>
                 </footer>
             </form>
         </field>
     </record>
 
     <record id="action_mass_reassign_doctor_wizard" model="ir.actions.act_window">
-        <field name="name">Масове перепризначення лікаря</field>
+        <field name="name">Mass reassignment of a doctor</field>
         <field name="res_model">hr.hospital.mass.reassign.doctor.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="view_id" ref="view_mass_reassign_doctor_wizard_form"/>
     </record>
+    
 </odoo>

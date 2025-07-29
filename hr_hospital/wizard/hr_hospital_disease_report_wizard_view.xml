@@ -18,8 +18,13 @@
                     <field name="group_by"/>
                 </group>
                 <footer>
-                    <button name="action_report" type="object" string="Згенерувати звіт" class="btn-primary"/>
-                    <button string="Скасувати" class="btn-secondary" special="cancel"/>
+                    <button name="action_report" 
+                        type="object" 
+                        string="Generate report" 
+                        class="btn-primary"/>
+                    <button string="Cancel" 
+                        class="btn-secondary" 
+                        special="cancel"/>
                 </footer>
             </form>
         </field>
@@ -30,9 +35,6 @@
         <field name="res_model">hr.hospital.disease.report.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="view_id" ref="view_disease_report_wizard_form"/>
-        <field name="binding_model_id" ref="model_hr_hospital_doctor"/>
-        <field name="binding_view_types">form,list</field>
     </record>
 
 </odoo>

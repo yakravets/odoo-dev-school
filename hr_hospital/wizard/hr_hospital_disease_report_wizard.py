@@ -1,7 +1,10 @@
+"""Wizard for generating disease reports within a specific date range."""
+
 from odoo import models, fields, _
 
 
 class DiseaseReportWizard(models.TransientModel):
+    """Transient model for creating disease reports by period."""
     _name = 'hr.hospital.disease.report.wizard'
     _description = _('Disease report for the period')
 

@@ -1,10 +1,15 @@
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+"""Abstract person model for HR Hospital module."""
+
 import re
 from datetime import date
 
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
+
 
 class AbstractPerson(models.AbstractModel):
+    """Abstract model that stores common personal info for patients/doctors."""
+
     _name = 'hr.hospital.abstract.person'
     _description = 'Abstract Person Model'
     _inherit = ['image.mixin']
@@ -70,13 +75,11 @@ class AbstractPerson(models.AbstractModel):
 
     @api.depends('birth_date')
     def _compute_age(self):
+        today = date.today()
         for record in self:
             if record.birth_date:
-                today = date.today()
                 born = record.birth_date
-                age = today.year - born.year - (
-                    (today.month, today.day) < (born.month, born.day)
-                )
+                age = _compute_age(born, today)
                 record.age = age
             else:
                 record.age = 0
@@ -93,7 +96,8 @@ class AbstractPerson(models.AbstractModel):
         for record in self:
             if record.phone and not phone_pattern.match(record.phone):
                 raise ValidationError(
-                    _("Phone number must be in format +380XXXXXXXXX.")
+                    _("Phone number must be in format "
+                        "+380XXXXXXXXX.")
                 )
 
     @api.constrains('email')
@@ -101,4 +105,12 @@ class AbstractPerson(models.AbstractModel):
         email_pattern = re.compile(r'^[\w\.-]+@[\w\.-]+\.\w{2,4}$')
         for record in self:
             if record.email and not email_pattern.match(record.email):
-                raise ValidationError(_("Incorrect Email."))
+                raise ValidationError(
+                    _("Incorrect Email.")
+                )
+
+
+def _compute_age(born, today):
+    return today.year - born.year - (
+        (today.month, today.day) < (born.month, born.day)
+    )

@@ -1,9 +1,16 @@
+"""Defines the Patient model for the HR Hospital module."""
+
+from datetime import date
+
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
-from datetime import date
 
 
 class Patient(models.Model):
+    """Represents a patient in the hospital system,
+    containing personal, medical, and history-related data.
+    """
+
     _name = 'hr.hospital.patient'
     _description = _('Patient')
     _inherit = 'hr.hospital.abstract.person'
@@ -39,6 +46,11 @@ class Patient(models.Model):
     )
     insurance_policy_number = fields.Char(
         string=_("Insurance policy number")
+    )
+    partner_id = fields.Many2one(
+        comodel_name='res.partner',
+        string=_('Partner'),
+        ondelete='restrict',
     )
 
     contact_person_ids = fields.Many2many(
@@ -83,9 +95,15 @@ class Patient(models.Model):
                     raise ValidationError(
                         _("The date of birth must be in the past.")
                     )
-                age = today.year - rec.birth_date.year - (
-                    (today.month, today.day) < (rec.birth_date.month, rec.birth_date.day)
+
+                age = (
+                    today.year - rec.birth_date.year
+                    - (
+                        (today.month, today.day)
+                        < (rec.birth_date.month, rec.birth_date.day)
+                    )
                 )
+
                 if age < 0:
                     raise ValidationError(
                         _("The patient's age must be greater than 0.")
@@ -96,17 +114,22 @@ class Patient(models.Model):
         patients = super().create(vals_list)
         for rec, vals in zip(patients, vals_list):
             if 'personal_doctor_id' in vals and vals['personal_doctor_id']:
-                rec._create_doctor_history(vals['personal_doctor_id'])
+                rec.create_doctor_history(vals['personal_doctor_id'])
         return patients
 
     def write(self, vals):
         res = super().write(vals)
         for rec in self:
             if 'personal_doctor_id' in vals and vals['personal_doctor_id']:
-                rec._create_doctor_history(vals['personal_doctor_id'])
+                rec.create_doctor_history(vals['personal_doctor_id'])
         return res
 
-    def _create_doctor_history(self, doctor_id):
+    def create_doctor_history(self, doctor_id):
+        """
+        Internal helper to log a doctor assignment for a patient.
+        :param doctor_id: ID of the assigned doctor.
+        """
+
         self.env['hr.hospital.patient.doctor.history'].create({
             'patient_id': self.id,
             'doctor_id': doctor_id,
@@ -117,9 +140,14 @@ class Patient(models.Model):
     @api.onchange('citizenship_country_id')
     def _onchange_citizenship_country_id(self):
         if self.citizenship_country_id:
-            suggested_lang = self._get_suggested_language_from_country(self.citizenship_country_id)
+            suggested_lang = self._get_suggested_language_from_country(
+                self.citizenship_country_id
+            )
             if suggested_lang:
-                message = _("Recommended language for this country:") + suggested_lang.name
+                message = _(
+                    "Recommended language for this country: %s"
+                ) % suggested_lang.name
+
                 return {
                     'warning': {
                         'title': _("Language of communication"),
@@ -130,7 +158,19 @@ class Patient(models.Model):
                     }
                 }
 
+        return None
+
     def _get_suggested_language_from_country(self, country):
+        """
+        Return a suggested language record based on the given
+        country's code. This method maps specific country codes
+        to language codes and searches for the corresponding
+        language record in the `res.lang` model.
+        :param country: A `res.country` record.
+        :return: A `res.lang` record if a matching language is found,
+        otherwise 'en_US'.
+        """
+
         mapping = {
             'UA': 'uk_UA',
             'PL': 'pl_PL',
@@ -144,9 +184,11 @@ class Patient(models.Model):
                 [('code', '=', lang_code)],
                 limit=1
             )
-        return False
+        return 'en_US'
 
     def action_open_visit_history(self):
+        """Open the visit history for the current patient."""
+
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
@@ -159,6 +201,14 @@ class Patient(models.Model):
         }
 
     def action_create_visit(self):
+        """
+        Open the visit history for the current patient.
+
+        This method returns an action to display the list and form views
+        of patient visits, filtered by the current patient's ID.
+
+        :return: A dictionary representing the action to open visit records.
+        """
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',

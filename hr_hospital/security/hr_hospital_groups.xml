@@ -1,0 +1,51 @@
+<odoo>
+    <data noupdate="0">
+
+        <data noupdate="1">
+            <record id="module_category_hr_hospital" model="ir.module.category">
+            <field name="name">Hospital Management</field>
+            <field name="sequence">20</field>
+            </record>
+        </data>
+
+        <!-- Patient -->
+        <record id="group_patient" model="res.groups">
+            <field name="name">Patient</field>
+            <field name="category_id" ref="module_category_hr_hospital"/>
+        </record>
+
+        <!-- Intern (inherits Patient) -->
+        <record id="group_intern" model="res.groups">
+            <field name="name">Intern</field>
+            <field name="category_id" ref="module_category_hr_hospital"/>
+            <field name="implied_ids" eval="[(4, ref('hr_hospital.group_patient'))]"/>
+        </record>
+
+        <!-- Doctor (inherits Intern) -->
+        <record id="group_doctor" model="res.groups">
+            <field name="name">Doctor</field>
+            <field name="category_id" ref="module_category_hr_hospital"/>
+            <field name="implied_ids" eval="[(4, ref('hr_hospital.group_intern'))]"/>
+        </record>
+
+        <!-- Manager (inherits Doctor) -->
+        <record id="group_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_category_hr_hospital"/>
+            <field name="implied_ids" eval="[(4, ref('hr_hospital.group_doctor'))]"/>
+        </record>
+
+        <!-- Administrator (inherits Manager) -->
+        <record id="group_admin" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="module_category_hr_hospital"/>
+            <field name="implied_ids" eval="[(4, ref('hr_hospital.group_manager'))]"/>
+        </record>
+
+        <record id="group_patient_yourself_view" model="res.groups">
+            <field name="name">Patient view only yourself data</field>
+            <field name="category_id" ref="module_category_hr_hospital"/>
+        </record>
+
+    </data>
+</odoo>

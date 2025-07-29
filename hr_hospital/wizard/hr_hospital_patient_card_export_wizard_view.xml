@@ -3,7 +3,7 @@
     <field name="name">hr.hospital.patient.card.export.wizard.form</field>
     <field name="model">hr.hospital.patient.card.export.wizard</field>
     <field name="arch" type="xml">
-      <form string="Експорт медичної картки">
+      <form string="Export of medical card">
         <group>
           <field name="patient_id"/>
           <field name="date_from"/>
@@ -16,21 +16,28 @@
           <field name="include_recommendations"/>
         </group>
         <footer>
-          <button string="Експортувати" name="action_export" type="object" class="btn-primary"/>
-          <button string="Скасувати" special="cancel" class="btn-secondary"/>
+          <button string="Export"
+            name="action_export" 
+            type="object" 
+            class="btn-primary"/>
+          <button string="Cancel"
+            special="cancel"
+            class="btn-secondary"/>
         </footer>
         <field name="export_file" invisible="1"/>
         <field name="export_filename" invisible="1"/>
         <div>
-          <p>Файл готовий: <a type="binary" name="export_file" download="1"></a></p>
+          <p>File link: <a type="binary" name="export_file" download="1"></a></p>
         </div>
       </form>
     </field>
   </record>
 
-  <act_window id="hr_hospital_patient_card_export_wizard_action"
-              name="Експорт медичної картки"
-              res_model="patient.card.export.wizard"
-              view_mode="form"
-              target="new"/>
+  <record id="action_hr_hospital_patient_card_export_wizard" model="ir.actions.act_window">
+      <field name="name">Export of medical card</field>
+      <field name="res_model">hr.hospital.patient.card.export.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+  </record>
+
 </odoo>

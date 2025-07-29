@@ -1,9 +1,14 @@
+"""Medical diagnosis model for the hr_hospital module."""
+
+from datetime import timedelta
+
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
-from datetime import timedelta
 
 
 class Diagnosis(models.Model):
+    """Model representing medical diagnoses."""
+
     _name = 'hr.hospital.medical.diagnosis'
     _description = _('Diagnosis')
 
@@ -22,14 +27,23 @@ class Diagnosis(models.Model):
         ondelete='cascade',
         domain=lambda self: [
             ('state', '=', 'done'),
-            ('visit_date', '>=', (fields.Date.today() - timedelta(days=30)).strftime('%Y-%m-%d'))
+            (
+                'visit_date',
+                '>=',
+                (
+                    fields.Date.today() - timedelta(days=30)
+                ).strftime('%Y-%m-%d')
+            )
         ]
     )
     disease_id = fields.Many2one(
         comodel_name='hr.hospital.type.of.disease',
         string=_("Disease"),
         required=True,
-        domain="[('is_contagious', '=', True), ('danger_level', 'in', ['high', 'critical'])]"
+        domain=[
+            ('is_contagious', '=', True),
+            ('danger_level', 'in', ['high', 'critical'])
+        ]
     )
     description = fields.Text(
         string=_("Description of diagnosis")
@@ -67,14 +81,30 @@ class Diagnosis(models.Model):
     @api.model
     def create(self, vals):
         if vals.get('name', _('New')) == _('New'):
-            vals['name'] = self.env['ir.sequence'] \
-            .next_by_code('hr.hospital.medical.diagnosis') or _('New')
-        return super(Diagnosis, self).create(vals)
+            vals['name'] = (
+                self.env['ir.sequence']
+                .next_by_code('hr.hospital.medical.diagnosis')
+                or _('New')
+            )
+        return super().create(vals)
 
     def action_approve(self):
+        """
+        Approves the medical diagnosis if it hasn't been approved yet.
+
+        If the current user has an associated doctor profile,
+        sets that doctor as the one who approved the diagnosis.
+        Also records the approval timestamp.
+
+        Raises:
+            ValidationError: If the diagnosis is already approved.
+        """
         for rec in self:
             if not rec.is_approved:
-                approved_by_id = self.env.user.doctor_id.id if hasattr(self.env.user, 'doctor_id') else False
+                if hasattr(self.env.user, 'doctor_id'):
+                    approved_by_id = self.env.user.doctor_id.id
+                else:
+                    approved_by_id = False
                 rec.write({
                     'is_approved': True,
                     'approved_by_id': approved_by_id,

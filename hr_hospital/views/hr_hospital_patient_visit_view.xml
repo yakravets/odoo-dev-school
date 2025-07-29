@@ -20,7 +20,8 @@
         <field name="arch" type="xml">
             <form string="Patient visit">
                 <header>
-                    <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
+                    <field name="status" widget="statusbar" 
+                        options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
                     <group name="group_patient_visit_header">
@@ -34,7 +35,8 @@
                         <group name="group_patient_visit_header_right">
                             <field name="visit_type"/>
                             <field name="actual_datetime"/>                            
-                            <field name="doctor_id" domain="[('license_number', '!=', False)]"/>
+                            <field name="doctor_id" 
+                                domain="[('license_number', '!=', False)]"/>
                         </group>
                     </group>
                     <notebook>
@@ -42,7 +44,8 @@
                             <field name="recommendation" nolabel="1"/>
                         </page>
                         <page string="Diagnisis">
-                            <field name="diagnosis_ids" context="{'visit_id': id}">
+                            <field name="diagnosis_ids" 
+                                    context="{'visit_id': id}">
                                 <list editable="bottom">
                                     <field name="name"/>
                                     <field name="disease_id"/>
