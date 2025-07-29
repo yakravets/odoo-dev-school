@@ -194,7 +194,7 @@ class Patient(models.Model):
             'type': 'ir.actions.act_window',
             'name': _('Visit History'),
             'res_model': 'hr.hospital.patient.visit',
-            'view_mode': 'tree,form',
+            'view_mode': 'list,form',
             'domain': [('patient_id', '=', self.id)],
             'context': {'default_patient_id': self.id},
             'target': 'current',

@@ -58,12 +58,12 @@
         sequence="25"/>
     <menuitem id="hr_hospital_type_of_disease_menu" 
         name="Diseases" 
-        action="hr_hospital_specialization_action" 
+        action="hr_hospital_type_of_disease_action" 
         parent="hr_hospital_doctors_root"
         sequence="30"/>
     <menuitem id="hr_hospital_specialization_menu" 
         name="Specializations" 
-        action="hr_hospital_type_of_disease_action" 
+        action="hr_hospital_specialization_action" 
         parent="hr_hospital_doctors_root"
         sequence="35"/>
 

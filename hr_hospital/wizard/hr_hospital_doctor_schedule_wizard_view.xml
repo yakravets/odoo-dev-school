@@ -22,8 +22,6 @@
         <group string="Time">
           <field name="time_start"/>
           <field name="time_end"/>
-          <field name="break_from"/>
-          <field name="break_to"/>
         </group>
         <footer>
           <button string="Create a schedule" 
@@ -40,7 +38,7 @@
 
   <record id="action_hr_hospital_doctor_schedule_wizard" model="ir.actions.act_window">
       <field name="name">Report of diseases</field>
-      <field name="res_model">hr.hospital.disease.report.wizard</field>
+      <field name="res_model">hr.hospital.doctor.schedule.wizard</field>
       <field name="view_mode">form</field>
       <field name="target">new</field>
   </record>

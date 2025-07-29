@@ -6,7 +6,7 @@
     'description': ' Hospital module app',
     'author': 'Yaroslav Kravets',
     'website': 'https://yaroslavkravets.pp.ua',
-    'license': 'OPL-1',
+    'license': 'LGPL-3',
     'category': 'Customization',
     'depends': [
         'base'

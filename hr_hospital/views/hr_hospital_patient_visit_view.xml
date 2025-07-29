@@ -78,12 +78,12 @@
         <field name="model">hr.hospital.patient.visit</field>
         <field name="arch" type="xml">
             <calendar
-                string="Patient Visits Calendar"
-                date_start="planned_datetime"
-                date_stop="actual_datetime"
-                color="doctor_id"
-                event_open_popup="true"
-                mode="week">
+                    string="Patient Visits Calendar"
+                    date_start="planned_datetime"
+                    date_stop="actual_datetime"
+                    color="doctor_id"
+                    event_open_popup="true"
+                    mode="week">
                 <field name="name"/>
                 <field name="patient_id"/>
                 <field name="doctor_id"/>

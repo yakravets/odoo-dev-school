@@ -31,12 +31,13 @@ class DoctorScheduleWizard(models.TransientModel):
     )
     schedule_type = fields.Selection(
         [
-            ('standard', _('Standard')),
-            ('even', _('Even week')),
-            ('odd', _('Odd week'))
+            ('workday', _('Working day')),
+            ('vacation', _('Leave')),
+            ('sick_leave', _('Hospital')),
+            ('conference', _('Conference')),
         ],
         string=_('Schedule type'),
-        default='standard'
+        default='workday'
     )
 
     monday = fields.Boolean(
@@ -67,12 +68,6 @@ class DoctorScheduleWizard(models.TransientModel):
     time_end = fields.Float(
         string=_('End time')
     )
-    break_from = fields.Float(
-        string=_('Break from')
-    )
-    break_to = fields.Float(
-        string=_('Break to')
-    )
 
     @api.model
     def _float_to_time(self, float_hour):
@@ -98,17 +93,7 @@ class DoctorScheduleWizard(models.TransientModel):
         the week is even or odd.
         """
 
-        schedule = self.env['hr.hospital.schedule']
-
-        weekdays = {
-            0: self.monday,
-            1: self.tuesday,
-            2: self.wednesday,
-            3: self.thursday,
-            4: self.friday,
-            5: self.saturday,
-            6: self.sunday,
-        }
+        schedule = self.env['hr.hospital.doctor.schedule']
 
         current_date = self.date_start
         for week in range(self.week_count):
@@ -116,19 +101,23 @@ class DoctorScheduleWizard(models.TransientModel):
                 day = current_date + timedelta(days=day_offset + week * 7)
                 # 0 is Monday.
                 weekday = day.weekday()
-                is_even = ((day.isocalendar()[1] % 2) == 0)
 
-                if weekdays.get(weekday):
-                    if self.schedule_type == 'even' and not is_even:
-                        continue
-                    if self.schedule_type == 'odd' and is_even:
-                        continue
+                is_work = (self.monday and weekday == 0)\
+                    or (self.tuesday and weekday == 1)\
+                    or (self.wednesday and weekday == 2)\
+                    or (self.thursday and weekday == 3)\
+                    or (self.friday and weekday == 4)\
+                    or (self.saturday and weekday == 5)\
+                    or (self.sunday and weekday == 6)
 
-                    schedule.create({
-                        'doctor_id': self.doctor_id.id,
-                        'date': day,
-                        'time_start': self._float_to_time(self.time_start),
-                        'time_end': self._float_to_time(self.time_end),
-                        'break_from': self._float_to_time(self.break_from),
-                        'break_to': self._float_to_time(self.break_to),
-                    })
+                if not is_work:
+                    continue
+
+                schedule.create({
+                    'doctor_id': self.doctor_id.id,
+                    'date': day,
+                    'schedule_type': self.schedule_type,
+                    'day_of_week': ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'][weekday],
+                    'from_time': self.time_start,
+                    'to_time': self.time_end,
+                })

@@ -6,10 +6,11 @@
         <field name="arch" type="xml">
             <list string="Types of diseases">
                 <header>
-                    <button name="%(action_open_disease_report_wizard)d"
+                    <!-- <button name="%(action_open_disease_report_wizard)d"
                             string="Disease report"
                             type="action"
-                            class="oe_highlight"/>
+                            class="oe_highlight"
+                            display="always"/> -->
                 </header>
                 <field name="name"/>
                 <field name="severity"/>

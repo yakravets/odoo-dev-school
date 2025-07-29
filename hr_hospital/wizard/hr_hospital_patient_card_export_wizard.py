@@ -68,10 +68,10 @@ class PatientCardExportWizard(models.TransientModel):
 
     @api.onchange('patient_id')
     def _onchange_patient_lang(self):
-        if self.patient_id and self.patient_id.lang:
+        if self.patient_id and self.patient_id.language_id:
             lang = self.env['res.lang'].search(
                 [
-                    ('code', '=', self.patient_id.lang)
+                    ('code', '=', self.patient_id.language_id.code)
                 ],
                 limit=1)
             self.lang_id = lang
@@ -79,18 +79,18 @@ class PatientCardExportWizard(models.TransientModel):
     def _get_data(self):
         visits = self.env['hr.hospital.patient.visit'].search([
             ('patient_id', '=', self.patient_id.id),
-            ('date', '>=', self.date_from or '1900-01-01'),
-            ('date', '<=', self.date_to or '2100-01-01')
+            ('actual_datetime', '>=', self.date_from or '1900-01-01'),
+            ('actual_datetime', '<=', self.date_to or '2100-01-01')
         ])
 
         data = []
         for visit in visits:
             item = {
-                'Date': str(visit.date),
+                'Date': str(visit.actual_datetime),
                 'Doctor': visit.doctor_id.name,
             }
             if self.include_diagnoses:
-                item['Diagnosis'] = visit.diagnosis or ''
+                item['Diagnosis'] = [d.name for d in visit.diagnosis_ids] or []
             if self.include_recommendations:
                 item['Recommendations'] = visit.recommendation or ''
             data.append(item)
