@@ -1,5 +1,3 @@
-# pylint: disable=missing-module-docstring
-
 {
     'name': 'Odoo Hospital',
     'version': '18.0.0.0.1',
