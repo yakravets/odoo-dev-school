@@ -1,6 +1,6 @@
 """Contact person model for HR Hospital module."""
 
-from odoo import models, fields, _
+from odoo import models, fields
 
 
 class ContactPerson(models.Model):
@@ -12,18 +12,18 @@ class ContactPerson(models.Model):
 
     type = fields.Selection(
         selection=[
-            ('husbent/wife', _('Husband/Wife')),
-            ('father/mouther', _('Father/Mother')),
-            ('relative', _('Relative')),
-            ('friend', _('Friend')),
-            ('colleague', _('Colleague')),
-            ('other', _('Other')),
+            ('husbent/wife', 'Husband/Wife'),
+            ('father/mouther', 'Father/Mother'),
+            ('relative', 'Relative'),
+            ('friend', 'Friend'),
+            ('colleague', 'Colleague'),
+            ('other', 'Other'),
         ],
-        string=_("Type of Contact Person"),
+        string="Type of Contact Person",
         required=True
     )
     patient_ids = fields.One2many(
         comodel_name='hr.hospital.patient',
         inverse_name='contact_person_ids',
-        string=_("Patients"),
+        string="Patients",
     )

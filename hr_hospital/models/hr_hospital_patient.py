@@ -12,15 +12,15 @@ class Patient(models.Model):
     """
 
     _name = 'hr.hospital.patient'
-    _description = _('Patient')
+    _description = 'Patient'
     _inherit = 'hr.hospital.abstract.person'
 
     personal_doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string=_("Personal doctor")
+        string="Personal doctor"
     )
     passport_data = fields.Char(
-        string=_("Passport data"),
+        string="Passport data",
         size=10
     )
     blood_group = fields.Selection(
@@ -34,22 +34,20 @@ class Patient(models.Model):
             ('ab_pos', 'AB(IV) Rh+'),
             ('ab_neg', 'AB(IV) Rh-'),
         ],
-        string=_("Blood type/Rh factor"),
+        string="Blood type/Rh factor",
     )
-    allergies = fields.Text(
-        string=_("Allergies")
-    )
+    allergies = fields.Text()
     insurance_company_id = fields.Many2one(
         comodel_name='res.partner',
-        string=_("Insurance company"),
+        string="Insurance company",
         domain=[('is_company', '=', True)]
     )
     insurance_policy_number = fields.Char(
-        string=_("Insurance policy number")
+        string="Insurance policy number"
     )
     partner_id = fields.Many2one(
         comodel_name='res.partner',
-        string=_('Partner'),
+        string='Partner',
         ondelete='restrict',
     )
 
@@ -58,12 +56,12 @@ class Patient(models.Model):
         relation='hr_hospital_contact_person_patient_rel',
         column1='patient_id',
         column2='contact_person_id',
-        string=_("Contact persons"),
+        string="Contact persons",
     )
     doctor_history_ids = fields.One2many(
         comodel_name='hr.hospital.patient.doctor.history',
         inverse_name='patient_id',
-        string=_("The history of personal doctors")
+        string="The history of personal doctors"
     )
     diagnosis_history_ids = fields.One2many(
         comodel_name='hr.hospital.medical.diagnosis',

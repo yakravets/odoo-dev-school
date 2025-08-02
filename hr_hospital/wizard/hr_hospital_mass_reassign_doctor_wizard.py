@@ -14,29 +14,29 @@ class MassReassignDoctorWizard(models.TransientModel):
     """
 
     _name = 'hr.hospital.mass.reassign.doctor.wizard'
-    _description = _('Mass Doctor Reassignment Wizard')
+    _description = 'Mass Doctor Reassignment Wizard'
 
     old_doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string=_("Old doctor"),
+        string="Old doctor",
         required=False
     )
     new_doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string=_("New doctor"),
+        string="New doctor",
         required=True
     )
     patient_ids = fields.Many2many(
         comodel_name='hr.hospital.patient',
-        string=_("Patients"),
+        string="Patients",
         domain="[('personal_doctor_id', '=', old_doctor_id)]"
     )
     change_date = fields.Date(
-        string=_("Change date"),
+        string="Change date",
         default=fields.Date.context_today
     )
     change_reason = fields.Text(
-        string=_("Reason for change"),
+        string="Reason for change",
         required=True
     )
 

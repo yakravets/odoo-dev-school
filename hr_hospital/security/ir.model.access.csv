@@ -1,4 +1,3 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hr_hospital_doctor,access_hr_hospital_doctor,model_hr_hospital_doctor,base.group_user,1,1,1,1
 access_hr_hospital_patient_visit,access_hr_hospital_patient_visit,model_hr_hospital_patient_visit,base.group_user,1,1,1,1
 access_hr_hospital_patient,access_hr_hospital_patient,model_hr_hospital_patient,base.group_user,1,1,1,1
@@ -13,3 +12,4 @@ access_hr_hospital_doctor_schedule_wizard,access_hr_hospital_doctor_schedule_wiz
 access_hr_hospital_mass_reassign_doctor_wizard,access_hr_hospital_mass_reassign_doctor_wizard,model_hr_hospital_mass_reassign_doctor_wizard,base.group_user,1,1,1,0
 access_hr_hospital_patient_card_export_wizard,access_hr_hospital_patient_card_export_wizard,model_hr_hospital_patient_card_export_wizard,base.group_user,1,1,1,0
 access_hr_hospital_patient_visit_patient,access_hr_hospital_patient_visit_patient,model_hr_hospital_patient_visit,hr_hospital.group_patient,1,1,1,0
+,,,,,,,

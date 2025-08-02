@@ -8,79 +8,76 @@ class PatientVisit(models.Model):
     """Model representing individual visits of a patient to the hospital."""
 
     _name = 'hr.hospital.patient.visit'
-    _description = _('Patient visits')
+    _description = 'Patient visits'
 
     name = fields.Char(
-        string=_("Name"),
         required=True,
         copy=False,
         readonly=True,
-        default=lambda self: _('New')
+        default=lambda self: 'New'
     )
     planned_datetime = fields.Datetime(
-        string=_('Scheduled date/time'),
+        string='Scheduled date/time',
         required=True
     )
     actual_datetime = fields.Datetime(
-        string=_("Actual date and time of visit"),
+        string="Actual date and time of visit",
         readonly=True
     )
     status = fields.Selection(
         [
-            ('planned', _('Scheduled')),
-            ('done', _('Completed')),
-            ('cancelled', _('Cancelled')),
-            ('no_show', _('Didn\'t show up')),
+            ('planned', 'Scheduled'),
+            ('done', 'Completed'),
+            ('cancelled', 'Cancelled'),
+            ('no_show', 'Didn\'t show up'),
         ],
-        string=_('Status'),
         required=True,
         default='planned'
     )
     patient_id = fields.Many2one(
         comodel_name='hr.hospital.patient',
-        string=_('Patient'),
+        string='Patient',
         required=True
     )
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string=_('Doctor'),
+        string='Doctor',
         required=True,
         ondelete='restrict',
         domain="[('license_number', '!=', False)]"
     )
     visit_type = fields.Selection(
         [
-            ('primary', _('Primary')),
-            ('repeat', _('Repeat')),
-            ('preventive', _('Preventive')),
-            ('emergency', _('Emergency')),
+            ('primary', 'Primary'),
+            ('repeat', 'Repeat'),
+            ('preventive', 'Preventive'),
+            ('emergency', 'Emergency'),
         ],
-        string=_("Type of visit")
+        string="Type of visit"
     )
     diagnosis_ids = fields.One2many(
         comodel_name='hr.hospital.medical.diagnosis',
         inverse_name='visit_id',
-        string=_("Diagnoses")
+        string="Diagnoses"
     )
     recommendation = fields.Html(
-        string=_("Recommendations")
+        string="Recommendations"
     )
     amount = fields.Monetary(
-        string=_("Cost of visit"),
+        string="Cost of visit",
         currency_field='currency_id'
     )
     currency_id = fields.Many2one(
         comodel_name='res.currency',
-        string=_("Currency")
+        string="Currency"
     )
 
     diagnosis_count = fields.Integer(
-        string=_("Count of diagnoses"),
+        string="Count of diagnoses",
         compute='_compute_diagnosis_count',
         store=True
     )
     visit_unit = fields.Integer(
-        string=_("Visit Unit"),
         default=1
     )
 

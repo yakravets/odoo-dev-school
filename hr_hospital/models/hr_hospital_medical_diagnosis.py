@@ -10,19 +10,18 @@ class Diagnosis(models.Model):
     """Model representing medical diagnoses."""
 
     _name = 'hr.hospital.medical.diagnosis'
-    _description = _('Diagnosis')
+    _description = 'Diagnosis'
 
     name = fields.Char(
-        string=_("Name"),
         required=True,
         copy=False,
         readonly=True,
-        default=lambda self: _('New')
+        default=lambda self: 'New'
     )
 
     visit_id = fields.Many2one(
         comodel_name='hr.hospital.patient.visit',
-        string=_("Visit"),
+        string="Visit",
         required=True,
         ondelete='cascade',
         domain=lambda self: [
@@ -38,7 +37,7 @@ class Diagnosis(models.Model):
     )
     disease_id = fields.Many2one(
         comodel_name='hr.hospital.type.of.disease',
-        string=_("Disease"),
+        string="Disease",
         required=True,
         domain=[
             ('is_contagious', '=', True),
@@ -46,45 +45,44 @@ class Diagnosis(models.Model):
         ]
     )
     description = fields.Text(
-        string=_("Description of diagnosis")
+        string="Description of diagnosis"
     )
     treatment = fields.Html(
-        string=_("Prescribed treatment")
+        string="Prescribed treatment"
     )
     is_approved = fields.Boolean(
-        string=_("Approved"),
+        string="Approved",
         default=False
     )
     approved_by_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string=_("The doctor who approved"),
+        string="The doctor who approved",
         readonly=True
     )
     approved_date = fields.Datetime(
-        string=_("Approval date"),
+        string="Approval date",
         readonly=True
     )
     severity = fields.Selection(
         [
-            ('mild', _('Mild')),
-            ('moderate', _('Moderate')),
-            ('severe', _('Severe')),
-            ('critical', _('Critical')),
+            ('mild', 'Mild'),
+            ('moderate', 'Moderate'),
+            ('severe', 'Severe'),
+            ('critical', 'Critical'),
         ],
-        string=_("Severity")
     )
     diagnosis_unit = fields.Integer(
-        string=_("Visit Unit"),
+        string="Visit Unit",
         default=1
     )
 
     @api.model
     def create(self, vals):
-        if vals.get('name', _('New')) == _('New'):
+        if vals.get('name', 'New') == 'New':
             vals['name'] = (
                 self.env['ir.sequence']
                 .next_by_code('hr.hospital.medical.diagnosis')
-                or _('New')
+                or 'New'
             )
         return super().create(vals)
 

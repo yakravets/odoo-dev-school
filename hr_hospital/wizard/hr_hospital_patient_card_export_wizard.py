@@ -9,7 +9,7 @@ import json
 import csv
 import io
 import base64
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 
 
 class PatientCardExportWizard(models.TransientModel):
@@ -21,44 +21,44 @@ class PatientCardExportWizard(models.TransientModel):
     """
 
     _name = 'hr.hospital.patient.card.export.wizard'
-    _description = _('Patient Card Export Wizard')
+    _description = 'Patient Card Export Wizard'
 
     patient_id = fields.Many2one(
         comodel_name='hr.hospital.patient',
-        string=_('Patient'),
+        string='Patient',
         required=True
     )
     date_from = fields.Date(
-        string=_('Start date')
+        string='Start date'
     )
     date_to = fields.Date(
-        string=_('End date')
+        string='End date'
     )
 
     include_diagnoses = fields.Boolean(
-        string=_('Include diagnoses'),
+        string='Include diagnoses',
         default=True
     )
     include_recommendations = fields.Boolean(
-        string=_('Include recommendations'),
+        string='Include recommendations',
         default=True
     )
 
     lang_id = fields.Many2one(
         comodel_name='res.lang',
-        string=_('Report language')
+        string='Report language'
     )
     export_format = fields.Selection(
         [
             ('json', 'JSON'),
             ('csv', 'CSV'),
         ],
-        string=_('Export format'),
+        string='Export format',
         default='json'
     )
 
     export_file = fields.Binary(
-        string=_('File'),
+        string='File',
         readonly=True
     )
     export_filename = fields.Char(

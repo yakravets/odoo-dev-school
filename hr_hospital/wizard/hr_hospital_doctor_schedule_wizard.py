@@ -2,8 +2,8 @@
 Wizard for generating or viewing the schedule of a specific doctor.
 """
 
-from odoo import models, fields, api, _
 from datetime import timedelta
+from odoo import models, fields, api
 
 
 class DoctorScheduleWizard(models.TransientModel):
@@ -13,60 +13,44 @@ class DoctorScheduleWizard(models.TransientModel):
     """
 
     _name = 'hr.hospital.doctor.schedule.wizard'
-    _description = _('Doctor Schedule Wizard')
+    _description = 'Doctor Schedule Wizard'
 
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string=_('Doctor'),
+        string='Doctor',
         required=True
     )
     date_start = fields.Date(
-        string=_('Start week'),
+        string='Start week',
         required=True
     )
     week_count = fields.Integer(
-        string=_('Number of weeks'),
+        string='Number of weeks',
         default=1,
         required=True
     )
     schedule_type = fields.Selection(
         [
-            ('workday', _('Working day')),
-            ('vacation', _('Leave')),
-            ('sick_leave', _('Hospital')),
-            ('conference', _('Conference')),
+            ('workday', 'Working day'),
+            ('vacation', 'Leave'),
+            ('sick_leave', 'Hospital'),
+            ('conference', 'Conference'),
         ],
-        string=_('Schedule type'),
+        string='Schedule type',
         default='workday'
     )
-
-    monday = fields.Boolean(
-        string=_('Monday')
-    )
-    tuesday = fields.Boolean(
-        string=_('Tuesday')
-    )
-    wednesday = fields.Boolean(
-        string=_('Wednesday')
-    )
-    thursday = fields.Boolean(
-        string=_('Thursday')
-    )
-    friday = fields.Boolean(
-        string=_('Friday')
-    )
-    saturday = fields.Boolean(
-        string=_('Saturday')
-    )
-    sunday = fields.Boolean(
-        string=_('Sunday')
-    )
-
+    monday = fields.Boolean()
+    tuesday = fields.Boolean()
+    wednesday = fields.Boolean()
+    thursday = fields.Boolean()
+    friday = fields.Boolean()
+    saturday = fields.Boolean()
+    sunday = fields.Boolean()
     time_start = fields.Float(
-        string=_('Start time')
+        string='Start time'
     )
     time_end = fields.Float(
-        string=_('End time')
+        string='End time'
     )
 
     @api.model
@@ -117,7 +101,15 @@ class DoctorScheduleWizard(models.TransientModel):
                     'doctor_id': self.doctor_id.id,
                     'date': day,
                     'schedule_type': self.schedule_type,
-                    'day_of_week': ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'][weekday],
+                    'day_of_week': [
+                        'mon',
+                        'tue',
+                        'wed',
+                        'thu',
+                        'fri',
+                        'sat',
+                        'sun'
+                    ][weekday],
                     'from_time': self.time_start,
                     'to_time': self.time_end,
                 })

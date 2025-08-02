@@ -1,7 +1,6 @@
 {
     'name': 'Odoo Hospital',
     'version': '18.0.0.0.1',
-    'description': ' Hospital module app',
     'author': 'Yaroslav Kravets',
     'website': 'https://yaroslavkravets.pp.ua',
     'license': 'LGPL-3',

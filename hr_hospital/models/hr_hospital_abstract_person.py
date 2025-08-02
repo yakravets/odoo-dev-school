@@ -16,61 +16,55 @@ class AbstractPerson(models.AbstractModel):
     _abstract = True
 
     first_name = fields.Char(
-        string=_('First name'),
+        string='First name',
         required=True
     )
     last_name = fields.Char(
-        string=_('Last name'),
+        string='Last name',
         required=True
     )
     middle_name = fields.Char(
-        string=_('Middle name'),
+        string='Middle name',
     )
     name = fields.Char(
-        string=_('Full Name'),
+        string='Full Name',
         compute='_compute_name',
         readonly=True,
         store=True
     )
     active = fields.Boolean(
-        string=_('Active'),
         default=True
     )
-
     phone = fields.Char(
-        string=_('Phone number'),
+        string='Phone number',
         required=True
     )
-    email = fields.Char(
-        string='Email',
-    )
+    email = fields.Char()
     gender = fields.Selection(
         [
-            ('unknown', _('Unknown')),
-            ('man', _('Man')),
-            ('woman', _('Woman')),
+            ('unknown', 'Unknown'),
+            ('man', 'Man'),
+            ('woman', 'Woman'),
         ],
-        string=_('Gender'),
         required=True,
         default='unknown'
     )
     birth_date = fields.Date(
-        string=_('Birth date'),
+        string='Birth date',
         required=True
     )
     age = fields.Integer(
-        string=_("Age"),
         compute='_compute_age',
         readonly=True,
         store=True
     )
     citizenship_country_id = fields.Many2one(
         comodel_name='res.country',
-        string=_('Citizenship country'),
+        string='Citizenship country'
     )
     language_id = fields.Many2one(
         comodel_name='res.lang',
-        string=_('Language'),
+        string='Language',
     )
 
     @api.depends('birth_date')

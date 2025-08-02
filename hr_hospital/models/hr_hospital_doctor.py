@@ -15,66 +15,65 @@ class Doctor(models.Model):
 
     _sql_constraints = [
         ('unique_license_number', 'unique(license_number)',
-            _('The license number must be unique!')),
+            'The license number must be unique!'),
         ('check_rating_range', 'CHECK(rating >= 0.00 AND rating <= 5.00)',
-            _('The rating must be from 0.00 to 5.00!')),
+            'The rating must be from 0.00 to 5.00!'),
     ]
 
     user_id = fields.Many2one(
         comodel_name='res.users',
-        string=_("System user")
+        string="System user"
     )
     specialization_id = fields.Many2one(
         comodel_name='hr.hospital.specialization',
-        string=_('Specialization'),
+        string='Specialization',
         required=True
     )
     is_intern = fields.Boolean(
-        string=_("Intern")
+        string="Intern"
     )
     mentor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string=_("Mentor doctor"),
+        string="Mentor doctor",
         domain="[('is_intern', '=', False)]"
     )
     license_number = fields.Char(
-        string=_("License number"),
+        string="License number",
         required=True,
         copy=False
     )
     license_issue_date = fields.Date(
-        string=_("License issue date")
+        string="License issue date"
     )
     work_experience = fields.Integer(
-        string=_("Work experience (years)"),
+        string="Work experience (years)",
         compute='_compute_work_experience',
         store=True
     )
     rating = fields.Float(
-        string=_("Rating"),
         digits=(3, 2),
         default=0.0
     )
     schedule_ids = fields.One2many(
         comodel_name='hr.hospital.doctor.schedule',
         inverse_name='doctor_id',
-        string=_("Work schedule")
+        string="Work schedule"
     )
     education_country_id = fields.Many2one(
         comodel_name='res.country',
-        string=_("Country of study")
+        string="Country of study"
     )
     intern_ids = fields.One2many(
         comodel_name='hr.hospital.doctor',
         inverse_name='mentor_id',
-        string=_("Interns"),
+        string="Interns",
         domain=[('is_intern', '=', True)],
         readonly=True,
     )
     visit_ids = fields.One2many(
         comodel_name='hr.hospital.patient.visit',
         inverse_name='doctor_id',
-        string=_("Work schedule")
+        string="Work schedule"
     )
 
     @api.depends('license_issue_date')

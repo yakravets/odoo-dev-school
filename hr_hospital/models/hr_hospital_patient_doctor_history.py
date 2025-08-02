@@ -3,7 +3,7 @@ Model for storing the history of changes in
 assigned personal doctors for hospital patients.
 """
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 
 
 class PatientDoctorHistory(models.Model):
@@ -12,52 +12,50 @@ class PatientDoctorHistory(models.Model):
     """
 
     _name = 'hr.hospital.patient.doctor.history'
-    _description = _('History of changes in personal doctors')
+    _description = 'History of changes in personal doctors'
 
     name = fields.Char(
-        string=_("Name"),
         required=True,
         copy=False,
         readonly=True,
-        default=lambda self: _('New')
+        default=lambda self: 'New'
     )
 
     active = fields.Boolean(
-        string=_("Active"),
         default=True
     )
     patient_id = fields.Many2one(
         comodel_name='hr.hospital.patient',
-        string=_("Patient"),
+        string="Patient",
         required=True,
         ondelete='cascade'
     )
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string=_("Doctor"),
+        string="Doctor",
         required=True,
         ondelete='restrict'
     )
     assign_date = fields.Date(
-        string=_("Appointment date"),
+        string="Appointment date",
         required=True,
         default=fields.Date.context_today
     )
     change_date = fields.Date(
-        string=_("Change date")
+        string="Change date"
     )
     change_reason = fields.Text(
-        string=_("Reason for change")
+        string="Reason for change"
     )
 
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
-            if vals.get('name', _('New')) == _('New'):
+            if vals.get('name', 'New') == 'New':
                 vals['name'] = (
                     self.env['ir.sequence']
                     .next_by_code('hr.hospital.patient.doctor.history')
-                    or _('New')
+                    or 'New'
                 )
 
         records = super().create(vals_list)

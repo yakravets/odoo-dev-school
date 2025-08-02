@@ -1,6 +1,5 @@
-from odoo.tests.common import TransactionCase
-from odoo.exceptions import ValidationError
 from datetime import datetime, timedelta
+from odoo.tests.common import TransactionCase
 
 
 class TestPatientVisit(TransactionCase):
@@ -53,11 +52,11 @@ class TestPatientVisit(TransactionCase):
             'currency_id': self.currency.id,
         })
 
-        diag1 = self.Diagnosis.create({
+        self.Diagnosis.create({
             'visit_id': visit.id,
             'name': 'Flu'
         })
-        diag2 = self.Diagnosis.create({
+        self.Diagnosis.create({
             'visit_id': visit.id,
             'name': 'Cough'
         })
